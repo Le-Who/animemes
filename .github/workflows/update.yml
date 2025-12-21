@@ -1,0 +1,38 @@
+name: Daily Database Update
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # Запуск каждый день в полночь
+  workflow_dispatch: # Кнопка для ручного запуска
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Важно: дает права на запись изменений
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Run update script
+        run: python update.py
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+          git add characters.json
+          # Если изменений нет, коммит не упадет с ошибкой
+          git commit -m "Auto-update database [skip ci]" || exit 0
+          git push

@@ -1,16 +1,30 @@
 [
     {
+        "id": "original",
+        "name": "Original",
+        "franchise": "Series",
+        "tag": "original",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/29/cd/sample_29cd54896404336eebe77f6967e871b6.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/ab/59/sample_ab59fbf3656a75dab83a90ea4b308f12.jpg"
+        },
+        "counts": {
+            "total": 1520132,
+            "nsfw": 1212135
+        }
+    },
+    {
         "id": "touhou",
         "name": "Touhou",
         "franchise": "Series",
         "tag": "touhou",
         "images": {
-            "sfw": "https://img2.gelbooru.com/samples/11/a9/sample_11a94d95ca2bbf98e6e75c122040e58a.jpg",
-            "nsfw": "https://img2.gelbooru.com/samples/05/5e/sample_055e5c3af2939eea0c9a20a9c1a8f519.jpg"
+            "sfw": "https://img2.gelbooru.com/samples/88/00/sample_8800c21c6ed4c52a089407e6bbf66b1f.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/83/ce/83cec122a32ac8d6ce2ffa045589e66d.jpeg"
         },
         "counts": {
-            "total": 921099,
-            "nsfw": 73796
+            "total": 921105,
+            "nsfw": 741182
         }
     },
     {
@@ -19,12 +33,12 @@
         "franchise": "Series",
         "tag": "nintendo",
         "images": {
-            "sfw": "https://img2.gelbooru.com/samples/af/08/sample_af082a9bc184981fafe58aedf8b523d5.jpg",
-            "nsfw": "https://img2.gelbooru.com/samples/d8/21/sample_d82177bb566579895779b6b0198fdee7.jpg"
+            "sfw": "https://img2.gelbooru.com/samples/a4/1d/sample_a41d9cab3132b092a5a95068531063c0.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/59/c1/59c183dea082ba373784de15988cb271.jpg"
         },
         "counts": {
-            "total": 781400,
-            "nsfw": 168702
+            "total": 781408,
+            "nsfw": 528121
         }
     },
     {
@@ -33,12 +47,12 @@
         "franchise": "Series",
         "tag": "kantai_collection",
         "images": {
-            "sfw": "https://img2.gelbooru.com/samples/a1/e0/sample_a1e013c6ce8e69cc3586119a928c00b1.jpg",
-            "nsfw": "https://img2.gelbooru.com/samples/a1/e0/sample_a1e013c6ce8e69cc3586119a928c00b1.jpg"
+            "sfw": "https://img2.gelbooru.com/images/87/be/87be79ad08c789bfc01dde03cfae9620.jpeg",
+            "nsfw": "https://img2.gelbooru.com/images/c0/24/c0244b65a371828d14f088a419be4ca1.jpg"
         },
         "counts": {
-            "total": 496358,
-            "nsfw": 40719
+            "total": 496381,
+            "nsfw": 452498
         }
     },
     {
@@ -47,12 +61,866 @@
         "franchise": "Series",
         "tag": "pokemon",
         "images": {
-            "sfw": "https://img2.gelbooru.com/samples/93/04/sample_9304115e6fcf1098ab0c4a4affcc89c6.jpg",
-            "nsfw": "https://img2.gelbooru.com/samples/40/73/sample_40735344a45b0db0c0617abd714b4768.jpg"
+            "sfw": "https://img2.gelbooru.com/samples/a6/0a/sample_a60a577ca65ca0f95a681ea2cb117616.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/3f/20/sample_3f202dee88ce4c1d7ac9eed30497dcce.jpg"
         },
         "counts": {
-            "total": 458808,
-            "nsfw": 99006
+            "total": 458817,
+            "nsfw": 291404
+        }
+    },
+    {
+        "id": "fate_(series)",
+        "name": "Fate",
+        "franchise": "Series",
+        "tag": "fate_(series)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/1e/99/sample_1e9965b99a46a8a070959eb3ba7f7669.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/32/85/sample_32855c0f998e6feb1de2876ead8e3bf9.jpg"
+        },
+        "counts": {
+            "total": 387150,
+            "nsfw": 339314
+        }
+    },
+    {
+        "id": "blue_archive",
+        "name": "Blue Archive",
+        "franchise": "Series",
+        "tag": "blue_archive",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/1e/8a/sample_1e8a9a0a415d2af7e89e5cc85ef1475b.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/ec/72/sample_ec72f5ca62f4ab10858fda7f1c9b4758.jpg"
+        },
+        "counts": {
+            "total": 357978,
+            "nsfw": 265486
+        }
+    },
+    {
+        "id": "fate/grand_order",
+        "name": "Fate/Grand Order",
+        "franchise": "Series",
+        "tag": "fate/grand_order",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/71/ce/71ce8fbaef1f3fc3d6af006a0183c56c.png",
+            "nsfw": "https://img2.gelbooru.com/samples/28/6b/sample_286bfce81918d56a420121c9509066d4.jpg"
+        },
+        "counts": {
+            "total": 284869,
+            "nsfw": 246574
+        }
+    },
+    {
+        "id": "hololive",
+        "name": "Hololive",
+        "franchise": "Series",
+        "tag": "hololive",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/2d/48/2d4861801f12c8c1704ff872508f1581.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/de/de/sample_dede0a7502b31849471d28d4c341ceda.jpg"
+        },
+        "counts": {
+            "total": 283105,
+            "nsfw": 218824
+        }
+    },
+    {
+        "id": "genshin_impact",
+        "name": "Genshin Impact",
+        "franchise": "Series",
+        "tag": "genshin_impact",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/3c/74/sample_3c745624f2ac9adf0062840ac19e9991.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/6c/38/sample_6c38b29ccf4a462df9503380a4585644.jpg"
+        },
+        "counts": {
+            "total": 276820,
+            "nsfw": 185017
+        }
+    },
+    {
+        "id": "idolmaster",
+        "name": "Idolmaster",
+        "franchise": "Series",
+        "tag": "idolmaster",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/cf/5f/sample_cf5fdd2a76ac2d4b478244c17da8cc1a.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/e6/33/e633306a31e232fa560120b7e6b50877.png"
+        },
+        "counts": {
+            "total": 273818,
+            "nsfw": 222050
+        }
+    },
+    {
+        "id": "vocaloid",
+        "name": "Vocaloid",
+        "franchise": "Series",
+        "tag": "vocaloid",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/aa/27/sample_aa2759d4897b475974c7d7bcc41efc9f.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/e1/f6/sample_e1f600d076141f68218ecc6dcf7e0a5b.jpg"
+        },
+        "counts": {
+            "total": 193792,
+            "nsfw": 133157
+        }
+    },
+    {
+        "id": "love_live!",
+        "name": "Love Live!",
+        "franchise": "Series",
+        "tag": "love_live!",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/40/94/sample_40944c73973a735b8c8851b327340a32.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/59/22/sample_59222f89a368eae4c8a31fed31148a56.jpg"
+        },
+        "counts": {
+            "total": 177404,
+            "nsfw": 119953
+        }
+    },
+    {
+        "id": "arknights",
+        "name": "Arknights",
+        "franchise": "Series",
+        "tag": "arknights",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/6f/37/sample_6f37adf4f7e5e6ad01f2c6048c29ad22.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/70/f2/70f2c83f010dcd80b77114113be45be8.jpeg"
+        },
+        "counts": {
+            "total": 175558,
+            "nsfw": 111926
+        }
+    },
+    {
+        "id": "umamusume",
+        "name": "Umamusume",
+        "franchise": "Series",
+        "tag": "umamusume",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/8d/d4/sample_8dd4185d9ecbbd44a0939554b0f6f72b.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/44/d6/sample_44d614b22c032313e05aaf1c97549320.jpg"
+        },
+        "counts": {
+            "total": 150384,
+            "nsfw": 77636
+        }
+    },
+    {
+        "id": "azur_lane",
+        "name": "Azur Lane",
+        "franchise": "Series",
+        "tag": "azur_lane",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/b0/63/sample_b063e1cda5f88e152ff594c581bdba71.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/8e/3d/sample_8e3dc0ebe9faba0763e5b850925745a7.jpg"
+        },
+        "counts": {
+            "total": 149782,
+            "nsfw": 143931
+        }
+    },
+    {
+        "id": "honkai_(series)",
+        "name": "Honkai",
+        "franchise": "Series",
+        "tag": "honkai_(series)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/3a/f2/sample_3af2da73dff79fbbeda84e0fe16d66e3.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/a6/00/sample_a6005d42e1bcd426825ddc6963931557.jpg"
+        },
+        "counts": {
+            "total": 145494,
+            "nsfw": 90223
+        }
+    },
+    {
+        "id": "fire_emblem",
+        "name": "Fire Emblem",
+        "franchise": "Series",
+        "tag": "fire_emblem",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/f1/90/sample_f1906d35f4c1a53e3c31b196181e87a3.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/c3/69/sample_c3692052f0ead56249dc448c1cde9951.jpg"
+        },
+        "counts": {
+            "total": 136348,
+            "nsfw": 102632
+        }
+    },
+    {
+        "id": "idolmaster_cinderella_girls",
+        "name": "Idolmaster Cinderella Girls",
+        "franchise": "Series",
+        "tag": "idolmaster_cinderella_girls",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/ba/35/sample_ba35d2550245e320ff7e0d9f9879f433.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/d5/c0/sample_d5c0c6270cb40f2b7487974f79e8acac.jpg"
+        },
+        "counts": {
+            "total": 135194,
+            "nsfw": 116639
+        }
+    },
+    {
+        "id": "digimon",
+        "name": "Digimon",
+        "franchise": "Series",
+        "tag": "digimon",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/0f/38/sample_0f38281054709de9b79ded3a46176bc0.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/9e/96/9e964fe287373b887135efbd19c19ecc.jpeg"
+        },
+        "counts": {
+            "total": 125411,
+            "nsfw": 42239
+        }
+    },
+    {
+        "id": "final_fantasy",
+        "name": "Final Fantasy",
+        "franchise": "Series",
+        "tag": "final_fantasy",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/a3/36/sample_a33688b61be2bf9cdb201e335f81f6fa.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/6f/75/sample_6f75f052971920df8be1c8941bf9efa3.jpg"
+        },
+        "counts": {
+            "total": 120578,
+            "nsfw": 87240
+        }
+    },
+    {
+        "id": "honkai:_star_rail",
+        "name": "Honkai: Star Rail",
+        "franchise": "Series",
+        "tag": "honkai:_star_rail",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/45/8d/sample_458dedef777318b3f9cf2e5535121826.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/a6/00/sample_a6005d42e1bcd426825ddc6963931557.jpg"
+        },
+        "counts": {
+            "total": 100236,
+            "nsfw": 56465
+        }
+    },
+    {
+        "id": "one_piece",
+        "name": "One Piece",
+        "franchise": "Series",
+        "tag": "one_piece",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/80/5b/sample_805b5bfb213b189461efa2090a858612.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/86/09/sample_860939f1280b42c4ac13b6b9545d7dea.jpg"
+        },
+        "counts": {
+            "total": 98544,
+            "nsfw": 74374
+        }
+    },
+    {
+        "id": "hololive_english",
+        "name": "Hololive English",
+        "franchise": "Series",
+        "tag": "hololive_english",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/2d/48/2d4861801f12c8c1704ff872508f1581.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/eb/2f/sample_eb2f8a6304f54fc87b7e4cbac679c5e3.jpg"
+        },
+        "counts": {
+            "total": 94363,
+            "nsfw": 68908
+        }
+    },
+    {
+        "id": "nijisanji",
+        "name": "Nijisanji",
+        "franchise": "Series",
+        "tag": "nijisanji",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/c4/8d/sample_c48d3f4dbbbd19a81205fc8bdb23a393.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/57/d3/sample_57d30257ceeebbcc873caa3721398e54.jpg"
+        },
+        "counts": {
+            "total": 80614,
+            "nsfw": 49020
+        }
+    },
+    {
+        "id": "mahou_shoujo_madoka_magica",
+        "name": "Mahou Shoujo Madoka Magica",
+        "franchise": "Series",
+        "tag": "mahou_shoujo_madoka_magica",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/8b/ac/sample_8bac87eadb1944302e37c2e7eb8a46b8.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/49/c9/49c9ed9b5bd350b556dc6675d36dbbc5.jpg"
+        },
+        "counts": {
+            "total": 78079,
+            "nsfw": 61064
+        }
+    },
+    {
+        "id": "puella_magi_madoka_magica",
+        "name": "Puella Magi Madoka Magica",
+        "franchise": "Series",
+        "tag": "puella_magi_madoka_magica",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/8b/ac/sample_8bac87eadb1944302e37c2e7eb8a46b8.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/49/c9/49c9ed9b5bd350b556dc6675d36dbbc5.jpg"
+        },
+        "counts": {
+            "total": 78079,
+            "nsfw": 61064
+        }
+    },
+    {
+        "id": "gundam",
+        "name": "Gundam",
+        "franchise": "Series",
+        "tag": "gundam",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/96/67/sample_9667fcf5fa04b6d9c50dc356e8787000.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/a7/dd/sample_a7dd2de25fa1b3024891949ab9b7f702.jpg"
+        },
+        "counts": {
+            "total": 77931,
+            "nsfw": 49987
+        }
+    },
+    {
+        "id": "girls_und_panzer",
+        "name": "Girls Und Panzer",
+        "franchise": "Series",
+        "tag": "girls_und_panzer",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/59/3b/sample_593b9fb38040ed77c5aff3a9b77005e4.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/39/55/sample_395561bb061b9483a01a61554a94671a.jpg"
+        },
+        "counts": {
+            "total": 76043,
+            "nsfw": 67774
+        }
+    },
+    {
+        "id": "precure",
+        "name": "Precure",
+        "franchise": "Series",
+        "tag": "precure",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/27/98/2798dfdcf391334739e6e85552260132.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/be/c2/sample_bec2d79b755b1e5a91b3aeca0ee2955a.jpg"
+        },
+        "counts": {
+            "total": 68035,
+            "nsfw": 53957
+        }
+    },
+    {
+        "id": "capcom",
+        "name": "Capcom",
+        "franchise": "Series",
+        "tag": "capcom",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/a7/3b/a73bdab861c8516fadeb5b8a70dae7c1.png",
+            "nsfw": "https://img2.gelbooru.com/samples/ad/56/sample_ad561bf6f7debd77ff6baa29a66bb9fe.jpg"
+        },
+        "counts": {
+            "total": 65759,
+            "nsfw": 61903
+        }
+    },
+    {
+        "id": "indie_virtual_youtuber",
+        "name": "Indie Virtual Youtuber",
+        "franchise": "Series",
+        "tag": "indie_virtual_youtuber",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/67/8a/678af1d8c8f504d2bcc21bddaafb18f1.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/de/de/sample_dede0a7502b31849471d28d4c341ceda.jpg"
+        },
+        "counts": {
+            "total": 65273,
+            "nsfw": 48930
+        }
+    },
+    {
+        "id": "danganronpa_(series)",
+        "name": "Danganronpa",
+        "franchise": "Series",
+        "tag": "danganronpa_(series)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/cf/73/sample_cf7381d1616cbec451c495c37f0e7805.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/ef/86/ef86805040f2a6763ba20dc3fff26511.jpg"
+        },
+        "counts": {
+            "total": 65249,
+            "nsfw": 39744
+        }
+    },
+    {
+        "id": "zenless_zone_zero",
+        "name": "Zenless Zone Zero",
+        "franchise": "Series",
+        "tag": "zenless_zone_zero",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/b0/11/sample_b011419cb432df4479e2d1987e8e590b.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/74/12/sample_7412f2552d8bc26fe8d0f7c1d295e16a.jpg"
+        },
+        "counts": {
+            "total": 64306,
+            "nsfw": 47553
+        }
+    },
+    {
+        "id": "boku_no_hero_academia",
+        "name": "Boku No Hero Academia",
+        "franchise": "Series",
+        "tag": "boku_no_hero_academia",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/e4/08/e408bbd2fcc6d301c53745aeb121f713.jpeg",
+            "nsfw": "https://img2.gelbooru.com/images/ea/19/ea19584442a9cb99a8b4aaf5fecb0a87.jpg"
+        },
+        "counts": {
+            "total": 62760,
+            "nsfw": 51712
+        }
+    },
+    {
+        "id": "my_hero_academia",
+        "name": "My Hero Academia",
+        "franchise": "Series",
+        "tag": "my_hero_academia",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/34/3c/sample_343c07c5649f36b0c9feb212b5bf0723.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/ea/19/ea19584442a9cb99a8b4aaf5fecb0a87.jpg"
+        },
+        "counts": {
+            "total": 62760,
+            "nsfw": 51712
+        }
+    },
+    {
+        "id": "naruto_(series)",
+        "name": "Naruto",
+        "franchise": "Series",
+        "tag": "naruto_(series)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/31/78/sample_3178aa9842eabac8d4ef6b93fe627a32.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/b9/1a/b91ac24447571b3ce4d0c5858ad95c6c.png"
+        },
+        "counts": {
+            "total": 59479,
+            "nsfw": 52668
+        }
+    },
+    {
+        "id": "kemono_friends",
+        "name": "Kemono Friends",
+        "franchise": "Series",
+        "tag": "kemono_friends",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/cf/73/sample_cf7381d1616cbec451c495c37f0e7805.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/5c/29/sample_5c2926836c77dc736bfb7241a134a204.jpg"
+        },
+        "counts": {
+            "total": 58913,
+            "nsfw": 44209
+        }
+    },
+    {
+        "id": "love_live!_school_idol_project",
+        "name": "Love Live! School Idol Project",
+        "franchise": "Series",
+        "tag": "love_live!_school_idol_project",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/cf/73/sample_cf7381d1616cbec451c495c37f0e7805.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/05/86/058624263886cc975fc255b0a660d65c.png"
+        },
+        "counts": {
+            "total": 57328,
+            "nsfw": 50889
+        }
+    },
+    {
+        "id": "dragon_ball",
+        "name": "Dragon Ball",
+        "franchise": "Series",
+        "tag": "dragon_ball",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/a7/3b/a73bdab861c8516fadeb5b8a70dae7c1.png",
+            "nsfw": "https://img2.gelbooru.com/images/89/51/89514a9cc70df1e3dd97822c5ff5d956.jpg"
+        },
+        "counts": {
+            "total": 53744,
+            "nsfw": 41496
+        }
+    },
+    {
+        "id": "granblue_fantasy",
+        "name": "Granblue Fantasy",
+        "franchise": "Series",
+        "tag": "granblue_fantasy",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/02/d8/02d8d3630546bbb4749ee8caf4e7dc87.jpeg",
+            "nsfw": "https://img2.gelbooru.com/images/e8/46/e8463595646cb5403ca674883243bfcd.png"
+        },
+        "counts": {
+            "total": 53430,
+            "nsfw": 48552
+        }
+    },
+    {
+        "id": "yu-gi-oh!",
+        "name": "Yu-Gi-Oh!",
+        "franchise": "Series",
+        "tag": "yu-gi-oh!",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/a6/86/a6863b05a673cdfd49bf1db054174461.png",
+            "nsfw": "https://img2.gelbooru.com/samples/df/11/sample_df113884d06aaefe2f4c0885fa28f043.jpg"
+        },
+        "counts": {
+            "total": 52846,
+            "nsfw": 39940
+        }
+    },
+    {
+        "id": "persona",
+        "name": "Persona",
+        "franchise": "Series",
+        "tag": "persona",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/a8/fe/sample_a8fe47a44d3dde8a2485793b9e1f2219.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/56/10/5610c7f68a4068b6f9adace828a7179a.jpg"
+        },
+        "counts": {
+            "total": 51870,
+            "nsfw": 39370
+        }
+    },
+    {
+        "id": "jojo_no_kimyou_na_bouken",
+        "name": "Jojo No Kimyou Na Bouken",
+        "franchise": "Series",
+        "tag": "jojo_no_kimyou_na_bouken",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/91/69/sample_91692a477a698c0cfe791e841cf4de9a.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/43/33/4333d79689177c2384041a53d2398dde.jpeg"
+        },
+        "counts": {
+            "total": 50892,
+            "nsfw": 40599
+        }
+    },
+    {
+        "id": "mahou_shoujo_madoka_magica_(anime)",
+        "name": "Mahou Shoujo Madoka Magica",
+        "franchise": "Anime",
+        "tag": "mahou_shoujo_madoka_magica_(anime)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/55/9e/559e447c6b9d5d0f9815329777d082ef.png",
+            "nsfw": "https://img2.gelbooru.com/images/49/c9/49c9ed9b5bd350b556dc6675d36dbbc5.jpg"
+        },
+        "counts": {
+            "total": 50263,
+            "nsfw": 44212
+        }
+    },
+    {
+        "id": "puella_magi_madoka_magica_(anime)",
+        "name": "Puella Magi Madoka Magica",
+        "franchise": "Anime",
+        "tag": "puella_magi_madoka_magica_(anime)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/55/9e/559e447c6b9d5d0f9815329777d082ef.png",
+            "nsfw": "https://img2.gelbooru.com/images/31/e6/31e612882ab9dddf907836adb3b78606.png"
+        },
+        "counts": {
+            "total": 50263,
+            "nsfw": 44212
+        }
+    },
+    {
+        "id": "street_fighter",
+        "name": "Street Fighter",
+        "franchise": "Series",
+        "tag": "street_fighter",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/a7/3b/a73bdab861c8516fadeb5b8a70dae7c1.png",
+            "nsfw": "https://img2.gelbooru.com/samples/91/f6/sample_91f6c495222c4a779028d83b54bafe8b.jpg"
+        },
+        "counts": {
+            "total": 48971,
+            "nsfw": 43388
+        }
+    },
+    {
+        "id": "neon_genesis_evangelion",
+        "name": "Neon Genesis Evangelion",
+        "franchise": "Series",
+        "tag": "neon_genesis_evangelion",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/95/a7/sample_95a7d701f2f19f179575117bbfda57db.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/3f/82/sample_3f820dcaacbd9521df0d48a6d97703a0.jpg"
+        },
+        "counts": {
+            "total": 48970,
+            "nsfw": 41153
+        }
+    },
+    {
+        "id": "the_legend_of_zelda",
+        "name": "The Legend Of Zelda",
+        "franchise": "Series",
+        "tag": "the_legend_of_zelda",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/74/fa/74fabd917347101065e0850bd30b0ca2.png",
+            "nsfw": "https://img2.gelbooru.com/samples/56/2a/sample_562afa1c0b26fe1728582e1f9bb03c77.jpg"
+        },
+        "counts": {
+            "total": 48011,
+            "nsfw": 35934
+        }
+    },
+    {
+        "id": "fate/stay_night",
+        "name": "Fate/Stay Night",
+        "franchise": "Series",
+        "tag": "fate/stay_night",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/a7/3b/a73bdab861c8516fadeb5b8a70dae7c1.png",
+            "nsfw": "https://img2.gelbooru.com/images/e6/66/e666aedaf9d97828eaa76a9785a59d49.jpg"
+        },
+        "counts": {
+            "total": 46440,
+            "nsfw": 41544
+        }
+    },
+    {
+        "id": "final_fantasy_vii",
+        "name": "Final Fantasy Vii",
+        "franchise": "Series",
+        "tag": "final_fantasy_vii",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/55/5f/555f321f2954172182fcbd8daf84eca7.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/c1/19/sample_c119097318c3731b1ed083cfc46aaf3d.jpg"
+        },
+        "counts": {
+            "total": 46038,
+            "nsfw": 31103
+        }
+    },
+    {
+        "id": "mario_(series)",
+        "name": "Mario",
+        "franchise": "Series",
+        "tag": "mario_(series)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/a7/3b/a73bdab861c8516fadeb5b8a70dae7c1.png",
+            "nsfw": "https://img2.gelbooru.com/images/c3/9d/c39da56f488a3bb277eea20d51cecef6.png"
+        },
+        "counts": {
+            "total": 45299,
+            "nsfw": 35308
+        }
+    },
+    {
+        "id": "idolmaster_shiny_colors",
+        "name": "Idolmaster Shiny Colors",
+        "franchise": "Series",
+        "tag": "idolmaster_shiny_colors",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/cf/5f/sample_cf5fdd2a76ac2d4b478244c17da8cc1a.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/90/69/sample_906920cf4a3d7a88655021332a5873bc.jpg"
+        },
+        "counts": {
+            "total": 43830,
+            "nsfw": 32808
+        }
+    },
+    {
+        "id": "sensei_(blue_archive)",
+        "name": "Sensei",
+        "franchise": "Blue Archive",
+        "tag": "sensei_(blue_archive)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/ec/f0/sample_ecf0f48efa1f4a7106f997693d4141d8.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/74/ea/sample_74ea3d32183831e5557747c2fed35ef1.jpg"
+        },
+        "counts": {
+            "total": 27354,
+            "nsfw": 20292
+        }
+    },
+    {
+        "id": "nami_(one_piece)",
+        "name": "Nami",
+        "franchise": "One Piece",
+        "tag": "nami_(one_piece)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/e4/49/sample_e449a5a0112a77c3ebdb1f2cbd55a432.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/83/6e/sample_836e01f8a57b7533ec8e39608a623028.jpg"
+        },
+        "counts": {
+            "total": 25272,
+            "nsfw": 22820
+        }
+    },
+    {
+        "id": "ganyu_(genshin_impact)",
+        "name": "Ganyu",
+        "franchise": "Genshin Impact",
+        "tag": "ganyu_(genshin_impact)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/b2/53/sample_b253f06345e90f27e99164c5da5405e2.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/98/7b/sample_987b7cb1509a75d7d754a97b1b9d8c1e.jpg"
+        },
+        "counts": {
+            "total": 20204,
+            "nsfw": 17353
+        }
+    },
+    {
+        "id": "scaramouche_(genshin_impact)",
+        "name": "Scaramouche",
+        "franchise": "Genshin Impact",
+        "tag": "scaramouche_(genshin_impact)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/f6/1f/f61f2067c49d755eaead9bb012801164.png",
+            "nsfw": "https://img2.gelbooru.com/samples/9e/b6/sample_9eb624929829aec7b091858073ba9595.jpg"
+        },
+        "counts": {
+            "total": 17936,
+            "nsfw": 3291
+        }
+    },
+    {
+        "id": "lumine_(genshin_impact)",
+        "name": "Lumine",
+        "franchise": "Genshin Impact",
+        "tag": "lumine_(genshin_impact)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/74/a6/sample_74a6a2f223d321bdce16068877898120.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/68/e5/sample_68e521fcaad4af35e9d34e60b92ef5f9.jpg"
+        },
+        "counts": {
+            "total": 17898,
+            "nsfw": 12230
+        }
+    },
+    {
+        "id": "asuna_(blue_archive)",
+        "name": "Asuna",
+        "franchise": "Blue Archive",
+        "tag": "asuna_(blue_archive)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/9c/14/sample_9c149538c124aa81bf6b81ac961e792d.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/bd/f7/sample_bdf78b190a74f33d1b49e2d1908367b6.jpg"
+        },
+        "counts": {
+            "total": 16135,
+            "nsfw": 15392
+        }
+    },
+    {
+        "id": "yuuka_(blue_archive)",
+        "name": "Yuuka",
+        "franchise": "Blue Archive",
+        "tag": "yuuka_(blue_archive)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/87/b9/sample_87b91f44d5a9bcf76e07b55545a48643.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/4e/b2/sample_4eb23b80a646af476167673272ef8f2c.jpg"
+        },
+        "counts": {
+            "total": 15789,
+            "nsfw": 12122
+        }
+    },
+    {
+        "id": "hina_(blue_archive)",
+        "name": "Hina",
+        "franchise": "Blue Archive",
+        "tag": "hina_(blue_archive)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/ea/39/sample_ea3907d604b7fa885f47cf8989fca867.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/bc/33/sample_bc33dff3097415b7ea077e7bda07a893.jpg"
+        },
+        "counts": {
+            "total": 15234,
+            "nsfw": 9325
+        }
+    },
+    {
+        "id": "trailblazer_(honkai:_star_rail)",
+        "name": "Trailblazer",
+        "franchise": "Honkai: Star Rail",
+        "tag": "trailblazer_(honkai:_star_rail)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/fe/4a/sample_fe4a2aaa1cc145b8aaf837177ee60c10.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/52/14/sample_52142429611950971103f421b22af9e8.jpg"
+        },
+        "counts": {
+            "total": 14133,
+            "nsfw": 6793
+        }
+    },
+    {
+        "id": "hu_tao_(genshin_impact)",
+        "name": "Hu Tao",
+        "franchise": "Genshin Impact",
+        "tag": "hu_tao_(genshin_impact)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/14/f9/14f977de61fe6d96010fe2b24a8fde53.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/a0/ee/sample_a0eec8db2ceb4d0d298286eeb7873337.jpg"
+        },
+        "counts": {
+            "total": 14093,
+            "nsfw": 9299
+        }
+    },
+    {
+        "id": "misty_(pokemon)",
+        "name": "Misty",
+        "franchise": "Pokemon",
+        "tag": "misty_(pokemon)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/a6/e3/a6e31d23cda009207d917c44110e06d8.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/15/b5/sample_15b54e6eb7119c3ab02f3b684ce49c98.jpg"
+        },
+        "counts": {
+            "total": 13567,
+            "nsfw": 11229
+        }
+    },
+    {
+        "id": "firefly_(honkai:_star_rail)",
+        "name": "Firefly",
+        "franchise": "Honkai: Star Rail",
+        "tag": "firefly_(honkai:_star_rail)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/0b/5f/sample_0b5fa0738dd93327d6af03f32f78a20d.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/70/9b/sample_709b794241d38afde9200d50836f4525.jpg"
+        },
+        "counts": {
+            "total": 13310,
+            "nsfw": 6582
+        }
+    },
+    {
+        "id": "dawn_(pokemon)",
+        "name": "Dawn",
+        "franchise": "Pokemon",
+        "tag": "dawn_(pokemon)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/57/ee/57ee66a8576d7d080ae502351b283a5d.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/8a/9f/sample_8a9fe84d1cadf591c65fe7b14820db37.jpg"
+        },
+        "counts": {
+            "total": 12874,
+            "nsfw": 10722
         }
     },
     {
@@ -61,12 +929,12 @@
         "franchise": "Pokemon",
         "tag": "may_(pokemon)",
         "images": {
-            "sfw": "https://img2.gelbooru.com/samples/61/4f/sample_614fc7181509986d480c6b7a207a6a9d.jpg",
-            "nsfw": "https://img2.gelbooru.com/samples/61/04/sample_6104cb7b33d7eace361f97f2e5348535.jpg"
+            "sfw": "https://img2.gelbooru.com/images/26/18/2618426e50fcdf3f206db10237aa8ad5.png",
+            "nsfw": "https://img2.gelbooru.com/images/a0/02/a002a650dd2e4669a74de55b5abe469a.jpg"
         },
         "counts": {
             "total": 12219,
-            "nsfw": 3652
+            "nsfw": 10102
         }
     },
     {
@@ -75,138 +943,390 @@
         "franchise": "Pokemon",
         "tag": "lillie_(pokemon)",
         "images": {
-            "sfw": "https://img2.gelbooru.com/samples/b6/a6/sample_b6a6d80e6406240ed787e1232ba01c79.jpg",
-            "nsfw": "https://img2.gelbooru.com/samples/49/c0/sample_49c053e3997aeb6b76aca393596d4c47.jpg"
+            "sfw": "https://img2.gelbooru.com/images/ba/4e/ba4edc2a46bf025c690e33afdb67cafb.png",
+            "nsfw": "https://img2.gelbooru.com/samples/fa/60/sample_fa60ad232dfc67f5db3a5f70c65508ae.jpg"
         },
         "counts": {
             "total": 11179,
-            "nsfw": 2898
+            "nsfw": 9106
         }
     },
     {
-        "id": "rosa_(pokemon)",
-        "name": "Rosa",
-        "franchise": "Pokemon",
-        "tag": "rosa_(pokemon)",
+        "id": "infection_monitor_(arknights)",
+        "name": "Infection Monitor",
+        "franchise": "Arknights",
+        "tag": "infection_monitor_(arknights)",
         "images": {
-            "sfw": "https://img2.gelbooru.com/samples/4a/16/sample_4a1650f4d44ffcab355436d1f559d797.jpg",
-            "nsfw": "https://img2.gelbooru.com/samples/4a/16/sample_4a1650f4d44ffcab355436d1f559d797.jpg"
+            "sfw": "https://img2.gelbooru.com/samples/84/27/sample_84279b65298ac36b2d491c4798fa6944.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/4b/99/sample_4b9940c53fb876eb07b1ae98e69af0ff.jpg"
         },
         "counts": {
-            "total": 10778,
-            "nsfw": 3497
+            "total": 11085,
+            "nsfw": 6949
         }
     },
     {
-        "id": "remodel_(kantai_collection)",
-        "name": "Remodel",
-        "franchise": "Kantai Collection",
-        "tag": "remodel_(kantai_collection)",
+        "id": "deku_(boku_no_hero_academia)",
+        "name": "Deku",
+        "franchise": "Boku No Hero Academia",
+        "tag": "deku_(boku_no_hero_academia)",
         "images": {
-            "sfw": "https://img2.gelbooru.com/samples/2b/98/sample_2b98b199452c9462b2cd0c4b3c3521d8.jpg",
-            "nsfw": "https://img2.gelbooru.com/samples/2b/98/sample_2b98b199452c9462b2cd0c4b3c3521d8.jpg"
+            "sfw": "https://img2.gelbooru.com/images/a8/ef/a8eff372a197e287580a373f7a017d06.png",
+            "nsfw": "https://img2.gelbooru.com/samples/78/e4/sample_78e4679e9d89f290f308530cdd45ae9b.jpg"
         },
         "counts": {
-            "total": 10680,
-            "nsfw": 314
+            "total": 9611,
+            "nsfw": 6255
         }
     },
     {
-        "id": "white_(pokemon)",
-        "name": "White",
-        "franchise": "Pokemon",
-        "tag": "white_(pokemon)",
+        "id": "scathach_(fate/grand_order)",
+        "name": "Scathach",
+        "franchise": "Fate/Grand Order",
+        "tag": "scathach_(fate/grand_order)",
         "images": {
-            "sfw": "https://img2.gelbooru.com/samples/91/6d/sample_916dd05c962219a1b6bbbe41748c9b02.jpg",
-            "nsfw": "https://img2.gelbooru.com/samples/91/6d/sample_916dd05c962219a1b6bbbe41748c9b02.jpg"
+            "sfw": "https://img2.gelbooru.com/samples/07/26/sample_07268874a159bae2928ccd3d6349c8f0.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/bf/e7/sample_bfe7b9557abd17a001b8ff693346bcbe.jpg"
         },
         "counts": {
-            "total": 10557,
-            "nsfw": 2839
+            "total": 9373,
+            "nsfw": 9234
         }
     },
     {
-        "id": "cynthia_(pokemon)",
-        "name": "Cynthia",
-        "franchise": "Pokemon",
-        "tag": "cynthia_(pokemon)",
+        "id": "doctor_(arknights)",
+        "name": "Doctor",
+        "franchise": "Arknights",
+        "tag": "doctor_(arknights)",
         "images": {
-            "sfw": "https://img2.gelbooru.com/samples/a1/cb/sample_a1cb4ac1b196fa337ce831d45a8e5c07.jpg",
-            "nsfw": "https://img2.gelbooru.com/samples/a1/cb/sample_a1cb4ac1b196fa337ce831d45a8e5c07.jpg"
+            "sfw": "https://img2.gelbooru.com/samples/6c/03/sample_6c03fe2385414beee74b584a0cd95f51.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/fc/ab/sample_fcab6a61bee97a3dbee12b879f25cc25.jpg"
         },
         "counts": {
-            "total": 10174,
-            "nsfw": 3660
+            "total": 9354,
+            "nsfw": 5760
         }
     },
     {
-        "id": "gap_(touhou)",
-        "name": "Gap",
-        "franchise": "Touhou",
-        "tag": "gap_(touhou)",
+        "id": "amiya_(arknights)",
+        "name": "Amiya",
+        "franchise": "Arknights",
+        "tag": "amiya_(arknights)",
         "images": {
-            "sfw": "https://img2.gelbooru.com/samples/cd/96/sample_cd96c98a2ae10ed95837b29d6cd1c171.jpg",
-            "nsfw": "https://img2.gelbooru.com/samples/cd/96/sample_cd96c98a2ae10ed95837b29d6cd1c171.jpg"
+            "sfw": "https://img2.gelbooru.com/images/49/13/4913b4491930b7b8465df3b97f2f62cd.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/88/d5/sample_88d594f0912c2037134ffa30dda1f6d3.jpg"
         },
         "counts": {
-            "total": 9010,
-            "nsfw": 234
+            "total": 9275,
+            "nsfw": 4801
         }
     },
     {
-        "id": "hex_maniac_(pokemon)",
-        "name": "Hex Maniac",
-        "franchise": "Pokemon",
-        "tag": "hex_maniac_(pokemon)",
+        "id": "uravity_(boku_no_hero_academia)",
+        "name": "Uravity",
+        "franchise": "Boku No Hero Academia",
+        "tag": "uravity_(boku_no_hero_academia)",
         "images": {
-            "sfw": "https://img2.gelbooru.com/samples/5a/7e/sample_5a7e315275aa0f0b6dc3644ffe01ceb3.jpg",
-            "nsfw": "https://img2.gelbooru.com/samples/5a/7e/sample_5a7e315275aa0f0b6dc3644ffe01ceb3.jpg"
+            "sfw": "https://img2.gelbooru.com/samples/38/c8/sample_38c80f654cef99953a56f9cb1a494680.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/66/40/sample_664095dd85babdb725c6570b5fdacf0a.jpg"
         },
         "counts": {
-            "total": 8378,
-            "nsfw": 3154
+            "total": 9202,
+            "nsfw": 7930
         }
     },
     {
-        "id": "serena_(pokemon)",
-        "name": "Serena",
-        "franchise": "Pokemon",
-        "tag": "serena_(pokemon)",
+        "id": "manjuu_(azur_lane)",
+        "name": "Manjuu",
+        "franchise": "Azur Lane",
+        "tag": "manjuu_(azur_lane)",
         "images": {
-            "sfw": "https://img2.gelbooru.com/samples/33/22/sample_3322a5449303ef5cf600bac010d1f7c3.jpg",
-            "nsfw": "https://img2.gelbooru.com/samples/ac/c8/sample_acc8e3ce7a63188bdc1c7149fe0adbe1.jpg"
+            "sfw": "https://img2.gelbooru.com/samples/62/06/sample_6206243f234ab91da27bb2395f61c250.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/8b/d9/sample_8bd96d7297a66390edf816204fc89fab.jpg"
         },
         "counts": {
-            "total": 8043,
-            "nsfw": 2102
+            "total": 9148,
+            "nsfw": 8592
         }
     },
     {
-        "id": "gloria_(pokemon)",
-        "name": "Gloria",
-        "franchise": "Pokemon",
-        "tag": "gloria_(pokemon)",
+        "id": "stelle_(honkai:_star_rail)",
+        "name": "Stelle",
+        "franchise": "Honkai: Star Rail",
+        "tag": "stelle_(honkai:_star_rail)",
         "images": {
-            "sfw": "https://img2.gelbooru.com/samples/1f/af/sample_1fafa277175e5d3d3a5e2f94e35c9cdf.jpg",
-            "nsfw": "https://img2.gelbooru.com/samples/1f/af/sample_1fafa277175e5d3d3a5e2f94e35c9cdf.jpg"
+            "sfw": "https://img2.gelbooru.com/samples/fe/4a/sample_fe4a2aaa1cc145b8aaf837177ee60c10.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/62/e7/sample_62e7bd5446b2a8244a4c37c868e45bc7.jpg"
         },
         "counts": {
-            "total": 7496,
-            "nsfw": 1770
+            "total": 9122,
+            "nsfw": 4514
         }
     },
     {
-        "id": "iono_(pokemon)",
-        "name": "Iono",
-        "franchise": "Pokemon",
-        "tag": "iono_(pokemon)",
+        "id": "agnes_tachyon_(umamusume)",
+        "name": "Agnes Tachyon",
+        "franchise": "Umamusume",
+        "tag": "agnes_tachyon_(umamusume)",
         "images": {
-            "sfw": "https://img2.gelbooru.com/samples/1e/41/sample_1e4104ec98cefce0e9ca346aaa0173d5.jpg",
-            "nsfw": "https://img2.gelbooru.com/samples/08/f4/sample_08f4a3d708daf5f496b826ed6cd60d0b.jpg"
+            "sfw": "https://img2.gelbooru.com/samples/a8/7c/sample_a87c58d8b427378e6e70d2d1e98c11aa.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/2b/ad/sample_2bad283f4621ec1b53d6eef5096cb4c8.jpg"
         },
         "counts": {
-            "total": 6635,
-            "nsfw": 1122
+            "total": 9049,
+            "nsfw": 3302
+        }
+    },
+    {
+        "id": "manhattan_cafe_(umamusume)",
+        "name": "Manhattan Cafe",
+        "franchise": "Umamusume",
+        "tag": "manhattan_cafe_(umamusume)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/c7/93/sample_c7933175ae31457bb0153e4859c42f31.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/09/98/sample_0998087746bb2b5437713cdc05365d35.jpg"
+        },
+        "counts": {
+            "total": 8512,
+            "nsfw": 2417
+        }
+    },
+    {
+        "id": "producer_(idolmaster)",
+        "name": "Producer",
+        "franchise": "Idolmaster",
+        "tag": "producer_(idolmaster)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/6f/24/6f2417564ce99abe99f150a4a8615cb9.png",
+            "nsfw": "https://img2.gelbooru.com/images/55/65/55658fd6e7f0afab656c0b71219b6aab.png"
+        },
+        "counts": {
+            "total": 8420,
+            "nsfw": 6957
+        }
+    },
+    {
+        "id": "kaito_(vocaloid)",
+        "name": "Kaito",
+        "franchise": "Vocaloid",
+        "tag": "kaito_(vocaloid)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/10/9c/sample_109c1efd7ea726f84c66f454f3627bb0.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/34/99/sample_34992febb3d2ae373c86ae3decd0ce3f.jpg"
+        },
+        "counts": {
+            "total": 8148,
+            "nsfw": 5240
+        }
+    },
+    {
+        "id": "minamoto_no_raikou_(fate/grand_order)",
+        "name": "Minamoto No Raikou",
+        "franchise": "Fate/Grand Order",
+        "tag": "minamoto_no_raikou_(fate/grand_order)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/81/fb/sample_81fb1b83aff88eb4c80d4df0294d2c1e.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/33/35/sample_333546f61065bcdcc034b3ed12c62e44.jpg"
+        },
+        "counts": {
+            "total": 7707,
+            "nsfw": 7508
+        }
+    },
+    {
+        "id": "zoro_(one_piece)",
+        "name": "Zoro",
+        "franchise": "One Piece",
+        "tag": "zoro_(one_piece)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/17/28/sample_172888ae33b69942890636683c49c87d.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/2f/81/sample_2f81091bfa692e10754a0b844ab393a4.jpg"
+        },
+        "counts": {
+            "total": 7688,
+            "nsfw": 4511
+        }
+    },
+    {
+        "id": "female_byleth_(fire_emblem)",
+        "name": "Female Byleth",
+        "franchise": "Fire Emblem",
+        "tag": "female_byleth_(fire_emblem)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/f2/ac/f2ac4d1d8061ba1b8bda7b6c56a865f7.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/8a/5c/8a5c487118a8aa4e88c3ce7763d1ae78.jpg"
+        },
+        "counts": {
+            "total": 7555,
+            "nsfw": 6347
+        }
+    },
+    {
+        "id": "byleth_(female)_(fire_emblem)",
+        "name": "Byleth",
+        "franchise": "Female",
+        "tag": "byleth_(female)_(fire_emblem)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/22/3f/sample_223fda1f0200b50c6ff797d9ec0e6c00.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/8a/5c/8a5c487118a8aa4e88c3ce7763d1ae78.jpg"
+        },
+        "counts": {
+            "total": 7555,
+            "nsfw": 6347
+        }
+    },
+    {
+        "id": "serval_(kemono_friends)",
+        "name": "Serval",
+        "franchise": "Kemono Friends",
+        "tag": "serval_(kemono_friends)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/cf/73/sample_cf7381d1616cbec451c495c37f0e7805.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/cd/88/sample_cd8823b549983715a6a00282068f1e6e.jpg"
+        },
+        "counts": {
+            "total": 7469,
+            "nsfw": 6405
+        }
+    },
+    {
+        "id": "march_7th_(honkai:_star_rail)",
+        "name": "March 7Th",
+        "franchise": "Honkai: Star Rail",
+        "tag": "march_7th_(honkai:_star_rail)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/f2/98/sample_f2987465a176e41a9a616604cf74b2d9.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/7a/6b/sample_7a6b29077f6afc4fec3deb3631eeee71.jpg"
+        },
+        "counts": {
+            "total": 7390,
+            "nsfw": 2851
+        }
+    },
+    {
+        "id": "texas_(arknights)",
+        "name": "Texas",
+        "franchise": "Arknights",
+        "tag": "texas_(arknights)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/d4/57/sample_d457cac28dbabecaf500902ccb547e7c.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/67/df/67df28c240529e7772165d5a6a3030c5.jpeg"
+        },
+        "counts": {
+            "total": 7283,
+            "nsfw": 4601
+        }
+    },
+    {
+        "id": "sanji_(one_piece)",
+        "name": "Sanji",
+        "franchise": "One Piece",
+        "tag": "sanji_(one_piece)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/c9/33/c933d8d6194d1658427c2c77ffeef6a6.jpeg",
+            "nsfw": "https://img2.gelbooru.com/images/09/85/0985168af12ed8d9d64fa9fbb76b58c0.jpeg"
+        },
+        "counts": {
+            "total": 6754,
+            "nsfw": 3976
+        }
+    },
+    {
+        "id": "rice_shower_(umamusume)",
+        "name": "Rice Shower",
+        "franchise": "Umamusume",
+        "tag": "rice_shower_(umamusume)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/da/8e/sample_da8e67ace4ce2d9c407776ad7888d186.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/74/1b/sample_741bcccaff0de1a9b8c25b967dd9842e.jpg"
+        },
+        "counts": {
+            "total": 6704,
+            "nsfw": 3506
+        }
+    },
+    {
+        "id": "darjeeling_(girls_und_panzer)",
+        "name": "Darjeeling",
+        "franchise": "Girls Und Panzer",
+        "tag": "darjeeling_(girls_und_panzer)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/ff/06/sample_ff06326c8c77071d58d629ac80a50536.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/58/1c/sample_581c08fb170cbf738d8f96ccdafcf38b.jpg"
+        },
+        "counts": {
+            "total": 6596,
+            "nsfw": 5942
+        }
+    },
+    {
+        "id": "lucina_(fire_emblem)",
+        "name": "Lucina",
+        "franchise": "Fire Emblem",
+        "tag": "lucina_(fire_emblem)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/89/d9/sample_89d9c3b49453218bd6f20fe5882e4b27.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/e3/f8/e3f8698a8dca41c5d2073d774706ab69.jpg"
+        },
+        "counts": {
+            "total": 6549,
+            "nsfw": 5439
+        }
+    },
+    {
+        "id": "daiwa_scarlet_(umamusume)",
+        "name": "Daiwa Scarlet",
+        "franchise": "Umamusume",
+        "tag": "daiwa_scarlet_(umamusume)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/2e/5f/2e5fb133b20d7606e94286d901407801.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/02/dc/sample_02dc5a8d8fe0c375a68a5d4507ba7371.jpg"
+        },
+        "counts": {
+            "total": 6474,
+            "nsfw": 4879
+        }
+    },
+    {
+        "id": "meiko_(vocaloid)",
+        "name": "Meiko",
+        "franchise": "Vocaloid",
+        "tag": "meiko_(vocaloid)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/f0/1e/f01e00dad78a0932e34603f35a640f77.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/6a/55/sample_6a5573d64766dbf5357f767f853b371b.jpg"
+        },
+        "counts": {
+            "total": 6408,
+            "nsfw": 4743
+        }
+    },
+    {
+        "id": "taihou_(azur_lane)",
+        "name": "Taihou",
+        "franchise": "Azur Lane",
+        "tag": "taihou_(azur_lane)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/58/96/5896e97f159eb176ca45ba7b9a86aeb3.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/5f/d1/sample_5fd1e82957b17d53d3db47e2d84b5dfd.jpg"
+        },
+        "counts": {
+            "total": 6276,
+            "nsfw": 6226
+        }
+    },
+    {
+        "id": "anchovy_(girls_und_panzer)",
+        "name": "Anchovy",
+        "franchise": "Girls Und Panzer",
+        "tag": "anchovy_(girls_und_panzer)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/b5/85/b585f7f5e4b1ee929b087ee0527d5f90.png",
+            "nsfw": "https://img2.gelbooru.com/images/e2/2d/e22d281b446c3f8b39613d2bb1209643.png"
+        },
+        "counts": {
+            "total": 5810,
+            "nsfw": 5164
         }
     },
     {
@@ -215,26 +1335,446 @@
         "franchise": "Touhou",
         "tag": "junko_(touhou)",
         "images": {
-            "sfw": "https://img2.gelbooru.com/samples/c9/24/sample_c924686b4bccdd8fe2460e0d228ab69b.jpg",
-            "nsfw": "https://img2.gelbooru.com/samples/24/98/sample_24983f7d05b32885ffab77cb0aba6ba4.jpg"
+            "sfw": "https://img2.gelbooru.com/samples/ca/dd/sample_cadddee207ae48800595aff9695c2c00.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/0b/b5/sample_0bb51d20ea1221384a59ee49d1d2162f.jpg"
         },
         "counts": {
             "total": 5629,
-            "nsfw": 255
+            "nsfw": 4018
         }
     },
     {
-        "id": "protagonist_(pokemon)",
-        "name": "Protagonist",
-        "franchise": "Pokemon",
-        "tag": "protagonist_(pokemon)",
+        "id": "bremerton_(azur_lane)",
+        "name": "Bremerton",
+        "franchise": "Azur Lane",
+        "tag": "bremerton_(azur_lane)",
         "images": {
-            "sfw": "https://img2.gelbooru.com/samples/51/1b/sample_511b5b8b629ebdda13886a488652faf4.jpg",
-            "nsfw": "https://img2.gelbooru.com/samples/3b/91/sample_3b915c5010f77657a8d74746d326e365.jpg"
+            "sfw": "https://img2.gelbooru.com/samples/9d/5f/sample_9d5ff8454601b1a26b31c9646dc0d6c7.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/29/ee/29ee6f77508553e1ac6df694f888c8a9.jpg"
         },
         "counts": {
-            "total": 5036,
-            "nsfw": 2327
+            "total": 5567,
+            "nsfw": 5551
+        }
+    },
+    {
+        "id": "mutsu_(kantai_collection)",
+        "name": "Mutsu",
+        "franchise": "Kantai Collection",
+        "tag": "mutsu_(kantai_collection)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/59/c7/sample_59c7f96cc92c601ff290f25e8c97cbe1.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/bf/e7/sample_bfe7b9557abd17a001b8ff693346bcbe.jpg"
+        },
+        "counts": {
+            "total": 5421,
+            "nsfw": 5220
+        }
+    },
+    {
+        "id": "miyamoto_musashi_(fate/grand_order)",
+        "name": "Miyamoto Musashi",
+        "franchise": "Fate/Grand Order",
+        "tag": "miyamoto_musashi_(fate/grand_order)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/ac/dc/sample_acdcafd8b07d1a81385aaffc0143f7ae.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/a5/70/sample_a57082049f8b41ed695f009d8af19399.jpg"
+        },
+        "counts": {
+            "total": 5386,
+            "nsfw": 5155
+        }
+    },
+    {
+        "id": "kaban_(kemono_friends)",
+        "name": "Kaban",
+        "franchise": "Kemono Friends",
+        "tag": "kaban_(kemono_friends)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/89/cf/89cf74ebe1f7115b2eaccef1886e9322.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/fb/9c/sample_fb9ca3c3053b6eec9c6f8595127167df.jpg"
+        },
+        "counts": {
+            "total": 5357,
+            "nsfw": 4772
+        }
+    },
+    {
+        "id": "belle_(zenless_zone_zero)",
+        "name": "Belle",
+        "franchise": "Zenless Zone Zero",
+        "tag": "belle_(zenless_zone_zero)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/9d/4b/sample_9d4b20bfad474899254accfc33b2a675.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/19/76/sample_197681448cfe328ebd85168f4fa750fa.jpg"
+        },
+        "counts": {
+            "total": 5218,
+            "nsfw": 3453
+        }
+    },
+    {
+        "id": "male_byleth_(fire_emblem)",
+        "name": "Male Byleth",
+        "franchise": "Fire Emblem",
+        "tag": "male_byleth_(fire_emblem)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/fa/84/sample_fa840819c9ed7db5a410c8d5bb813149.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/54/49/sample_544985788ea2042ce345380232138623.jpg"
+        },
+        "counts": {
+            "total": 5102,
+            "nsfw": 3979
+        }
+    },
+    {
+        "id": "formidable_(azur_lane)",
+        "name": "Formidable",
+        "franchise": "Azur Lane",
+        "tag": "formidable_(azur_lane)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/f7/d9/sample_f7d98b154ba2687bbde36b06388588c8.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/18/8b/sample_188be1400dd4221115dae1d1cce4c21f.jpg"
+        },
+        "counts": {
+            "total": 4931,
+            "nsfw": 4848
+        }
+    },
+    {
+        "id": "irys_(hololive)",
+        "name": "Irys",
+        "franchise": "Hololive",
+        "tag": "irys_(hololive)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/b6/30/sample_b6307568c6cfca2f00de5c77daac42a0.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/a5/d8/sample_a5d8a80e60b82db022f5bd1018675a7e.jpg"
+        },
+        "counts": {
+            "total": 4665,
+            "nsfw": 3346
+        }
+    },
+    {
+        "id": "chi-chi_(dragon_ball)",
+        "name": "Chi-Chi",
+        "franchise": "Dragon Ball",
+        "tag": "chi-chi_(dragon_ball)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/83/60/8360a278f015bb1337764adcc46d8abf.png",
+            "nsfw": "https://img2.gelbooru.com/samples/08/71/sample_0871a01bc47605ea6e627f1d4489948c.jpg"
+        },
+        "counts": {
+            "total": 4640,
+            "nsfw": 4228
+        }
+    },
+    {
+        "id": "jane_doe_(zenless_zone_zero)",
+        "name": "Jane Doe",
+        "franchise": "Zenless Zone Zero",
+        "tag": "jane_doe_(zenless_zone_zero)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/7d/03/7d03f5a9c7a1d496ac61706f50919cb1.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/e3/b8/sample_e3b81ed8b6f5bf5107bca6c31a67dd27.jpg"
+        },
+        "counts": {
+            "total": 4410,
+            "nsfw": 3791
+        }
+    },
+    {
+        "id": "machu_(gundam)",
+        "name": "Machu",
+        "franchise": "Gundam",
+        "tag": "machu_(gundam)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/28/2a/sample_282a397f108cbc15e2e6add6822c29ca.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/bc/33/sample_bc33126dc36b0c349c9cb0df5f888699.jpg"
+        },
+        "counts": {
+            "total": 4406,
+            "nsfw": 1571
+        }
+    },
+    {
+        "id": "djeeta_(granblue_fantasy)",
+        "name": "Djeeta",
+        "franchise": "Granblue Fantasy",
+        "tag": "djeeta_(granblue_fantasy)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/e7/3e/e73ec4124981d197bdcf16b4e5cc41f9.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/da/64/sample_da6473ca619af648226ac5ee0e648522.jpg"
+        },
+        "counts": {
+            "total": 4298,
+            "nsfw": 3940
+        }
+    },
+    {
+        "id": "kay_(girls_und_panzer)",
+        "name": "Kay",
+        "franchise": "Girls Und Panzer",
+        "tag": "kay_(girls_und_panzer)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/75/e0/sample_75e00dc7c4d01507b9ba58061026c47d.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/9a/f7/9af72e0d65dca8b7ef06455baaa575d6.png"
+        },
+        "counts": {
+            "total": 4269,
+            "nsfw": 3956
+        }
+    },
+    {
+        "id": "yamato_(one_piece)",
+        "name": "Yamato",
+        "franchise": "One Piece",
+        "tag": "yamato_(one_piece)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/b8/32/sample_b832d1381fead86adf596a884c596ff3.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/57/5c/575c513d1f096f33db8fee44535ed405.jpg"
+        },
+        "counts": {
+            "total": 4099,
+            "nsfw": 3276
+        }
+    },
+    {
+        "id": "wise_(zenless_zone_zero)",
+        "name": "Wise",
+        "franchise": "Zenless Zone Zero",
+        "tag": "wise_(zenless_zone_zero)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/92/fb/sample_92fb96e9643950716d182ff91047b300.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/49/79/sample_4979c9b500abded56b6adf681254f358.jpg"
+        },
+        "counts": {
+            "total": 4022,
+            "nsfw": 2701
+        }
+    },
+    {
+        "id": "narmaya_(granblue_fantasy)",
+        "name": "Narmaya",
+        "franchise": "Granblue Fantasy",
+        "tag": "narmaya_(granblue_fantasy)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/ed/64/sample_ed64dabce733b097b53fb75cddf3e734.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/58/bf/58bf3ca6b57a40ad54d91927e83b351f.jpg"
+        },
+        "counts": {
+            "total": 3916,
+            "nsfw": 3804
+        }
+    },
+    {
+        "id": "bangboo_(zenless_zone_zero)",
+        "name": "Bangboo",
+        "franchise": "Zenless Zone Zero",
+        "tag": "bangboo_(zenless_zone_zero)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/28/6c/sample_286c2d81289fd48e6275b237cd9bd8c9.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/24/c8/sample_24c85475630a7f5d7d7c5fec3647ee97.jpg"
+        },
+        "counts": {
+            "total": 3712,
+            "nsfw": 2158
+        }
+    },
+    {
+        "id": "anastasia_(idolmaster)",
+        "name": "Anastasia",
+        "franchise": "Idolmaster",
+        "tag": "anastasia_(idolmaster)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/1c/75/sample_1c75b7691ac026a1c4a87372fc87e269.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/b8/d8/b8d88398a74991e1c79d4916db6db5b8.png"
+        },
+        "counts": {
+            "total": 3505,
+            "nsfw": 3180
+        }
+    },
+    {
+        "id": "katyusha_(girls_und_panzer)",
+        "name": "Katyusha",
+        "franchise": "Girls Und Panzer",
+        "tag": "katyusha_(girls_und_panzer)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/69/6b/sample_696b10489d1cc1bcb3ab47bddcdc1414.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/71/b0/sample_71b0001f37be40fc7e59da0a2b7e3e52.jpg"
+        },
+        "counts": {
+            "total": 3212,
+            "nsfw": 2803
+        }
+    },
+    {
+        "id": "aigis_(persona)",
+        "name": "Aigis",
+        "franchise": "Persona",
+        "tag": "aigis_(persona)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/08/c8/08c89882c16b3532743640ad17f04b2c.png",
+            "nsfw": "https://img2.gelbooru.com/images/6c/ed/6ced379a2be8d3a0af4de20620c42013.png"
+        },
+        "counts": {
+            "total": 3045,
+            "nsfw": 2124
+        }
+    },
+    {
+        "id": "aegis_(persona)",
+        "name": "Aegis",
+        "franchise": "Persona",
+        "tag": "aegis_(persona)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/cf/f2/sample_cff2dd855e6c2281b29f2f891baa2f97.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/6c/ed/6ced379a2be8d3a0af4de20620c42013.png"
+        },
+        "counts": {
+            "total": 3045,
+            "nsfw": 2124
+        }
+    },
+    {
+        "id": "ryu_(street_fighter)",
+        "name": "Ryu",
+        "franchise": "Street Fighter",
+        "tag": "ryu_(street_fighter)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/33/f2/33f2bf628833181750f1d8ffa42917ec.jpeg",
+            "nsfw": "https://img2.gelbooru.com/samples/3b/80/sample_3b80c38f51aa02cd60b695bc2b450a30.jpg"
+        },
+        "counts": {
+            "total": 2915,
+            "nsfw": 2214
+        }
+    },
+    {
+        "id": "common_raccoon_(kemono_friends)",
+        "name": "Common Raccoon",
+        "franchise": "Kemono Friends",
+        "tag": "common_raccoon_(kemono_friends)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/3b/5b/sample_3b5ba95f1a7147f981f9f346bab64e44.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/96/be/sample_96bee11216d1564cf412704beaa7583c.jpg"
+        },
+        "counts": {
+            "total": 2901,
+            "nsfw": 2322
+        }
+    },
+    {
+        "id": "azki_(hololive)",
+        "name": "Azki",
+        "franchise": "Hololive",
+        "tag": "azki_(hololive)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/0c/91/sample_0c912b091061938a39f49a5164d677c6.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/45/07/4507c8656dcc8b6131fe4eef70568548.jpg"
+        },
+        "counts": {
+            "total": 2866,
+            "nsfw": 1965
+        }
+    },
+    {
+        "id": "gran_(granblue_fantasy)",
+        "name": "Gran",
+        "franchise": "Granblue Fantasy",
+        "tag": "gran_(granblue_fantasy)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/0c/c9/sample_0cc9b52e39f64ee2e83822f9465ba6ea.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/32/44/324458f212ebbbe388977e846a3141bf.jpg"
+        },
+        "counts": {
+            "total": 2864,
+            "nsfw": 2532
+        }
+    },
+    {
+        "id": "trunks_(dragon_ball)",
+        "name": "Trunks",
+        "franchise": "Dragon Ball",
+        "tag": "trunks_(dragon_ball)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/6d/68/sample_6d6850e89da36efc6907bbfbad7fec69.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/27/63/sample_2763ce802cf7d1cb530d942799ad14a2.jpg"
+        },
+        "counts": {
+            "total": 2835,
+            "nsfw": 2070
+        }
+    },
+    {
+        "id": "fennec_(kemono_friends)",
+        "name": "Fennec",
+        "franchise": "Kemono Friends",
+        "tag": "fennec_(kemono_friends)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/20/1e/sample_201e5c635e31250cbfc74c27f45884dd.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/4b/53/4b53c4b9505ad280ea9bae4c9e6b9154.jpg"
+        },
+        "counts": {
+            "total": 2709,
+            "nsfw": 2275
+        }
+    },
+    {
+        "id": "pan_(dragon_ball)",
+        "name": "Pan",
+        "franchise": "Dragon Ball",
+        "tag": "pan_(dragon_ball)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/dd/c9/ddc9de27118ba19aefb4a05d7ed65b48.png",
+            "nsfw": "https://img2.gelbooru.com/samples/19/b5/sample_19b5b8e5e7ef5d9afeab85d7094eae0d.jpg"
+        },
+        "counts": {
+            "total": 2557,
+            "nsfw": 2041
+        }
+    },
+    {
+        "id": "ia_(vocaloid)",
+        "name": "Ia",
+        "franchise": "Vocaloid",
+        "tag": "ia_(vocaloid)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/2f/49/2f496079e64a8b087ae11d9ef295d01d.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/c1/85/c185c38874c9266055eca44a1c4d772a.jpeg"
+        },
+        "counts": {
+            "total": 2532,
+            "nsfw": 1986
+        }
+    },
+    {
+        "id": "endeavor_(boku_no_hero_academia)",
+        "name": "Endeavor",
+        "franchise": "Boku No Hero Academia",
+        "tag": "endeavor_(boku_no_hero_academia)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/b6/7e/sample_b67e5b8a73b0b6aab413afb9d843b9e8.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/ce/81/ce813d2fcd333a253f0e151704f32552.jpg"
+        },
+        "counts": {
+            "total": 2361,
+            "nsfw": 1848
+        }
+    },
+    {
+        "id": "leonardo_da_vinci_(fate/grand_order)",
+        "name": "Leonardo Da Vinci",
+        "franchise": "Fate/Grand Order",
+        "tag": "leonardo_da_vinci_(fate/grand_order)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/55/91/sample_5591439a3f507692bb9ad52646d5b16b.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/cf/b1/sample_cfb13a694300827fa98d442069c7b11d.jpg"
+        },
+        "counts": {
+            "total": 2205,
+            "nsfw": 1865
         }
     },
     {
@@ -243,12 +1783,26 @@
         "franchise": "Touhou",
         "tag": "seiran_(touhou)",
         "images": {
-            "sfw": "https://img2.gelbooru.com/samples/ea/1d/sample_ea1df5575aa0d6f2c9a24b504890c821.jpg",
-            "nsfw": "https://img2.gelbooru.com/samples/ea/1d/sample_ea1df5575aa0d6f2c9a24b504890c821.jpg"
+            "sfw": "https://img2.gelbooru.com/samples/07/e5/sample_07e57f57612396c291713cbe64f77ab7.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/0c/62/sample_0c621cb1318bfd01b83042f019626817.jpg"
         },
         "counts": {
             "total": 2185,
-            "nsfw": 100
+            "nsfw": 1490
+        }
+    },
+    {
+        "id": "shinki_(touhou)",
+        "name": "Shinki",
+        "franchise": "Touhou",
+        "tag": "shinki_(touhou)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/c5/38/sample_c538a608d1b4cf7e34189c58cab58a6c.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/70/b8/sample_70b89cdc7d09318652d0771b471481c2.jpg"
+        },
+        "counts": {
+            "total": 2094,
+            "nsfw": 1674
         }
     },
     {
@@ -257,12 +1811,26 @@
         "franchise": "Touhou",
         "tag": "mima_(touhou)",
         "images": {
-            "sfw": "https://img2.gelbooru.com/samples/02/9a/sample_029ac54b571ff7d7b8e82ec69115f32a.jpg",
-            "nsfw": "https://img2.gelbooru.com/samples/02/9a/sample_029ac54b571ff7d7b8e82ec69115f32a.jpg"
+            "sfw": "https://img2.gelbooru.com/images/13/ed/13edc7478422738f10335d94ae1e4a9d.png",
+            "nsfw": "https://img2.gelbooru.com/samples/b5/ed/sample_b5ed231ee747c308896e6ea58dc87587.jpg"
         },
         "counts": {
             "total": 2012,
-            "nsfw": 48
+            "nsfw": 1517
+        }
+    },
+    {
+        "id": "kuzuha_(nijisanji)",
+        "name": "Kuzuha",
+        "franchise": "Nijisanji",
+        "tag": "kuzuha_(nijisanji)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/48/f2/sample_48f2bcc347976f06de6a574fbfa6ab48.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/ef/a2/sample_efa234b32581b4d28a441e2846cd883d.jpg"
+        },
+        "counts": {
+            "total": 1862,
+            "nsfw": 714
         }
     },
     {
@@ -271,12 +1839,68 @@
         "franchise": "Touhou",
         "tag": "ringo_(touhou)",
         "images": {
-            "sfw": "https://img2.gelbooru.com/samples/7c/25/sample_7c25bdc8a2fd7b7491ac3bad586425c7.jpg",
-            "nsfw": "https://img2.gelbooru.com/samples/82/75/sample_82752ef07a4cbff76b7a217636b8917e.jpg"
+            "sfw": "https://img2.gelbooru.com/images/74/fc/74fcc713d26a4208fdd114e09f7e86cc.png",
+            "nsfw": "https://img2.gelbooru.com/samples/83/10/sample_8310112547ec5103796f56e3cb56e28c.jpg"
         },
         "counts": {
             "total": 1830,
-            "nsfw": 106
+            "nsfw": 1337
+        }
+    },
+    {
+        "id": "hawks_(boku_no_hero_academia)",
+        "name": "Hawks",
+        "franchise": "Boku No Hero Academia",
+        "tag": "hawks_(boku_no_hero_academia)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/a8/ef/a8eff372a197e287580a373f7a017d06.png",
+            "nsfw": "https://img2.gelbooru.com/samples/ee/1c/sample_ee1c52485ba3742593e577341c607a89.jpg"
+        },
+        "counts": {
+            "total": 1757,
+            "nsfw": 1072
+        }
+    },
+    {
+        "id": "cu_chulainn_(fate/stay_night)",
+        "name": "Cu Chulainn",
+        "franchise": "Fate/Stay Night",
+        "tag": "cu_chulainn_(fate/stay_night)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/e5/6e/sample_e56e59631fc90d7aafd30b1988f51cc3.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/a5/63/a5635754bda883d26eabf5eb3d0f5e70.jpg"
+        },
+        "counts": {
+            "total": 1634,
+            "nsfw": 1399
+        }
+    },
+    {
+        "id": "anila_(granblue_fantasy)",
+        "name": "Anila",
+        "franchise": "Granblue Fantasy",
+        "tag": "anila_(granblue_fantasy)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/3a/1d/sample_3a1de9da9e4e8848fff1fe5d73b6fc72.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/72/c4/sample_72c4cff870b37b7f562d4ebb64bbd230.jpg"
+        },
+        "counts": {
+            "total": 1591,
+            "nsfw": 1564
+        }
+    },
+    {
+        "id": "white_mage_(final_fantasy)",
+        "name": "White Mage",
+        "franchise": "Final Fantasy",
+        "tag": "white_mage_(final_fantasy)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/1d/90/1d908e2d9e43a47269ed3d405906844d.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/1e/c8/sample_1ec8d255a9d2204626596b968f260ab3.jpg"
+        },
+        "counts": {
+            "total": 1560,
+            "nsfw": 1320
         }
     },
     {
@@ -285,26 +1909,166 @@
         "franchise": "Touhou",
         "tag": "tokiko_(touhou)",
         "images": {
-            "sfw": "https://img2.gelbooru.com/samples/49/92/sample_49928b2fb3c4514e18b80dffbd8a3ef3.jpg",
-            "nsfw": "https://img2.gelbooru.com/samples/49/92/sample_49928b2fb3c4514e18b80dffbd8a3ef3.jpg"
+            "sfw": "https://img2.gelbooru.com/samples/9a/e1/sample_9ae11e857c2891b47e8cdcd091bec948.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/cd/fd/sample_cdfd40a229163384e7c6bd5a792dd075.jpg"
         },
         "counts": {
             "total": 1441,
-            "nsfw": 53
+            "nsfw": 1149
         }
     },
     {
-        "id": "laevatein_(touhou)",
-        "name": "Laevatein",
-        "franchise": "Touhou",
-        "tag": "laevatein_(touhou)",
+        "id": "kanae_(nijisanji)",
+        "name": "Kanae",
+        "franchise": "Nijisanji",
+        "tag": "kanae_(nijisanji)",
         "images": {
-            "sfw": "https://img2.gelbooru.com/samples/e9/19/sample_e919510997694f80c25ab01a53382367.jpg",
-            "nsfw": "https://img2.gelbooru.com/samples/e9/19/sample_e919510997694f80c25ab01a53382367.jpg"
+            "sfw": "https://img2.gelbooru.com/images/67/e6/67e60aa3547cd9d55f7802f3904c468c.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/50/04/500496fd3aad4ca04d5d5d61486604ea.png"
         },
         "counts": {
-            "total": 1373,
-            "nsfw": 19
+            "total": 1221,
+            "nsfw": 362
+        }
+    },
+    {
+        "id": "ibuki_(street_fighter)",
+        "name": "Ibuki",
+        "franchise": "Street Fighter",
+        "tag": "ibuki_(street_fighter)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/cf/f0/cff0f4b233fe983eb896867ccabffead.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/7d/a7/sample_7da79aaa779d2839f0e21511f6725ba5.jpg"
+        },
+        "counts": {
+            "total": 1207,
+            "nsfw": 1088
+        }
+    },
+    {
+        "id": "kefla_(dragon_ball)",
+        "name": "Kefla",
+        "franchise": "Dragon Ball",
+        "tag": "kefla_(dragon_ball)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/e6/56/sample_e65678fe6517780b7c9257a626b441fa.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/b8/8b/b88b37915668cd58dfc2b354476d81c0.jpg"
+        },
+        "counts": {
+            "total": 1170,
+            "nsfw": 1128
+        }
+    },
+    {
+        "id": "elena_(street_fighter)",
+        "name": "Elena",
+        "franchise": "Street Fighter",
+        "tag": "elena_(street_fighter)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/a9/7c/sample_a97c45d9c430d88c74cf864f399bb4d0.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/3e/e7/3ee7d7c70080df2654d934842de03cca.jpg"
+        },
+        "counts": {
+            "total": 1124,
+            "nsfw": 1020
+        }
+    },
+    {
+        "id": "makoto_(street_fighter)",
+        "name": "Makoto",
+        "franchise": "Street Fighter",
+        "tag": "makoto_(street_fighter)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/ac/4c/sample_ac4cdca126bad4a213fc10f48c97faba.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/fa/67/fa67ae13082e13b7321a4cfd11a68687.jpg"
+        },
+        "counts": {
+            "total": 1101,
+            "nsfw": 1023
+        }
+    },
+    {
+        "id": "flower_(vocaloid)",
+        "name": "Flower",
+        "franchise": "Vocaloid",
+        "tag": "flower_(vocaloid)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/c7/bb/c7bb5cdb3469ebf65d4594465fe3cee7.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/aa/65/aa6595da117e0b4756ebbd74263f1580.jpg"
+        },
+        "counts": {
+            "total": 1009,
+            "nsfw": 255
+        }
+    },
+    {
+        "id": "ingrid_(capcom)",
+        "name": "Ingrid",
+        "franchise": "Capcom",
+        "tag": "ingrid_(capcom)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/d8/c9/sample_d8c9a2eef7a2e33131a4e0f4bce20a09.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/82/e8/sample_82e806d5f60784dfd9df7fcd444e6c70.jpg"
+        },
+        "counts": {
+            "total": 969,
+            "nsfw": 856
+        }
+    },
+    {
+        "id": "mizuki_kotori_(yu-gi-oh!)",
+        "name": "Mizuki Kotori",
+        "franchise": "Yu-Gi-Oh!",
+        "tag": "mizuki_kotori_(yu-gi-oh!)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/fc/ea/fceaebc28863115d104863d6bedade7c.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/b3/89/sample_b3896461bfc0c954ccce69f97b095295.jpg"
+        },
+        "counts": {
+            "total": 937,
+            "nsfw": 902
+        }
+    },
+    {
+        "id": "yuuki_setsuna_(love_live!)",
+        "name": "Yuuki Setsuna",
+        "franchise": "Love Live!",
+        "tag": "yuuki_setsuna_(love_live!)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/c3/8e/sample_c38e47175ff1eb3d2b728897f8dfb022.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/b9/47/sample_b9478eaf4fe0f39e093d226a72f6412c.jpg"
+        },
+        "counts": {
+            "total": 920,
+            "nsfw": 646
+        }
+    },
+    {
+        "id": "yuki_setsuna_(love_live!)",
+        "name": "Yuki Setsuna",
+        "franchise": "Love Live!",
+        "tag": "yuki_setsuna_(love_live!)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/a9/51/sample_a9516a2ff94db55605aa1b7bd278f41b.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/b9/47/sample_b9478eaf4fe0f39e093d226a72f6412c.jpg"
+        },
+        "counts": {
+            "total": 920,
+            "nsfw": 646
+        }
+    },
+    {
+        "id": "natalia_(idolmaster)",
+        "name": "Natalia",
+        "franchise": "Idolmaster",
+        "tag": "natalia_(idolmaster)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/d5/4b/sample_d54bdc659c29a64b2a8aa66daadb185f.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/95/eb/95eb5aacb81b11e3b5aa3c382181a3e6.jpeg"
+        },
+        "counts": {
+            "total": 905,
+            "nsfw": 855
         }
     },
     {
@@ -313,40 +2077,166 @@
         "franchise": "Touhou",
         "tag": "yumeko_(touhou)",
         "images": {
-            "sfw": "https://img2.gelbooru.com/samples/4b/dc/sample_4bdcf30a492148fab82f5ed2435f65d0.jpg",
-            "nsfw": "https://img2.gelbooru.com/samples/4b/dc/sample_4bdcf30a492148fab82f5ed2435f65d0.jpg"
+            "sfw": "https://img2.gelbooru.com/samples/84/13/sample_84138d033a52222e9f3f4433a44a26bf.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/75/52/sample_75528dfd1fd8b78aa20933d8dfac83d0.jpg"
         },
         "counts": {
             "total": 895,
-            "nsfw": 16
+            "nsfw": 640
         }
     },
     {
-        "id": "elly_(touhou)",
-        "name": "Elly",
-        "franchise": "Touhou",
-        "tag": "elly_(touhou)",
+        "id": "lil-la_(yu-gi-oh!)",
+        "name": "Lil-La",
+        "franchise": "Yu-Gi-Oh!",
+        "tag": "lil-la_(yu-gi-oh!)",
         "images": {
-            "sfw": "https://img2.gelbooru.com/samples/e6/28/sample_e628cdea86e7588e8092cf768c809351.jpg",
-            "nsfw": "https://img2.gelbooru.com/samples/bd/88/sample_bd88a731a8b0440fc8a35d807e881eab.jpg"
+            "sfw": "https://img2.gelbooru.com/samples/07/3a/sample_073a96e6dc60e64aae7ae39a97045fb4.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/6d/37/sample_6d37e5e06d7efb42eb9d9f0c29e054d6.jpg"
         },
         "counts": {
-            "total": 724,
-            "nsfw": 34
+            "total": 880,
+            "nsfw": 680
         }
     },
     {
-        "id": "control_rod_(touhou)",
-        "name": "Control Rod",
-        "franchise": "Touhou",
-        "tag": "control_rod_(touhou)",
+        "id": "a-chan_(hololive)",
+        "name": "A-Chan",
+        "franchise": "Hololive",
+        "tag": "a-chan_(hololive)",
         "images": {
-            "sfw": "https://img2.gelbooru.com/samples/a9/cb/sample_a9cb2d4bed80f7cbbd152eaf7714cdba.jpg",
-            "nsfw": "https://img2.gelbooru.com/samples/a9/cb/sample_a9cb2d4bed80f7cbbd152eaf7714cdba.jpg"
+            "sfw": "https://img2.gelbooru.com/samples/a5/7b/sample_a57bf0c3400a8d04057f093605d5d7ac.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/db/69/sample_db69606822c7ed5517b29bd20ec8cd9f.jpg"
         },
         "counts": {
-            "total": 698,
-            "nsfw": 10
+            "total": 842,
+            "nsfw": 582
+        }
+    },
+    {
+        "id": "elizabeth_(persona)",
+        "name": "Elizabeth",
+        "franchise": "Persona",
+        "tag": "elizabeth_(persona)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/58/9b/sample_589b323d3df3607c0df22e5c16cc19ba.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/e1/83/e183381e8edfa53d16370ec29bb7c2e9.jpg"
+        },
+        "counts": {
+            "total": 825,
+            "nsfw": 686
+        }
+    },
+    {
+        "id": "hino_akane_(idolmaster)",
+        "name": "Hino Akane",
+        "franchise": "Idolmaster",
+        "tag": "hino_akane_(idolmaster)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/c0/08/c008474668b1afb43741f91e434fc967.png",
+            "nsfw": "https://img2.gelbooru.com/images/51/3c/513c53698a77255f33fe939d23347acc.png"
+        },
+        "counts": {
+            "total": 791,
+            "nsfw": 727
+        }
+    },
+    {
+        "id": "shadow_(persona)",
+        "name": "Shadow",
+        "franchise": "Persona",
+        "tag": "shadow_(persona)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/da/89/sample_da89cf7db20233498aed15bf9c083ec2.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/ff/97/ff97aa560653d2c05fb3bb9b8c839bb8.jpeg"
+        },
+        "counts": {
+            "total": 786,
+            "nsfw": 734
+        }
+    },
+    {
+        "id": "black_mage_(final_fantasy)",
+        "name": "Black Mage",
+        "franchise": "Final Fantasy",
+        "tag": "black_mage_(final_fantasy)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/f6/59/sample_f6596a1510a80db6dbf69f7ed6e814d4.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/62/6a/626a7ab3045eed4bf26098a01b3cc1d1.jpeg"
+        },
+        "counts": {
+            "total": 769,
+            "nsfw": 473
+        }
+    },
+    {
+        "id": "serena_(yu-gi-oh!)",
+        "name": "Serena",
+        "franchise": "Yu-Gi-Oh!",
+        "tag": "serena_(yu-gi-oh!)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/5a/28/sample_5a285681fd1c378c13248c7c4659b35b.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/b8/00/b80083a167760f911955f4fcd29461a7.jpeg"
+        },
+        "counts": {
+            "total": 760,
+            "nsfw": 639
+        }
+    },
+    {
+        "id": "ki-sikil_(yu-gi-oh!)",
+        "name": "Ki-Sikil",
+        "franchise": "Yu-Gi-Oh!",
+        "tag": "ki-sikil_(yu-gi-oh!)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/38/aa/38aaffd211196f4c7d77e0486d3e79f2.png",
+            "nsfw": "https://img2.gelbooru.com/samples/9c/d9/sample_9cd9a0218212dbca00254ddf273a3f8a.jpg"
+        },
+        "counts": {
+            "total": 742,
+            "nsfw": 588
+        }
+    },
+    {
+        "id": "cait_sith_(final_fantasy)",
+        "name": "Cait Sith",
+        "franchise": "Final Fantasy",
+        "tag": "cait_sith_(final_fantasy)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/26/93/sample_2693cae7da08fcbc042e219c151ca315.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/43/a2/43a2d30cab5b865b78cbf0c000a2dd6b.jpg"
+        },
+        "counts": {
+            "total": 651,
+            "nsfw": 226
+        }
+    },
+    {
+        "id": "dola_(nijisanji)",
+        "name": "Dola",
+        "franchise": "Nijisanji",
+        "tag": "dola_(nijisanji)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/fc/30/sample_fc300e84be82a3f8061e78a9720cac27.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/0e/90/0e907ecb45794e43f8355cad4e0e2808.jpg"
+        },
+        "counts": {
+            "total": 597,
+            "nsfw": 509
+        }
+    },
+    {
+        "id": "irys_(irys_2.0)_(hololive)",
+        "name": "Irys",
+        "franchise": "Irys 2.0",
+        "tag": "irys_(irys_2.0)_(hololive)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/91/48/sample_9148df4f5a63c3a9b552773cc222d19d.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/5f/1c/sample_5f1c425fc8fb5a48b8e161025cc13f3f.jpg"
+        },
+        "counts": {
+            "total": 595,
+            "nsfw": 385
         }
     },
     {
@@ -355,26 +2245,211 @@
         "franchise": "Nintendo",
         "tag": "mii_(nintendo)",
         "images": {
-            "sfw": "https://img2.gelbooru.com/samples/46/d5/sample_46d54652303f756209f0c7f0029b622c.jpg",
-            "nsfw": "https://img2.gelbooru.com/samples/46/d5/sample_46d54652303f756209f0c7f0029b622c.jpg"
+            "sfw": "https://img2.gelbooru.com/samples/dd/06/sample_dd063fec8d1890eae1cdabd979eb4531.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/d1/b3/sample_d1b33ff00ace9104bdf89df8656148ac.jpg"
         },
         "counts": {
             "total": 543,
-            "nsfw": 86
+            "nsfw": 313
         }
     },
     {
-        "id": "heart_lock_(kantai_collection)",
-        "name": "Heart Lock",
+        "id": "washington_(kantai_collection)",
+        "name": "Washington",
         "franchise": "Kantai Collection",
-        "tag": "heart_lock_(kantai_collection)",
+        "tag": "washington_(kantai_collection)",
         "images": {
-            "sfw": "https://img2.gelbooru.com/samples/fd/53/sample_fd5327572b56fbc0ecd208118a85b1c6.jpg",
-            "nsfw": "https://img2.gelbooru.com/samples/ee/95/sample_ee955a9789344db6da6596e36d5926c2.jpg"
+            "sfw": "https://img2.gelbooru.com/images/95/2b/952baa64400de57ff3a2d1faf90e97d3.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/00/ae/00aee302f48a4f9536fc83c1407c26e1.jpg"
         },
         "counts": {
-            "total": 511,
-            "nsfw": 110
+            "total": 534,
+            "nsfw": 397
         }
+    },
+    {
+        "id": "ai_(digimon)",
+        "name": "Ai",
+        "franchise": "Digimon",
+        "tag": "ai_(digimon)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/02/16/sample_021677b2a53f26db6a38bd99eac54ece.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/b6/ea/sample_b6ea984a2b28539b988f176a752ad6fa.jpg"
+        },
+        "counts": {
+            "total": 515,
+            "nsfw": 65
+        }
+    },
+    {
+        "id": "assassin_(fate/stay_night)",
+        "name": "Assassin",
+        "franchise": "Fate/Stay Night",
+        "tag": "assassin_(fate/stay_night)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/69/5a/sample_695afcd17dfa6d90379ec24c6b885b6f.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/d0/65/d06594a93665c6f3b5507ff9f0d15acb.png"
+        },
+        "counts": {
+            "total": 495,
+            "nsfw": 420
+        }
+    },
+    {
+        "id": "sayo_(digimon)",
+        "name": "Sayo",
+        "franchise": "Digimon",
+        "tag": "sayo_(digimon)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/a5/25/sample_a525ccd18f73526615bcea92e87380d3.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/6c/bd/6cbd5a41172bf2205b7f414e31913550.png"
+        },
+        "counts": {
+            "total": 494,
+            "nsfw": 140
+        }
+    },
+    {
+        "id": "sakura_uta_(precure)",
+        "name": "Sakura Uta",
+        "franchise": "Precure",
+        "tag": "sakura_uta_(precure)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/e9/0f/e90f42025d77e5397eb5b17bdb19bdb3.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/18/3c/183c6917b2315d906e3611b7059b22b1.jpg"
+        },
+        "counts": {
+            "total": 471,
+            "nsfw": 196
+        }
+    },
+    {
+        "id": "red_mage_(final_fantasy)",
+        "name": "Red Mage",
+        "franchise": "Final Fantasy",
+        "tag": "red_mage_(final_fantasy)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/72/a5/sample_72a58b14af8802f5e390216b7064d90e.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/02/3c/sample_023c5d33a61140b0bc82fbbaad583ade.jpg"
+        },
+        "counts": {
+            "total": 455,
+            "nsfw": 322
+        }
+    },
+    {
+        "id": "laura_(precure)",
+        "name": "Laura",
+        "franchise": "Precure",
+        "tag": "laura_(precure)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/d8/5e/sample_d85ebed78e6bd945b6fda1483a79f829.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/48/39/sample_483978c37bf3e76729a32b65680a90db.jpg"
+        },
+        "counts": {
+            "total": 439,
+            "nsfw": 422
+        }
+    },
+    {
+        "id": "elu_(nijisanji)",
+        "name": "Elu",
+        "franchise": "Nijisanji",
+        "tag": "elu_(nijisanji)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/fc/8a/sample_fc8a38a1f8cbfb83012eaab6b25c7494.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/0b/c5/sample_0bc5ffbfc1c22995d2da05a476e2431d.jpg"
+        },
+        "counts": {
+            "total": 395,
+            "nsfw": 257
+        }
+    },
+    {
+        "id": "yuni_(precure)",
+        "name": "Yuni",
+        "franchise": "Precure",
+        "tag": "yuni_(precure)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/09/05/09052ced1cf84e3fdf8c88df38c87d47.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/c0/94/c094576b2db8b2accc0898a2ff4e09e7.jpg"
+        },
+        "counts": {
+            "total": 359,
+            "nsfw": 273
+        }
+    },
+    {
+        "id": "sheffield_(kantai_collection)",
+        "name": "Sheffield",
+        "franchise": "Kantai Collection",
+        "tag": "sheffield_(kantai_collection)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/47/a4/47a43106495e5df70f03b80d8af31516.png",
+            "nsfw": "https://img2.gelbooru.com/samples/8f/73/sample_8f7388af56a1a8d0c80e7eefbb3dcd05.jpg"
+        },
+        "counts": {
+            "total": 335,
+            "nsfw": 262
+        }
+    },
+    {
+        "id": "conch_(gundam)",
+        "name": "Conch",
+        "franchise": "Gundam",
+        "tag": "conch_(gundam)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/80/9a/sample_809afc1121658592fdcf0c0e9a8aaf19.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/2c/9f/sample_2c9f601eb413fd5f64553212986e0f64.jpg"
+        },
+        "counts": {
+            "total": 301,
+            "nsfw": 33
+        },
+        "img_query": "conch_(gundam) ass"
+    },
+    {
+        "id": "merlin_(fate/stay_night)",
+        "name": "Merlin",
+        "franchise": "Fate/Stay Night",
+        "tag": "merlin_(fate/stay_night)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/da/84/sample_da841b66883b892b75fa4ab2291e1b05.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/1f/28/1f289a362fe983e44b9dd057cf67925b.png"
+        },
+        "counts": {
+            "total": 270,
+            "nsfw": 262
+        }
+    },
+    {
+        "id": "kururun_(precure)",
+        "name": "Kururun",
+        "franchise": "Precure",
+        "tag": "kururun_(precure)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/0b/dc/sample_0bdcfce986ed922596c6d0f46f0b0f7f.jpg",
+            "nsfw": "https://img2.gelbooru.com/samples/4b/be/sample_4bbe8e8631f44aea76ba2d010f6dc3fb.jpg"
+        },
+        "counts": {
+            "total": 243,
+            "nsfw": 95
+        },
+        "img_query": "kururun_(precure) solo -rating:general"
+    },
+    {
+        "id": "shirouzu_(gundam)",
+        "name": "Shirouzu",
+        "franchise": "Gundam",
+        "tag": "shirouzu_(gundam)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/samples/05/9c/sample_059cd79b451a58f93eafecdda8a25943.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/c3/bd/c3bd6b4d5464fd5b397b4a76d610e88c.jpg"
+        },
+        "counts": {
+            "total": 133,
+            "nsfw": 5
+        },
+        "img_query": "shirouzu_(gundam)"
     }
 ]

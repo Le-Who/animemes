@@ -4,309 +4,246 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="no-referrer">
-    <title>Дарья Пахнет!</title>
+    <title>Anime PostGuess</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #0f172a;
-            --card-bg: #1e293b;
-            --text-main: #f8fafc;
-            --win: #22c55e;
-            --lose: #ef4444;
-            --nsfw-color: #ef4444;
-            --safe-color: #3b82f6;
+            --bg: #0f172a; --card: #1e293b; --text: #f8fafc;
+            --win: #22c55e; --lose: #ef4444; --nsfw: #f43f5e;
         }
-
         * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
         body {
-            font-family: 'Outfit', sans-serif;
-            background: var(--bg);
-            color: var(--text-main);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
+            font-family: 'Outfit', sans-serif; background: var(--bg);
+            color: var(--text); height: 100vh; overflow: hidden;
+            display: flex; flex-direction: column;
         }
 
         .header {
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: absolute;
-            width: 100%;
-            z-index: 10;
+            padding: 15px 30px; display: flex; justify-content: space-between;
+            align-items: center; z-index: 10; background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
         }
+        .logo { font-weight: 900; font-size: 1.4rem; letter-spacing: -1px; }
+        
+        /* Переключатель */
+        .switch-wrap { display: flex; align-items: center; gap: 10px; cursor: pointer; }
+        .switch-bg {
+            width: 44px; height: 24px; background: #475569;
+            border-radius: 20px; position: relative; transition: 0.3s;
+        }
+        .switch-dot {
+            width: 18px; height: 18px; background: #fff;
+            border-radius: 50%; position: absolute; top: 3px; left: 3px;
+            transition: 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+        input:checked + .switch-bg { background: var(--nsfw); }
+        input:checked + .switch-bg .switch-dot { transform: translateX(20px); }
+        .switch-label { font-size: 0.9rem; font-weight: 700; }
+        input { display: none; }
 
-        .logo { font-size: 1.5rem; font-weight: 900; }
-        .stats { font-size: 1rem; opacity: 0.8; }
-
-        /* Переключатель 18+ */
-        .mode-toggle {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(255,255,255,0.1);
-            padding: 8px 15px;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        .mode-toggle:hover { background: rgba(255,255,255,0.2); }
-        .mode-toggle input { display: none; }
-        .toggle-track {
-            width: 40px; height: 20px;
-            background: #475569;
-            border-radius: 20px;
-            position: relative;
-            transition: 0.3s;
-        }
-        .toggle-dot {
-            width: 16px; height: 16px;
-            background: #fff;
-            border-radius: 50%;
-            position: absolute;
-            top: 2px; left: 2px;
-            transition: 0.3s;
-        }
-        input:checked + .toggle-track { background: var(--nsfw-color); }
-        input:checked + .toggle-track .toggle-dot { transform: translateX(20px); }
-        .mode-label { font-weight: 700; font-size: 0.9rem; }
-        .mode-warning { color: var(--nsfw-color); display: none; }
-        input:checked ~ .mode-warning { display: inline; }
-
-        .game-stage {
-            display: flex;
-            height: 100vh;
-            width: 100%;
-        }
+        .game-area { flex: 1; display: flex; position: relative; }
 
         .card {
-            flex: 1;
-            position: relative;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            transition: width 0.5s ease;
+            flex: 1; position: relative; cursor: pointer;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            text-align: center; overflow: hidden;
+            transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
         }
-
+        
         .card-bg {
-            position: absolute;
-            inset: 0;
-            width: 100%; height: 100%;
-            object-fit: cover;
-            opacity: 0.4;
-            transition: transform 0.5s;
-            z-index: 0;
+            position: absolute; inset: 0; width: 100%; height: 100%;
+            object-fit: cover; opacity: 0.4; transition: 0.5s; z-index: 0;
         }
         .card:hover .card-bg { transform: scale(1.05); opacity: 0.6; }
+        
+        .info { z-index: 2; position: relative; text-shadow: 0 4px 30px rgba(0,0,0,0.9); }
+        .name { font-size: 2.5rem; font-weight: 900; line-height: 1.1; }
+        .fran { font-size: 1rem; opacity: 0.8; text-transform: uppercase; letter-spacing: 2px; margin-top: 5px;}
+        .count { font-size: 4rem; font-weight: 800; margin-top: 20px; }
+        
+        /* Результаты */
+        .card.win { background: var(--win); }
+        .card.lose { background: var(--lose); }
+        .card.win .card-bg, .card.lose .card-bg { opacity: 0.15; }
 
-        .content { z-index: 2; position: relative; text-shadow: 0 4px 20px rgba(0,0,0,0.8); }
-        .name { font-size: 3rem; font-weight: 900; line-height: 1; margin-bottom: 5px; }
-        .franchise { font-size: 1.2rem; opacity: 0.8; text-transform: uppercase; letter-spacing: 2px; }
-
-        .counter {
-            margin-top: 20px;
-            font-size: 3.5rem;
-            font-weight: 800;
-        }
-        .counter-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.7; }
-
-        /* VS Circle */
         .vs {
-            position: absolute;
-            top: 50%; left: 50%;
+            position: absolute; top: 50%; left: 50%;
             transform: translate(-50%, -50%);
-            width: 60px; height: 60px;
+            width: 50px; height: 50px;
             background: #fff; color: #000;
             border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
             font-weight: 900; z-index: 20;
-            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
         }
 
-        /* Результаты */
-        .card.winner { background: var(--win); }
-        .card.loser { background: var(--lose); }
-        .card.winner .card-bg, .card.loser .card-bg { opacity: 0.2; }
-
-        .btn-next {
-            position: absolute;
-            bottom: 40px; left: 50%;
+        .btn {
+            position: absolute; bottom: 40px; left: 50%;
             transform: translateX(-50%) translateY(100px);
             background: #fff; color: #000;
-            padding: 15px 50px;
-            border-radius: 50px;
-            font-weight: 900; font-size: 1.2rem;
-            cursor: pointer; border: none;
-            opacity: 0; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            z-index: 30;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            padding: 15px 40px; border-radius: 40px;
+            font-weight: 800; border: none; cursor: pointer;
+            opacity: 0; transition: 0.4s; z-index: 30;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
-        .btn-next.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+        .btn.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-        @media(max-width: 768px) {
-            .game-stage { flex-direction: column; }
-            .name { font-size: 2rem; }
-            .counter { font-size: 2.5rem; }
-        }
+        @media(max-width: 768px) { .game-area { flex-direction: column; } .name { font-size: 1.8rem; } }
     </style>
 </head>
 <body>
 
     <div class="header">
-        <div class="logo">Блеб Guess</div>
-        
-        <label class="mode-toggle">
-            <input type="checkbox" id="nsfwToggle">
-            <div class="toggle-track"><div class="toggle-dot"></div></div>
-            <span class="mode-label">NSFW <span class="mode-warning">(18+)</span></span>
+        <div class="logo">PostGuess</div>
+        <label class="switch-wrap">
+            <input type="checkbox" id="modeSwitch">
+            <div class="switch-bg"><div class="switch-dot"></div></div>
+            <span class="switch-label">NSFW (18+)</span>
         </label>
-
-        <div class="stats">Счет: <span id="score">0</span></div>
+        <div style="opacity:0.7">Score: <span id="score">0</span></div>
     </div>
 
-    <div class="game-stage">
-        <div class="card" id="left">
+    <div class="game-area">
+        <!-- Левая карточка -->
+        <div class="card" id="c1" onclick="vote('left')">
             <img src="" class="card-bg" id="img1">
-            <div class="content">
+            <div class="info">
                 <div class="name" id="name1"></div>
-                <div class="franchise" id="fran1"></div>
-                <div class="counter" id="count1">0</div>
-                <div class="counter-label" id="label1">Total Posts</div>
+                <div class="fran" id="fran1"></div>
+                <div class="count" id="count1">0</div>
             </div>
         </div>
 
         <div class="vs">VS</div>
 
-        <div class="card" id="right">
+        <!-- Правая карточка -->
+        <div class="card" id="c2" onclick="vote('right')">
             <img src="" class="card-bg" id="img2">
-            <div class="content">
+            <div class="info">
                 <div class="name" id="name2"></div>
-                <div class="franchise" id="fran2"></div>
-                <div class="counter" id="count2">?</div>
-                <div class="counter-label" id="label2">Total Posts</div>
+                <div class="fran" id="fran2"></div>
+                <div class="count" id="count2">?</div>
             </div>
         </div>
     </div>
 
-    <button class="btn-next" id="nextBtn">Дальше</button>
+    <button class="btn" id="nextBtn" onclick="next()">Дальше</button>
 
     <script>
-        let db = [];
-        let leftChar, rightChar;
-        let isNsfw = false;
-        let isPlaying = true;
+        let db = [], pool = [];
+        let leftItem, rightItem;
+        let isNSFW = false;
+        let locked = false;
         let score = 0;
 
+        // Элементы
         const els = {
-            left: document.getElementById('left'),
-            right: document.getElementById('right'),
+            c1: document.getElementById('c1'), c2: document.getElementById('c2'),
             img1: document.getElementById('img1'), img2: document.getElementById('img2'),
             name1: document.getElementById('name1'), name2: document.getElementById('name2'),
             fran1: document.getElementById('fran1'), fran2: document.getElementById('fran2'),
-            count1: document.getElementById('count1'), count2: document.getElementById('count2'),
-            lbl1: document.getElementById('label1'), lbl2: document.getElementById('label2'),
-            btn: document.getElementById('nextBtn'),
-            score: document.getElementById('score')
+            cnt1: document.getElementById('count1'), cnt2: document.getElementById('count2'),
+            score: document.getElementById('score'), btn: document.getElementById('nextBtn')
         };
 
-        // Загрузка
-        fetch('characters.json?t=' + Date.now())
-            .then(r => r.json())
-            .then(data => {
-                db = data;
-                nextRound();
-            })
-            .catch(err => alert("Ошибка загрузки данных! Запустите manage.py"));
-
-        // Переключатель режима
-        document.getElementById('nsfwToggle').addEventListener('change', (e) => {
-            isNsfw = e.target.checked;
-            els.lbl1.textContent = isNsfw ? "NSFW Posts (18+)" : "Total Posts";
-            els.lbl2.textContent = isNsfw ? "NSFW Posts (18+)" : "Total Posts";
-            // Сбрасываем игру при смене режима
-            score = 0; els.score.textContent = 0;
-            nextRound();
+        // Старт
+        fetch('characters.json?t='+Date.now()).then(r=>r.json()).then(data => {
+            db = data;
+            resetPool();
+            startFirstRound();
         });
 
-        els.btn.addEventListener('click', nextRound);
-        els.left.addEventListener('click', () => makeChoice('left'));
-        els.right.addEventListener('click', () => makeChoice('right'));
+        document.getElementById('modeSwitch').addEventListener('change', (e) => {
+            isNSFW = e.target.checked;
+            score = 0; els.score.innerText = 0;
+            resetPool();
+            startFirstRound();
+        });
 
-        function nextRound() {
-            isPlaying = true;
+        function resetPool() {
+            // Копируем базу и перемешиваем
+            pool = [...db].sort(() => Math.random() - 0.5);
+        }
+
+        function getNext() {
+            if (pool.length === 0) resetPool();
+            return pool.pop();
+        }
+
+        function startFirstRound() {
+            leftItem = getNext();
+            rightItem = getNext();
+            updateUI(false);
+        }
+
+        function next() {
+            // МЕХАНИКА КОНВЕЙЕРА:
+            // Левая карточка становится той, что была справа
+            leftItem = rightItem;
+            // Правая берется новая из пула
+            rightItem = getNext();
+            
+            updateUI(false);
             els.btn.classList.remove('show');
-            els.left.className = 'card';
-            els.right.className = 'card';
+            locked = false;
             
-            // Выбор персонажей
-            leftChar = db[Math.floor(Math.random() * db.length)];
-            do {
-                rightChar = db[Math.floor(Math.random() * db.length)];
-            } while (rightChar.id === leftChar.id);
-
-            // Рендер
-            render(1, leftChar, false);
-            render(2, rightChar, true);
+            // Сброс цветов
+            els.c1.className = 'card';
+            els.c2.className = 'card';
         }
 
-        function getCount(char) {
-            return isNsfw ? char.counts.nsfw : char.counts.total;
+        function getVal(item) {
+            return isNSFW ? item.counts.nsfw : item.counts.total;
         }
 
-        function render(idx, char, isHidden) {
-            const suffix = idx === 1 ? '1' : '2';
-            els['name'+suffix].textContent = char.name;
-            els['fran'+suffix].textContent = char.franchise;
-            els['img'+suffix].src = char.image;
+        function getImg(item) {
+            // Если режима нет или картинки нет, берем SFW как запасной вариант
+            if (isNSFW && item.images.nsfw) return item.images.nsfw;
+            return item.images.sfw || item.images.nsfw; // Фоллбэк
+        }
+
+        function updateUI(revealed) {
+            // Левая
+            els.name1.innerText = leftItem.name;
+            els.fran1.innerText = leftItem.franchise;
+            els.cnt1.innerText = getVal(leftItem).toLocaleString();
+            els.img1.src = getImg(leftItem);
+
+            // Правая
+            els.name2.innerText = rightItem.name;
+            els.fran2.innerText = rightItem.franchise;
+            els.img2.src = getImg(rightItem);
             
-            const val = getCount(char);
-            
-            if (isHidden) {
-                els['count'+suffix].textContent = "?";
+            if (revealed) {
+                els.cnt2.innerText = getVal(rightItem).toLocaleString();
             } else {
-                animateValue(els['count'+suffix], 0, val, 1000);
+                els.cnt2.innerText = "?";
             }
         }
 
-        function makeChoice(side) {
-            if (!isPlaying) return;
-            isPlaying = false;
+        function vote(side) {
+            if (locked) return;
+            locked = true;
 
-            const val1 = getCount(leftChar);
-            const val2 = getCount(rightChar);
-            const isWin = (side === 'left' && val1 >= val2) || (side === 'right' && val2 >= val1);
+            const v1 = getVal(leftItem);
+            const v2 = getVal(rightItem);
+            const isWin = (side === 'left' && v1 >= v2) || (side === 'right' && v2 >= v1);
 
-            // Показать скрытое число
-            animateValue(els.count2, 0, val2, 600);
+            updateUI(true); // Показать число
 
             if (isWin) {
                 score++;
-                if (side === 'left') els.left.classList.add('winner');
-                else els.right.classList.add('winner');
+                if (side === 'left') els.c1.classList.add('win');
+                else els.c2.classList.add('win');
             } else {
                 score = 0;
-                if (side === 'left') { els.left.classList.add('loser'); els.right.classList.add('winner'); }
-                else { els.right.classList.add('loser'); els.left.classList.add('winner'); }
+                if (side === 'left') { els.c1.classList.add('lose'); els.c2.classList.add('win'); }
+                else { els.c2.classList.add('lose'); els.c1.classList.add('win'); }
             }
             
-            els.score.textContent = score;
+            els.score.innerText = score;
             els.btn.classList.add('show');
-        }
-
-        function animateValue(obj, start, end, duration) {
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                obj.innerHTML = Math.floor(progress * (end - start) + start).toLocaleString();
-                if (progress < 1) window.requestAnimationFrame(step);
-            };
-            window.requestAnimationFrame(step);
         }
     </script>
 </body>

@@ -1,50 +1,112 @@
 [
     {
-        "id": "rem",
-        "name": "Rem",
-        "franchise": "Re:Zero",
-        "tag": "rem_(re:zero)",
-        "posts": 0,
-        "image": ""
+        "id": "",
+        "name": "",
+        "franchise": "Unknown",
+        "tag": "",
+        "image": "https://img2.gelbooru.com/images/ab/59/ab59fbf3656a75dab83a90ea4b308f12.jpeg",
+        "counts": {
+            "total": 12517533,
+            "nsfw": 2418845
+        }
     },
     {
-        "id": "makima",
-        "name": "Makima",
-        "franchise": "Chainsaw Man",
-        "tag": "makima_(chainsaw_man)",
-        "posts": 0,
-        "image": ""
+        "id": "1gir",
+        "name": "1Gir",
+        "franchise": "Unknown",
+        "tag": "1gir",
+        "image": "https://video-cdn4.gelbooru.com/images/85/75/8575b9c0c7dce2561c05af8795c2d2fe.mp4",
+        "counts": {
+            "total": 8506973,
+            "nsfw": 1766147
+        }
     },
     {
-        "id": "frieren",
-        "name": "Frieren",
-        "franchise": "Sousou no Frieren",
-        "tag": "frieren",
-        "posts": 0,
-        "image": ""
+        "id": "1girl",
+        "name": "1Girl",
+        "franchise": "Unknown",
+        "tag": "1girl",
+        "image": "https://video-cdn4.gelbooru.com/images/53/6c/536c821914a54117fed5f61dc055fb6c.mp4",
+        "counts": {
+            "total": 8506972,
+            "nsfw": 1766147
+        }
     },
     {
-        "id": "hatsune_miku",
-        "name": "Hatsune Miku",
-        "franchise": "Vocaloid",
-        "tag": "hatsune_miku",
-        "posts": 0,
-        "image": ""
+        "id": "1_girl",
+        "name": "1 Girl",
+        "franchise": "Unknown",
+        "tag": "1_girl",
+        "image": "https://video-cdn4.gelbooru.com/images/53/33/533333c2691535d8226e3774cb641d9b.mp4",
+        "counts": {
+            "total": 8506972,
+            "nsfw": 1766147
+        }
     },
     {
-        "id": "yor_forger",
-        "name": "Yor Forger",
-        "franchise": "Spy x Family",
-        "tag": "yor_forger",
-        "posts": 0,
-        "image": ""
+        "id": "1woman",
+        "name": "1Woman",
+        "franchise": "Unknown",
+        "tag": "1woman",
+        "image": "https://img2.gelbooru.com/images/ab/59/ab59fbf3656a75dab83a90ea4b308f12.jpeg",
+        "counts": {
+            "total": 8506972,
+            "nsfw": 1766147
+        }
     },
     {
-        "id": "lucy",
-        "name": "Lucy",
-        "franchise": "Cyberpunk Edgerunners",
-        "tag": "lucy_(cyberpunk)",
-        "posts": 0,
-        "image": ""
+        "id": "female_solo",
+        "name": "Female Solo",
+        "franchise": "Unknown",
+        "tag": "female_solo",
+        "image": "https://video-cdn4.gelbooru.com/images/53/6c/536c821914a54117fed5f61dc055fb6c.mp4",
+        "counts": {
+            "total": 8506972,
+            "nsfw": 1766147
+        }
+    },
+    {
+        "id": "one_girl",
+        "name": "One Girl",
+        "franchise": "Unknown",
+        "tag": "one_girl",
+        "image": "https://img2.gelbooru.com/images/ab/59/ab59fbf3656a75dab83a90ea4b308f12.jpeg",
+        "counts": {
+            "total": 8506972,
+            "nsfw": 1766146
+        }
+    },
+    {
+        "id": "highres",
+        "name": "Highres",
+        "franchise": "Unknown",
+        "tag": "highres",
+        "image": "https://video-cdn4.gelbooru.com/images/ad/cb/adcb32660b4cc9cf783aa4927cb4de3b.mp4",
+        "counts": {
+            "total": 7753929,
+            "nsfw": 1357948
+        }
+    },
+    {
+        "id": "solo",
+        "name": "Solo",
+        "franchise": "Unknown",
+        "tag": "solo",
+        "image": "https://video-cdn4.gelbooru.com/images/0d/92/0d92c8814a5bc89c18e095e61a0510a4.mp4",
+        "counts": {
+            "total": 6550884,
+            "nsfw": 575078
+        }
+    },
+    {
+        "id": "long_hair",
+        "name": "Long Hair",
+        "franchise": "Unknown",
+        "tag": "long_hair",
+        "image": "https://video-cdn4.gelbooru.com/images/66/d3/66d34f506568fdc41c077f4629b61e15.mp4",
+        "counts": {
+            "total": 5783611,
+            "nsfw": 970972
+        }
     }
 ]

@@ -4,109 +4,109 @@
         "name": "",
         "franchise": "Unknown",
         "tag": "",
+        "image": "https://img2.gelbooru.com/images/9c/c4/9cc47fdf3d43d46c9ce4f75ca5d231f0.png",
+        "counts": {
+            "total": 12517545,
+            "nsfw": 2418844
+        }
+    },
+    {
+        "id": "original",
+        "name": "Original",
+        "franchise": "Series",
+        "tag": "original",
         "image": "https://img2.gelbooru.com/images/ab/59/ab59fbf3656a75dab83a90ea4b308f12.jpeg",
         "counts": {
-            "total": 12517533,
-            "nsfw": 2418845
+            "total": 1520056,
+            "nsfw": 300642
         }
     },
     {
-        "id": "1gir",
-        "name": "1Gir",
-        "franchise": "Unknown",
-        "tag": "1gir",
-        "image": "https://video-cdn4.gelbooru.com/images/85/75/8575b9c0c7dce2561c05af8795c2d2fe.mp4",
+        "id": "touhou",
+        "name": "Touhou",
+        "franchise": "Series",
+        "tag": "touhou",
+        "image": "https://img2.gelbooru.com/images/05/5e/055e5c3af2939eea0c9a20a9c1a8f519.png",
         "counts": {
-            "total": 8506973,
-            "nsfw": 1766147
+            "total": 921099,
+            "nsfw": 73796
         }
     },
     {
-        "id": "1girl",
-        "name": "1Girl",
-        "franchise": "Unknown",
-        "tag": "1girl",
-        "image": "https://video-cdn4.gelbooru.com/images/53/6c/536c821914a54117fed5f61dc055fb6c.mp4",
+        "id": "nintendo",
+        "name": "Nintendo",
+        "franchise": "Series",
+        "tag": "nintendo",
+        "image": "https://img2.gelbooru.com/images/d6/e2/d6e2f3be4a689fd94f99b0502268e551.png",
         "counts": {
-            "total": 8506972,
-            "nsfw": 1766147
+            "total": 781396,
+            "nsfw": 168703
         }
     },
     {
-        "id": "1_girl",
-        "name": "1 Girl",
-        "franchise": "Unknown",
-        "tag": "1_girl",
-        "image": "https://video-cdn4.gelbooru.com/images/53/33/533333c2691535d8226e3774cb641d9b.mp4",
+        "id": "kantai_collection",
+        "name": "Kantai Collection",
+        "franchise": "Series",
+        "tag": "kantai_collection",
+        "image": "https://img2.gelbooru.com/images/a6/aa/a6aa676dbad5ff4eb78a55596b9adff0.png",
         "counts": {
-            "total": 8506972,
-            "nsfw": 1766147
+            "total": 496355,
+            "nsfw": 40719
         }
     },
     {
-        "id": "1woman",
-        "name": "1Woman",
-        "franchise": "Unknown",
-        "tag": "1woman",
-        "image": "https://img2.gelbooru.com/images/ab/59/ab59fbf3656a75dab83a90ea4b308f12.jpeg",
+        "id": "pokemon",
+        "name": "Pokemon",
+        "franchise": "Series",
+        "tag": "pokemon",
+        "image": "https://img2.gelbooru.com/images/3f/20/3f202dee88ce4c1d7ac9eed30497dcce.png",
         "counts": {
-            "total": 8506972,
-            "nsfw": 1766147
+            "total": 458805,
+            "nsfw": 99005
         }
     },
     {
-        "id": "female_solo",
-        "name": "Female Solo",
-        "franchise": "Unknown",
-        "tag": "female_solo",
-        "image": "https://video-cdn4.gelbooru.com/images/53/6c/536c821914a54117fed5f61dc055fb6c.mp4",
+        "id": "fate_(series)",
+        "name": "Fate",
+        "franchise": "Series",
+        "tag": "fate_(series)",
+        "image": "https://img2.gelbooru.com/images/0c/e1/0ce17aa442af347e12287e2306921c23.png",
         "counts": {
-            "total": 8506972,
-            "nsfw": 1766147
+            "total": 387111,
+            "nsfw": 56989
         }
     },
     {
-        "id": "one_girl",
-        "name": "One Girl",
-        "franchise": "Unknown",
-        "tag": "one_girl",
-        "image": "https://img2.gelbooru.com/images/ab/59/ab59fbf3656a75dab83a90ea4b308f12.jpeg",
+        "id": "blue_archive",
+        "name": "Blue Archive",
+        "franchise": "Series",
+        "tag": "blue_archive",
+        "image": "https://img2.gelbooru.com/images/27/da/27da9cd6525d79a6b7380a77def7b774.png",
         "counts": {
-            "total": 8506972,
-            "nsfw": 1766146
+            "total": 357918,
+            "nsfw": 58439
         }
     },
     {
-        "id": "highres",
-        "name": "Highres",
-        "franchise": "Unknown",
-        "tag": "highres",
-        "image": "https://video-cdn4.gelbooru.com/images/ad/cb/adcb32660b4cc9cf783aa4927cb4de3b.mp4",
+        "id": "fate/grand_order",
+        "name": "Fate/Grand Order",
+        "franchise": "Series",
+        "tag": "fate/grand_order",
+        "image": "https://img2.gelbooru.com/images/04/7a/047aeefb272917ed34c2c6a875979fea.png",
         "counts": {
-            "total": 7753929,
-            "nsfw": 1357948
+            "total": 284832,
+            "nsfw": 42199
         }
     },
     {
-        "id": "solo",
-        "name": "Solo",
-        "franchise": "Unknown",
-        "tag": "solo",
-        "image": "https://video-cdn4.gelbooru.com/images/0d/92/0d92c8814a5bc89c18e095e61a0510a4.mp4",
+        "id": "hololive",
+        "name": "Hololive",
+        "franchise": "Series",
+        "tag": "hololive",
+        "image": "https://img2.gelbooru.com/images/9c/a5/9ca5a635e0ee26f22ed6f83f45411798.png",
         "counts": {
-            "total": 6550884,
-            "nsfw": 575078
-        }
-    },
-    {
-        "id": "long_hair",
-        "name": "Long Hair",
-        "franchise": "Unknown",
-        "tag": "long_hair",
-        "image": "https://video-cdn4.gelbooru.com/images/66/d3/66d34f506568fdc41c077f4629b61e15.mp4",
-        "counts": {
-            "total": 5783611,
-            "nsfw": 970972
+            "total": 283078,
+            "nsfw": 36710
         }
     }
 ]

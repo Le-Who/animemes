@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- ЭТОТ ТЕГ ПОЗВОЛЯЕТ ГРУЗИТЬ КАРТИНКИ С ЧУЖИХ САЙТОВ -->
     <meta name="referrer" content="no-referrer">
     <title>Anime PostGuess</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
@@ -12,14 +11,13 @@
             --bg: #0f172a;
             --card-bg: #1e293b;
             --text-main: #f8fafc;
-            --text-sec: #94a3b8;
-            --accent: #3b82f6;
             --win: #22c55e;
             --lose: #ef4444;
+            --nsfw-color: #ef4444;
+            --safe-color: #3b82f6;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
-
         body {
             font-family: 'Outfit', sans-serif;
             background: var(--bg);
@@ -27,82 +25,95 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            overflow-x: hidden;
+            overflow: hidden;
         }
 
         .header {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             position: absolute;
-            top: 20px;
             width: 100%;
-            text-align: center;
             z-index: 10;
         }
 
-        .logo { font-size: 1.5rem; font-weight: 900; letter-spacing: -1px; }
-        .score-pill {
-            display: inline-block;
+        .logo { font-size: 1.5rem; font-weight: 900; }
+        .stats { font-size: 1rem; opacity: 0.8; }
+
+        /* Переключатель 18+ */
+        .mode-toggle {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             background: rgba(255,255,255,0.1);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            margin-top: 10px;
+            padding: 8px 15px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
         }
+        .mode-toggle:hover { background: rgba(255,255,255,0.2); }
+        .mode-toggle input { display: none; }
+        .toggle-track {
+            width: 40px; height: 20px;
+            background: #475569;
+            border-radius: 20px;
+            position: relative;
+            transition: 0.3s;
+        }
+        .toggle-dot {
+            width: 16px; height: 16px;
+            background: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: 2px; left: 2px;
+            transition: 0.3s;
+        }
+        input:checked + .toggle-track { background: var(--nsfw-color); }
+        input:checked + .toggle-track .toggle-dot { transform: translateX(20px); }
+        .mode-label { font-weight: 700; font-size: 0.9rem; }
+        .mode-warning { color: var(--nsfw-color); display: none; }
+        input:checked ~ .mode-warning { display: inline; }
 
         .game-stage {
             display: flex;
+            height: 100vh;
             width: 100%;
-            max-width: 1000px;
-            height: 80vh; /* Высота для десктопа */
-            position: relative;
         }
 
         .card {
             flex: 1;
             position: relative;
             cursor: pointer;
-            transition: transform 0.3s ease;
-            overflow: hidden;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
+            transition: width 0.5s ease;
         }
 
         .card-bg {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            inset: 0;
+            width: 100%; height: 100%;
             object-fit: cover;
             opacity: 0.4;
-            transition: opacity 0.3s, transform 3s ease-out;
-            z-index: 1;
+            transition: transform 0.5s;
+            z-index: 0;
         }
-        
         .card:hover .card-bg { transform: scale(1.05); opacity: 0.6; }
 
-        .content {
-            position: relative;
-            z-index: 2;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.8);
-            padding: 20px;
-        }
+        .content { z-index: 2; position: relative; text-shadow: 0 4px 20px rgba(0,0,0,0.8); }
+        .name { font-size: 3rem; font-weight: 900; line-height: 1; margin-bottom: 5px; }
+        .franchise { font-size: 1.2rem; opacity: 0.8; text-transform: uppercase; letter-spacing: 2px; }
 
-        .name { font-size: 2.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 5px; }
-        .franchise { font-size: 1.2rem; color: rgba(255,255,255,0.8); font-weight: 400; text-transform: uppercase; letter-spacing: 2px; }
-
-        .count-wrap {
+        .counter {
             margin-top: 20px;
-            background: rgba(0,0,0,0.5);
-            padding: 10px 30px;
-            border-radius: 50px;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255,255,255,0.1);
+            font-size: 3.5rem;
+            font-weight: 800;
         }
-
-        .count { font-size: 3rem; font-weight: 700; color: #fff; }
-        .label { font-size: 0.8rem; text-transform: uppercase; opacity: 0.7; display: block; }
+        .counter-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.7; }
 
         /* VS Circle */
         .vs {
@@ -110,75 +121,62 @@
             top: 50%; left: 50%;
             transform: translate(-50%, -50%);
             width: 60px; height: 60px;
-            background: #fff;
-            color: #000;
+            background: #fff; color: #000;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 900;
-            z-index: 5;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 900; z-index: 20;
             box-shadow: 0 0 30px rgba(0,0,0,0.5);
         }
 
-        /* States */
-        .card.correct .card-bg { opacity: 0.2; }
-        .card.correct { background: var(--win); }
-        
-        .card.wrong .card-bg { opacity: 0.2; }
-        .card.wrong { background: var(--lose); }
+        /* Результаты */
+        .card.winner { background: var(--win); }
+        .card.loser { background: var(--lose); }
+        .card.winner .card-bg, .card.loser .card-bg { opacity: 0.2; }
 
         .btn-next {
             position: absolute;
-            bottom: 30px;
-            left: 50%;
+            bottom: 40px; left: 50%;
             transform: translateX(-50%) translateY(100px);
-            background: #fff;
-            color: #000;
-            border: none;
-            padding: 15px 40px;
-            font-size: 1.2rem;
-            font-weight: 900;
+            background: #fff; color: #000;
+            padding: 15px 50px;
             border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            opacity: 0;
-            z-index: 20;
+            font-weight: 900; font-size: 1.2rem;
+            cursor: pointer; border: none;
+            opacity: 0; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 30;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
         }
+        .btn-next.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-        .btn-next.show { transform: translateX(-50%) translateY(0); opacity: 1; }
-        .btn-next:hover { transform: translateX(-50%) scale(1.05); }
-
-        @media (max-width: 768px) {
-            .game-stage { flex-direction: column; height: 100vh; }
-            .name { font-size: 1.8rem; }
-            .count { font-size: 2rem; }
-            .header { top: 10px; }
+        @media(max-width: 768px) {
+            .game-stage { flex-direction: column; }
+            .name { font-size: 2rem; }
+            .counter { font-size: 2.5rem; }
         }
-        
-        #loading { position: fixed; inset: 0; background: var(--bg); z-index: 100; display: flex; align-items: center; justify-content: center; }
     </style>
 </head>
 <body>
 
-    <div id="loading">Загрузка базы данных...</div>
-
     <div class="header">
         <div class="logo">PostGuess</div>
-        <div class="score-pill">Счет: <span id="score">0</span></div>
+        
+        <label class="mode-toggle">
+            <input type="checkbox" id="nsfwToggle">
+            <div class="toggle-track"><div class="toggle-dot"></div></div>
+            <span class="mode-label">NSFW <span class="mode-warning">(18+)</span></span>
+        </label>
+
+        <div class="stats">Счет: <span id="score">0</span></div>
     </div>
 
     <div class="game-stage">
         <div class="card" id="left">
             <img src="" class="card-bg" id="img1">
             <div class="content">
-                <div class="name" id="name1">Name</div>
-                <div class="franchise" id="fran1">Franchise</div>
-                <div class="count-wrap">
-                    <span class="count" id="count1">0</span>
-                    <span class="label">Постов</span>
-                </div>
+                <div class="name" id="name1"></div>
+                <div class="franchise" id="fran1"></div>
+                <div class="counter" id="count1">0</div>
+                <div class="counter-label" id="label1">Total Posts</div>
             </div>
         </div>
 
@@ -187,145 +185,129 @@
         <div class="card" id="right">
             <img src="" class="card-bg" id="img2">
             <div class="content">
-                <div class="name" id="name2">Name</div>
-                <div class="franchise" id="fran2">Franchise</div>
-                <div class="count-wrap">
-                    <span class="count" id="count2">?</span>
-                    <span class="label">Постов</span>
-                </div>
+                <div class="name" id="name2"></div>
+                <div class="franchise" id="fran2"></div>
+                <div class="counter" id="count2">?</div>
+                <div class="counter-label" id="label2">Total Posts</div>
             </div>
         </div>
     </div>
 
-    <button class="btn-next" id="nextBtn" onclick="nextRound()">Дальше</button>
+    <button class="btn-next" id="nextBtn">Дальше</button>
 
     <script>
         let db = [];
-        let score = 0;
         let leftChar, rightChar;
-        let isGameActive = true;
+        let isNsfw = false;
+        let isPlaying = true;
+        let score = 0;
 
         const els = {
             left: document.getElementById('left'),
             right: document.getElementById('right'),
-            img1: document.getElementById('img1'),
-            img2: document.getElementById('img2'),
-            name1: document.getElementById('name1'),
-            name2: document.getElementById('name2'),
-            fran1: document.getElementById('fran1'),
-            fran2: document.getElementById('fran2'),
-            count1: document.getElementById('count1'),
-            count2: document.getElementById('count2'),
-            nextBtn: document.getElementById('nextBtn'),
-            score: document.getElementById('score'),
-            loading: document.getElementById('loading')
+            img1: document.getElementById('img1'), img2: document.getElementById('img2'),
+            name1: document.getElementById('name1'), name2: document.getElementById('name2'),
+            fran1: document.getElementById('fran1'), fran2: document.getElementById('fran2'),
+            count1: document.getElementById('count1'), count2: document.getElementById('count2'),
+            lbl1: document.getElementById('label1'), lbl2: document.getElementById('label2'),
+            btn: document.getElementById('nextBtn'),
+            score: document.getElementById('score')
         };
 
-        // Загрузка данных
-        async function init() {
-            try {
-                // ВАЖНО: GitHub Pages требует времени на обновление кэша, добавим timestamp
-                const response = await fetch('characters.json?t=' + new Date().getTime());
-                if (!response.ok) throw new Error("Нет файла данных");
-                db = await response.json();
-                
-                // Фильтр пустых данных
-                db = db.filter(c => c.posts > 0);
-                
-                if(db.length < 2) throw new Error("Мало данных");
-
-                els.loading.style.display = 'none';
+        // Загрузка
+        fetch('characters.json?t=' + Date.now())
+            .then(r => r.json())
+            .then(data => {
+                db = data;
                 nextRound();
-                
-                // Слушатели
-                els.left.onclick = () => handleChoice('left');
-                els.right.onclick = () => handleChoice('right');
+            })
+            .catch(err => alert("Ошибка загрузки данных! Запустите manage.py"));
 
-            } catch (e) {
-                els.loading.textContent = "Ошибка: " + e.message + ". Проверьте update.py";
-            }
-        }
+        // Переключатель режима
+        document.getElementById('nsfwToggle').addEventListener('change', (e) => {
+            isNsfw = e.target.checked;
+            els.lbl1.textContent = isNsfw ? "NSFW Posts (18+)" : "Total Posts";
+            els.lbl2.textContent = isNsfw ? "NSFW Posts (18+)" : "Total Posts";
+            // Сбрасываем игру при смене режима
+            score = 0; els.score.textContent = 0;
+            nextRound();
+        });
+
+        els.btn.addEventListener('click', nextRound);
+        els.left.addEventListener('click', () => makeChoice('left'));
+        els.right.addEventListener('click', () => makeChoice('right'));
 
         function nextRound() {
-            isGameActive = true;
-            els.nextBtn.classList.remove('show');
-            resetStyles();
-
-            // Выбор случайной пары
+            isPlaying = true;
+            els.btn.classList.remove('show');
+            els.left.className = 'card';
+            els.right.className = 'card';
+            
+            // Выбор персонажей
             leftChar = db[Math.floor(Math.random() * db.length)];
             do {
                 rightChar = db[Math.floor(Math.random() * db.length)];
             } while (rightChar.id === leftChar.id);
 
             // Рендер
-            renderCard(els.name1, els.fran1, els.img1, els.count1, leftChar, false);
-            renderCard(els.name2, els.fran2, els.img2, els.count2, rightChar, true);
+            render(1, leftChar, false);
+            render(2, rightChar, true);
+        }
+
+        function getCount(char) {
+            return isNsfw ? char.counts.nsfw : char.counts.total;
+        }
+
+        function render(idx, char, isHidden) {
+            const suffix = idx === 1 ? '1' : '2';
+            els['name'+suffix].textContent = char.name;
+            els['fran'+suffix].textContent = char.franchise;
+            els['img'+suffix].src = char.image;
             
-            // Анимация входа
-            animateValue(els.count1, 0, leftChar.posts, 1000);
-        }
-
-        function renderCard(nameEl, franEl, imgEl, countEl, data, isHidden) {
-            nameEl.textContent = data.name;
-            franEl.textContent = data.franchise;
-            imgEl.src = data.image || 'https://placehold.co/600x800/1e293b/FFF?text=No+Image';
-            countEl.textContent = isHidden ? "?" : 0; // Сначала 0 для анимации
-        }
-
-        function handleChoice(side) {
-            if (!isGameActive) return;
-            isGameActive = false;
-
-            const p1 = leftChar.posts;
-            const p2 = rightChar.posts;
-            let win = false;
-
-            if (side === 'left' && p1 >= p2) win = true;
-            if (side === 'right' && p2 >= p1) win = true;
-
-            // Показать число справа
-            animateValue(els.count2, 0, p2, 500);
-
-            // Визуализация победы
-            if (p1 >= p2) {
-                els.left.classList.add('correct');
-                els.right.classList.add('wrong');
+            const val = getCount(char);
+            
+            if (isHidden) {
+                els['count'+suffix].textContent = "?";
             } else {
-                els.right.classList.add('correct');
-                els.left.classList.add('wrong');
+                animateValue(els['count'+suffix], 0, val, 1000);
             }
+        }
 
-            if (win) {
+        function makeChoice(side) {
+            if (!isPlaying) return;
+            isPlaying = false;
+
+            const val1 = getCount(leftChar);
+            const val2 = getCount(rightChar);
+            const isWin = (side === 'left' && val1 >= val2) || (side === 'right' && val2 >= val1);
+
+            // Показать скрытое число
+            animateValue(els.count2, 0, val2, 600);
+
+            if (isWin) {
                 score++;
-                els.score.textContent = score;
+                if (side === 'left') els.left.classList.add('winner');
+                else els.right.classList.add('winner');
             } else {
                 score = 0;
-                els.score.textContent = 0;
+                if (side === 'left') { els.left.classList.add('loser'); els.right.classList.add('winner'); }
+                else { els.right.classList.add('loser'); els.left.classList.add('winner'); }
             }
-
-            els.nextBtn.classList.add('show');
-        }
-
-        function resetStyles() {
-            els.left.className = 'card';
-            els.right.className = 'card';
+            
+            els.score.textContent = score;
+            els.btn.classList.add('show');
         }
 
         function animateValue(obj, start, end, duration) {
-            if (obj.textContent === "?") return; // Не анимировать знак вопроса до раскрытия
             let startTimestamp = null;
             const step = (timestamp) => {
                 if (!startTimestamp) startTimestamp = timestamp;
                 const progress = Math.min((timestamp - startTimestamp) / duration, 1);
                 obj.innerHTML = Math.floor(progress * (end - start) + start).toLocaleString();
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
+                if (progress < 1) window.requestAnimationFrame(step);
             };
             window.requestAnimationFrame(step);
         }
-
-        init();
     </script>
 </body>
 </html>

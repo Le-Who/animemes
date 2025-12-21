@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ВАЖНО: Разрешает загрузку картинок с других сайтов -->
     <meta name="referrer" content="no-referrer">
-    <title>Дуня, когда пойдём писать фанфики?</title>
+    <title>Anime PostGuess</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -18,6 +19,7 @@
             display: flex; flex-direction: column;
         }
 
+        /* HEADER */
         .header {
             padding: 15px 30px; display: flex; justify-content: space-between;
             align-items: center; z-index: 10; background: rgba(0,0,0,0.3);
@@ -25,7 +27,7 @@
         }
         .logo { font-weight: 900; font-size: 1.4rem; letter-spacing: -1px; }
         
-        /* Переключатель */
+        /* SWITCH */
         .switch-wrap { display: flex; align-items: center; gap: 10px; cursor: pointer; }
         .switch-bg {
             width: 44px; height: 24px; background: #475569;
@@ -41,6 +43,14 @@
         .switch-label { font-size: 0.9rem; font-weight: 700; }
         input { display: none; }
 
+        /* SCORES */
+        .scores { display: flex; gap: 20px; font-weight: 700; font-size: 1rem; }
+        .score-box { display: flex; flex-direction: column; align-items: flex-end; }
+        .score-val { font-size: 1.2rem; line-height: 1; }
+        .score-label { font-size: 0.7rem; opacity: 0.6; text-transform: uppercase; }
+        .best-val { color: #fbbf24; }
+
+        /* GAME AREA */
         .game-area { flex: 1; display: flex; position: relative; }
 
         .card {
@@ -57,16 +67,16 @@
         }
         .card:hover .card-bg { transform: scale(1.05); opacity: 0.6; }
         
-        .info { z-index: 2; position: relative; text-shadow: 0 4px 30px rgba(0,0,0,0.9); }
+        .info { z-index: 2; position: relative; text-shadow: 0 4px 30px rgba(0,0,0,0.9); pointer-events: none; }
         .name { font-size: 2.5rem; font-weight: 900; line-height: 1.1; }
         .fran { font-size: 1rem; opacity: 0.8; text-transform: uppercase; letter-spacing: 2px; margin-top: 5px;}
         .count { font-size: 4rem; font-weight: 800; margin-top: 20px; }
         
-        /* Результаты */
         .card.win { background: var(--win); }
         .card.lose { background: var(--lose); }
         .card.win .card-bg, .card.lose .card-bg { opacity: 0.15; }
 
+        /* VS CIRCLE */
         .vs {
             position: absolute; top: 50%; left: 50%;
             transform: translate(-50%, -50%);
@@ -78,6 +88,7 @@
             box-shadow: 0 0 20px rgba(0,0,0,0.5);
         }
 
+        /* BUTTON */
         .btn {
             position: absolute; bottom: 40px; left: 50%;
             transform: translateX(-50%) translateY(100px);
@@ -95,17 +106,28 @@
 <body>
 
     <div class="header">
-        <div class="logo">Дуня Guess</div>
+        <div class="logo">PostGuess</div>
+        
         <label class="switch-wrap">
             <input type="checkbox" id="modeSwitch">
             <div class="switch-bg"><div class="switch-dot"></div></div>
             <span class="switch-label">NSFW (18+)</span>
         </label>
-        <div style="opacity:0.7">Score: <span id="score">0</span></div>
+        
+        <div class="scores">
+            <div class="score-box">
+                <span class="score-val" id="score">0</span>
+                <span class="score-label">Текущий</span>
+            </div>
+            <div class="score-box">
+                <span class="score-val best-val" id="best">0</span>
+                <span class="score-label">Лучший</span>
+            </div>
+        </div>
     </div>
 
     <div class="game-area">
-        <!-- Левая карточка -->
+        <!-- Карточка 1 (Левая) -->
         <div class="card" id="c1" onclick="vote('left')">
             <img src="" class="card-bg" id="img1">
             <div class="info">
@@ -117,7 +139,7 @@
 
         <div class="vs">VS</div>
 
-        <!-- Правая карточка -->
+        <!-- Карточка 2 (Правая) -->
         <div class="card" id="c2" onclick="vote('right')">
             <img src="" class="card-bg" id="img2">
             <div class="info">
@@ -136,6 +158,7 @@
         let isNSFW = false;
         let locked = false;
         let score = 0;
+        let bestScore = localStorage.getItem('pg_best') || 0;
 
         // Элементы
         const els = {
@@ -144,25 +167,31 @@
             name1: document.getElementById('name1'), name2: document.getElementById('name2'),
             fran1: document.getElementById('fran1'), fran2: document.getElementById('fran2'),
             cnt1: document.getElementById('count1'), cnt2: document.getElementById('count2'),
-            score: document.getElementById('score'), btn: document.getElementById('nextBtn')
+            score: document.getElementById('score'), best: document.getElementById('best'),
+            btn: document.getElementById('nextBtn')
         };
 
         // Старт
+        els.best.innerText = bestScore;
+        
+        // Загружаем JSON (добавлен timestamp для обхода кэша)
         fetch('characters.json?t='+Date.now()).then(r=>r.json()).then(data => {
             db = data;
             resetPool();
             startFirstRound();
         });
 
+        // Переключение режима
         document.getElementById('modeSwitch').addEventListener('change', (e) => {
             isNSFW = e.target.checked;
-            score = 0; els.score.innerText = 0;
+            score = 0; updateScoreUI();
+            
+            // Полный сброс раунда при смене режима (чтобы обновились картинки)
             resetPool();
             startFirstRound();
         });
 
         function resetPool() {
-            // Копируем базу и перемешиваем
             pool = [...db].sort(() => Math.random() - 0.5);
         }
 
@@ -175,20 +204,24 @@
             leftItem = getNext();
             rightItem = getNext();
             updateUI(false);
+            
+            // Сброс стилей
+            locked = false;
+            els.c1.className = 'card';
+            els.c2.className = 'card';
+            els.btn.classList.remove('show');
         }
 
         function next() {
-            // МЕХАНИКА КОНВЕЙЕРА:
-            // Левая карточка становится той, что была справа
+            // Двигаем победителя влево (точнее, правую карточку влево)
             leftItem = rightItem;
-            // Правая берется новая из пула
             rightItem = getNext();
             
             updateUI(false);
+            
+            // Сброс
             els.btn.classList.remove('show');
             locked = false;
-            
-            // Сброс цветов
             els.c1.className = 'card';
             els.c2.className = 'card';
         }
@@ -198,9 +231,10 @@
         }
 
         function getImg(item) {
-            // Если режима нет или картинки нет, берем SFW как запасной вариант
+            // Если режим 18+ и есть NSFW картинка - показываем её
             if (isNSFW && item.images.nsfw) return item.images.nsfw;
-            return item.images.sfw || item.images.nsfw; // Фоллбэк
+            // Иначе показываем SFW (или что есть)
+            return item.images.sfw || item.images.nsfw;
         }
 
         function updateUI(revealed) {
@@ -216,7 +250,7 @@
             els.img2.src = getImg(rightItem);
             
             if (revealed) {
-                els.cnt2.innerText = getVal(rightItem).toLocaleString();
+                animateValue(els.cnt2, 0, getVal(rightItem), 600);
             } else {
                 els.cnt2.innerText = "?";
             }
@@ -234,6 +268,10 @@
 
             if (isWin) {
                 score++;
+                if (score > bestScore) {
+                    bestScore = score;
+                    localStorage.setItem('pg_best', bestScore);
+                }
                 if (side === 'left') els.c1.classList.add('win');
                 else els.c2.classList.add('win');
             } else {
@@ -242,8 +280,24 @@
                 else { els.c2.classList.add('lose'); els.c1.classList.add('win'); }
             }
             
-            els.score.innerText = score;
+            updateScoreUI();
             els.btn.classList.add('show');
+        }
+
+        function updateScoreUI() {
+            els.score.innerText = score;
+            els.best.innerText = bestScore;
+        }
+
+        function animateValue(obj, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = Math.floor(progress * (end - start) + start).toLocaleString();
+                if (progress < 1) window.requestAnimationFrame(step);
+            };
+            window.requestAnimationFrame(step);
         }
     </script>
 </body>

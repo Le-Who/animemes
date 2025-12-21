@@ -4,10 +4,13 @@
         "name": "",
         "franchise": "Unknown",
         "tag": "",
-        "image": "https://img2.gelbooru.com/images/9c/c4/9cc47fdf3d43d46c9ce4f75ca5d231f0.png",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/3c/ba/3cba6260f82abc8797ada3ee874a03e6.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/53/3b/533b412111688cce25f3d5fdeea6295a.jpeg"
+        },
         "counts": {
-            "total": 12517545,
-            "nsfw": 2418844
+            "total": 12517729,
+            "nsfw": 2418859
         }
     },
     {
@@ -15,10 +18,13 @@
         "name": "Original",
         "franchise": "Series",
         "tag": "original",
-        "image": "https://img2.gelbooru.com/images/ab/59/ab59fbf3656a75dab83a90ea4b308f12.jpeg",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/b2/2a/b22a31c4900db0a2cd904b92200337db.png",
+            "nsfw": "https://img2.gelbooru.com/images/ab/59/ab59fbf3656a75dab83a90ea4b308f12.jpeg"
+        },
         "counts": {
-            "total": 1520056,
-            "nsfw": 300642
+            "total": 1520073,
+            "nsfw": 300636
         }
     },
     {
@@ -26,7 +32,10 @@
         "name": "Touhou",
         "franchise": "Series",
         "tag": "touhou",
-        "image": "https://img2.gelbooru.com/images/05/5e/055e5c3af2939eea0c9a20a9c1a8f519.png",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/35/12/3512b5a9edba5234a582a4cba5eee3f6.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/6c/61/6c619d05e390f3afc0fbb1cf20a1afe7.png"
+        },
         "counts": {
             "total": 921099,
             "nsfw": 73796
@@ -37,10 +46,13 @@
         "name": "Nintendo",
         "franchise": "Series",
         "tag": "nintendo",
-        "image": "https://img2.gelbooru.com/images/d6/e2/d6e2f3be4a689fd94f99b0502268e551.png",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/3c/ba/3cba6260f82abc8797ada3ee874a03e6.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/d8/21/d82177bb566579895779b6b0198fdee7.png"
+        },
         "counts": {
-            "total": 781396,
-            "nsfw": 168703
+            "total": 781399,
+            "nsfw": 168702
         }
     },
     {
@@ -48,9 +60,12 @@
         "name": "Kantai Collection",
         "franchise": "Series",
         "tag": "kantai_collection",
-        "image": "https://img2.gelbooru.com/images/a6/aa/a6aa676dbad5ff4eb78a55596b9adff0.png",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/55/0b/550bf1379d92c99baadf2e9651db7a3b.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/06/e9/06e932f79efa9191237a533f974a8b35.jpg"
+        },
         "counts": {
-            "total": 496355,
+            "total": 496358,
             "nsfw": 40719
         }
     },
@@ -59,10 +74,13 @@
         "name": "Pokemon",
         "franchise": "Series",
         "tag": "pokemon",
-        "image": "https://img2.gelbooru.com/images/3f/20/3f202dee88ce4c1d7ac9eed30497dcce.png",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/6d/f4/6df4a8441727650559fb3a8f45342724.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/58/a5/58a55c0e134c858d22b8e2f3f26b1c6d.png"
+        },
         "counts": {
-            "total": 458805,
-            "nsfw": 99005
+            "total": 458807,
+            "nsfw": 99006
         }
     },
     {
@@ -70,10 +88,13 @@
         "name": "Fate",
         "franchise": "Series",
         "tag": "fate_(series)",
-        "image": "https://img2.gelbooru.com/images/0c/e1/0ce17aa442af347e12287e2306921c23.png",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/71/ce/71ce8fbaef1f3fc3d6af006a0183c56c.png",
+            "nsfw": "https://img2.gelbooru.com/images/4a/35/4a3512d49c61f317d16312f22210b6f3.png"
+        },
         "counts": {
-            "total": 387111,
-            "nsfw": 56989
+            "total": 387128,
+            "nsfw": 56997
         }
     },
     {
@@ -81,10 +102,13 @@
         "name": "Blue Archive",
         "franchise": "Series",
         "tag": "blue_archive",
-        "image": "https://img2.gelbooru.com/images/27/da/27da9cd6525d79a6b7380a77def7b774.png",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/48/65/48658ff99e91ead6ec161a2a0420b14a.png",
+            "nsfw": "https://img2.gelbooru.com/images/fb/98/fb98eaaef35cd691a5e446a07f1baef8.png"
+        },
         "counts": {
-            "total": 357918,
-            "nsfw": 58439
+            "total": 357940,
+            "nsfw": 58446
         }
     },
     {
@@ -92,10 +116,13 @@
         "name": "Fate/Grand Order",
         "franchise": "Series",
         "tag": "fate/grand_order",
-        "image": "https://img2.gelbooru.com/images/04/7a/047aeefb272917ed34c2c6a875979fea.png",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/1e/99/1e9965b99a46a8a070959eb3ba7f7669.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/77/23/7723bc963104af3d78b93900a5554d7f.png"
+        },
         "counts": {
-            "total": 284832,
-            "nsfw": 42199
+            "total": 284849,
+            "nsfw": 42207
         }
     },
     {
@@ -103,10 +130,153 @@
         "name": "Hololive",
         "franchise": "Series",
         "tag": "hololive",
-        "image": "https://img2.gelbooru.com/images/9c/a5/9ca5a635e0ee26f22ed6f83f45411798.png",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/8e/89/8e8929107f58455a507e6e38b1114b7a.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/a1/d1/a1d1feefe07ceb416234a8fb41d99976.jpg"
+        },
         "counts": {
-            "total": 283078,
+            "total": 283084,
             "nsfw": 36710
+        }
+    },
+    {
+        "id": "genshin_impact",
+        "name": "Genshin Impact",
+        "franchise": "Series",
+        "tag": "genshin_impact",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/e6/6d/e66d7ca01888a766270120b52b599c91.png",
+            "nsfw": "https://img2.gelbooru.com/images/f6/0e/f60eeacaf9b4efd28f8454567f741533.jpg"
+        },
+        "counts": {
+            "total": 276809,
+            "nsfw": 40829
+        }
+    },
+    {
+        "id": "hatsune_miku",
+        "name": "Hatsune Miku",
+        "franchise": "Unknown",
+        "tag": "hatsune_miku",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/81/6b/816ba592ee479c9df552321d3f6686bf.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/f7/f1/f7f1f4fc2dbb3fcf285fb93d7c863f57.png"
+        },
+        "counts": {
+            "total": 132486,
+            "nsfw": 7473
+        }
+    },
+    {
+        "id": "miku_hatsune",
+        "name": "Miku Hatsune",
+        "franchise": "Unknown",
+        "tag": "miku_hatsune",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/21/e3/21e3c0a666172e40cdfc76e0a6591d21.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/fb/4e/fb4e035d4514864cad07ee0a993c1e2b.jpg"
+        },
+        "counts": {
+            "total": 132486,
+            "nsfw": 7473
+        }
+    },
+    {
+        "id": "hakurei_reimu",
+        "name": "Hakurei Reimu",
+        "franchise": "Unknown",
+        "tag": "hakurei_reimu",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/6b/11/6b1152b1510d121842928efe4ce217f5.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/49/92/49928b2fb3c4514e18b80dffbd8a3ef3.jpg"
+        },
+        "counts": {
+            "total": 75009,
+            "nsfw": 4390
+        }
+    },
+    {
+        "id": "kirisame_marisa",
+        "name": "Kirisame Marisa",
+        "franchise": "Unknown",
+        "tag": "kirisame_marisa",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/d5/65/d565202b02fca098a6aa2bd0e9ffd7ce.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/6f/9d/6f9dec7e20fee75ab942eb91e295efbb.jpg"
+        },
+        "counts": {
+            "total": 64004,
+            "nsfw": 2731
+        }
+    },
+    {
+        "id": "flandre_scarlet",
+        "name": "Flandre Scarlet",
+        "franchise": "Unknown",
+        "tag": "flandre_scarlet",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/84/2d/842d24da3a6deb5c6f43275b7a75b457.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/65/09/6509e03e5f70ef15385494f65615b004.jpeg"
+        },
+        "counts": {
+            "total": 53550,
+            "nsfw": 3575
+        }
+    },
+    {
+        "id": "remilia_scarlet",
+        "name": "Remilia Scarlet",
+        "franchise": "Unknown",
+        "tag": "remilia_scarlet",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/d9/2e/d92e239d655e9e329298a294cbed9b61.jpg",
+            "nsfw": "https://img2.gelbooru.com/images/92/f0/92f0f47ff7271b9e0547697903f76317.jpg"
+        },
+        "counts": {
+            "total": 49882,
+            "nsfw": 2989
+        }
+    },
+    {
+        "id": "artoria_pendragon_(fate)",
+        "name": "Artoria Pendragon",
+        "franchise": "Fate",
+        "tag": "artoria_pendragon_(fate)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/ca/a3/caa355445e57598d7b6feb81b28b1620.jpeg",
+            "nsfw": "https://img2.gelbooru.com/images/ab/ec/abecd5519c81c9094d5f8881d936ffda.jpeg"
+        },
+        "counts": {
+            "total": 43541,
+            "nsfw": 5403
+        }
+    },
+    {
+        "id": "altria_pendragon_(fate)",
+        "name": "Altria Pendragon",
+        "franchise": "Fate",
+        "tag": "altria_pendragon_(fate)",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/71/ce/71ce8fbaef1f3fc3d6af006a0183c56c.png",
+            "nsfw": "https://img2.gelbooru.com/images/84/0c/840cb18c7757f109266c73ded7808d28.jpg"
+        },
+        "counts": {
+            "total": 43541,
+            "nsfw": 5403
+        }
+    },
+    {
+        "id": "izayoi_sakuya",
+        "name": "Izayoi Sakuya",
+        "franchise": "Unknown",
+        "tag": "izayoi_sakuya",
+        "images": {
+            "sfw": "https://img2.gelbooru.com/images/97/c5/97c52f9a124d6c408802f574067aa9a2.png",
+            "nsfw": "https://img2.gelbooru.com/images/db/a5/dba5f7eb4be826d69bf2daf0b0c2a7d6.jpg"
+        },
+        "counts": {
+            "total": 43011,
+            "nsfw": 3292
         }
     }
 ]

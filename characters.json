@@ -1,0 +1,50 @@
+[
+    {
+        "id": "rem",
+        "name": "Rem",
+        "franchise": "Re:Zero",
+        "tag": "rem_(re:zero)",
+        "posts": 0,
+        "image": ""
+    },
+    {
+        "id": "makima",
+        "name": "Makima",
+        "franchise": "Chainsaw Man",
+        "tag": "makima_(chainsaw_man)",
+        "posts": 0,
+        "image": ""
+    },
+    {
+        "id": "frieren",
+        "name": "Frieren",
+        "franchise": "Sousou no Frieren",
+        "tag": "frieren",
+        "posts": 0,
+        "image": ""
+    },
+    {
+        "id": "hatsune_miku",
+        "name": "Hatsune Miku",
+        "franchise": "Vocaloid",
+        "tag": "hatsune_miku",
+        "posts": 0,
+        "image": ""
+    },
+    {
+        "id": "yor_forger",
+        "name": "Yor Forger",
+        "franchise": "Spy x Family",
+        "tag": "yor_forger",
+        "posts": 0,
+        "image": ""
+    },
+    {
+        "id": "lucy",
+        "name": "Lucy",
+        "franchise": "Cyberpunk Edgerunners",
+        "tag": "lucy_(cyberpunk)",
+        "posts": 0,
+        "image": ""
+    }
+]

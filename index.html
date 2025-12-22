@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- ВАЖНО: Разрешает загрузку картинок с других сайтов -->
     <meta name="referrer" content="no-referrer">
-    <title>Кто хочет стать Дуней</title>
+    <title>Кто хочет стать Дуней?</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -54,27 +54,71 @@
         .game-area { flex: 1; display: flex; position: relative; }
 
         .card {
-            flex: 1; position: relative; cursor: pointer;
-            display: flex; flex-direction: column;
-            justify-content: center; align-items: center;
-            text-align: center; overflow: hidden;
+            flex: 1; 
+            position: relative; 
+            cursor: pointer;
+            display: flex; 
+            flex-direction: column;
+            justify-content: center; /* Центрируем контент (текст) */
+            align-items: center;
+            text-align: center; 
+            overflow: hidden;
             transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            background: #000; /* Черный фон под картинкой */
         }
         
+        /* Размытый фон для заполнения пустот */
+        .card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: var(--bg-image);
+            background-size: cover;
+            background-position: center;
+            filter: blur(30px) brightness(0.4);
+            z-index: 0;
+            transition: background-image 0.5s ease;
+        }
+
         .card-bg {
-            position: absolute; inset: 0; width: 100%; height: 100%;
-            object-fit: cover; opacity: 0.4; transition: 0.5s; z-index: 0;
+            position: absolute; 
+            inset: 0; 
+            width: 100%; 
+            height: 100%;
+            /* Картинка видна полностью */
+            object-fit: contain; 
+            opacity: 1; 
+            transition: 0.5s; 
+            z-index: 1;
         }
-        .card:hover .card-bg { transform: scale(1.05); opacity: 0.6; }
         
-        .info { z-index: 2; position: relative; text-shadow: 0 4px 30px rgba(0,0,0,0.9); pointer-events: none; }
-        .name { font-size: 2.5rem; font-weight: 900; line-height: 1.1; }
-        .fran { font-size: 1rem; opacity: 0.8; text-transform: uppercase; letter-spacing: 2px; margin-top: 5px;}
-        .count { font-size: 4rem; font-weight: 800; margin-top: 20px; }
+        .card:hover .card-bg { 
+            transform: scale(1.02); 
+        }
         
-        .card.win { background: var(--win); }
-        .card.lose { background: var(--lose); }
-        .card.win .card-bg, .card.lose .card-bg { opacity: 0.15; }
+        .info { 
+            z-index: 2; 
+            position: absolute; 
+            bottom: 0; 
+            left: 0; 
+            width: 100%;
+            padding: 40px 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8); 
+            pointer-events: none; 
+        }
+        
+        .name { font-size: 2.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 5px; }
+        .fran { font-size: 1rem; opacity: 0.9; text-transform: uppercase; letter-spacing: 2px; color: #cbd5e1; }
+        .count { font-size: 4rem; font-weight: 800; margin-top: 15px; color: #fff; }
+        
+        /* Результаты */
+        .card.win::after {
+            content: ''; position: absolute; inset: 0; background: var(--win); opacity: 0.3; z-index: 3;
+        }
+        .card.lose::after {
+            content: ''; position: absolute; inset: 0; background: var(--lose); opacity: 0.3; z-index: 3;
+        }
 
         /* VS CIRCLE */
         .vs {
@@ -100,13 +144,18 @@
         }
         .btn.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-        @media(max-width: 768px) { .game-area { flex-direction: column; } .name { font-size: 1.8rem; } }
+        @media(max-width: 768px) { 
+            .game-area { flex-direction: column; } 
+            .name { font-size: 1.8rem; } 
+            .info { position: relative; background: none; padding: 20px; }
+            .card { justify-content: flex-end; }
+        }
     </style>
 </head>
 <body>
 
     <div class="header">
-        <div class="logo">Дарья Guess</div>
+        <div class="logo">Это такое?!/div>
         
         <label class="switch-wrap">
             <input type="checkbox" id="modeSwitch">
@@ -117,11 +166,11 @@
         <div class="scores">
             <div class="score-box">
                 <span class="score-val" id="score">0</span>
-                <span class="score-label">Текущий</span>
+                <span class="score-label">Current</span>
             </div>
             <div class="score-box">
                 <span class="score-val best-val" id="best">0</span>
-                <span class="score-label">Лучший</span>
+                <span class="score-label">Best</span>
             </div>
         </div>
     </div>
@@ -131,7 +180,7 @@
         <div class="card" id="c1" onclick="vote('left')">
             <img src="" class="card-bg" id="img1">
             <div class="info">
-                <div class="name" id="name1"></div>
+                <div class="name" id="name1">Loading...</div>
                 <div class="fran" id="fran1"></div>
                 <div class="count" id="count1">0</div>
             </div>
@@ -143,7 +192,7 @@
         <div class="card" id="c2" onclick="vote('right')">
             <img src="" class="card-bg" id="img2">
             <div class="info">
-                <div class="name" id="name2"></div>
+                <div class="name" id="name2">Loading...</div>
                 <div class="fran" id="fran2"></div>
                 <div class="count" id="count2">?</div>
             </div>
@@ -175,11 +224,18 @@
         els.best.innerText = bestScore;
         
         // Загружаем JSON (добавлен timestamp для обхода кэша)
-        fetch('characters.json?t='+Date.now()).then(r=>r.json()).then(data => {
-            db = data;
-            resetPool();
-            startFirstRound();
-        });
+        fetch('characters.json?t='+Date.now())
+            .then(r => r.json())
+            .then(data => {
+                db = data;
+                if(db.length < 2) {
+                    alert("В базе мало персонажей! Запустите manage.py.");
+                    return;
+                }
+                resetPool();
+                startFirstRound();
+            })
+            .catch(e => console.error("Ошибка загрузки:", e));
 
         // Переключение режима
         document.getElementById('modeSwitch').addEventListener('change', (e) => {
@@ -192,6 +248,7 @@
         });
 
         function resetPool() {
+            // Создаем копию базы и перемешиваем
             pool = [...db].sort(() => Math.random() - 0.5);
         }
 
@@ -207,8 +264,8 @@
             
             // Сброс стилей
             locked = false;
-            els.c1.className = 'card';
-            els.c2.className = 'card';
+            els.c1.classList.remove('win', 'lose');
+            els.c2.classList.remove('win', 'lose');
             els.btn.classList.remove('show');
         }
 
@@ -222,8 +279,8 @@
             // Сброс
             els.btn.classList.remove('show');
             locked = false;
-            els.c1.className = 'card';
-            els.c2.className = 'card';
+            els.c1.classList.remove('win', 'lose');
+            els.c2.classList.remove('win', 'lose');
         }
 
         function getVal(item) {
@@ -242,12 +299,18 @@
             els.name1.innerText = leftItem.name;
             els.fran1.innerText = leftItem.franchise;
             els.cnt1.innerText = getVal(leftItem).toLocaleString();
-            els.img1.src = getImg(leftItem);
+            
+            const url1 = getImg(leftItem);
+            els.img1.src = url1;
+            els.c1.style.setProperty('--bg-image', `url('${url1}')`);
 
             // Правая
             els.name2.innerText = rightItem.name;
             els.fran2.innerText = rightItem.franchise;
-            els.img2.src = getImg(rightItem);
+            
+            const url2 = getImg(rightItem);
+            els.img2.src = url2;
+            els.c2.style.setProperty('--bg-image', `url('${url2}')`);
             
             if (revealed) {
                 animateValue(els.cnt2, 0, getVal(rightItem), 600);
@@ -262,6 +325,9 @@
 
             const v1 = getVal(leftItem);
             const v2 = getVal(rightItem);
+            
+            // Победа, если выбрали карточку с БОЛЬШИМ числом
+            // Если равны - тоже победа
             const isWin = (side === 'left' && v1 >= v2) || (side === 'right' && v2 >= v1);
 
             updateUI(true); // Показать число

@@ -286,6 +286,8 @@
             els.c1.classList.remove('win', 'lose');
             els.c2.classList.remove('win', 'lose');
             els.btn.classList.remove('show');
+
+            preloadNext();
         }
 
         function next() {
@@ -302,6 +304,8 @@
             locked = false;
             els.c1.classList.remove('win', 'lose');
             els.c2.classList.remove('win', 'lose');
+
+            preloadNext();
         }
 
         function getVal(item) {
@@ -406,6 +410,17 @@
             if (e.key === 'ArrowRight' && !locked) vote('right');
             if (e.key === 'Enter' && locked && document.activeElement === document.body) next();
         });
+        function preloadNext() {
+            // If the pool is empty, refill it now to identify the next image.
+            // This shifts the shuffle timing slightly but preserves randomness.
+            if (pool.length === 0) resetPool();
+
+            if (pool.length > 0) {
+                const nextItem = pool[pool.length - 1];
+                const img = new Image();
+                img.src = getImg(nextItem);
+            }
+        }
     </script>
 </body>
 </html>

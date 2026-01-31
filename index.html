@@ -144,6 +144,17 @@
         }
         .btn.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
+        /* Accessibility Focus Styles */
+        .card:focus-visible {
+            outline: 4px solid #fff;
+            outline-offset: -4px;
+            z-index: 10;
+        }
+        .switch-wrap input:focus-visible + .switch-bg {
+            outline: 2px solid #fff;
+            outline-offset: 2px;
+        }
+
         @media(max-width: 768px) { 
             .game-area { flex-direction: column; } 
             .name { font-size: 1.8rem; } 
@@ -177,7 +188,7 @@
 
     <div class="game-area">
         <!-- Карточка 1 (Левая) -->
-        <div class="card" id="c1" onclick="vote('left')">
+        <div class="card" id="c1" onclick="vote('left')" role="button" tabindex="0" onkeydown="handleCardKey(event, 'left')">
             <img src="" class="card-bg" id="img1">
             <div class="info">
                 <div class="name" id="name1">Loading...</div>
@@ -189,7 +200,7 @@
         <div class="vs">VS</div>
 
         <!-- Карточка 2 (Правая) -->
-        <div class="card" id="c2" onclick="vote('right')">
+        <div class="card" id="c2" onclick="vote('right')" role="button" tabindex="0" onkeydown="handleCardKey(event, 'right')">
             <img src="" class="card-bg" id="img2">
             <div class="info">
                 <div class="name" id="name2">Loading...</div>
@@ -314,6 +325,8 @@
             
             const url1 = getImg(leftItem);
             els.img1.src = url1;
+            els.img1.alt = `${leftItem.name} (${leftItem.franchise})`;
+            els.c1.setAttribute('aria-label', `Vote for ${leftItem.name}`);
             els.c1.style.setProperty('--bg-image', `url('${url1}')`);
 
             // Правая
@@ -322,6 +335,8 @@
             
             const url2 = getImg(rightItem);
             els.img2.src = url2;
+            els.img2.alt = `${rightItem.name} (${rightItem.franchise})`;
+            els.c2.setAttribute('aria-label', `Vote for ${rightItem.name}`);
             els.c2.style.setProperty('--bg-image', `url('${url2}')`);
             
             if (revealed) {
@@ -381,6 +396,20 @@
             currentAnimId = window.requestAnimationFrame(step);
         }
 
+        // Keyboard Support
+        function handleCardKey(e, side) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                if (locked) next();
+                else vote(side);
+            }
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft' && !locked) vote('left');
+            if (e.key === 'ArrowRight' && !locked) vote('right');
+            if (e.key === 'Enter' && locked && document.activeElement === document.body) next();
+        });
         function preloadNext() {
             // If the pool is empty, refill it now to identify the next image.
             // This shifts the shuffle timing slightly but preserves randomness.

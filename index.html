@@ -448,14 +448,25 @@
             if (e.key === 'Enter' && locked && document.activeElement === document.body) next();
         });
         function preloadNext() {
+            // OPTIMIZATION: Preload upcoming 3 images to prevent lag between rounds
+            const PRELOAD_COUNT = 3;
+
             // If the pool is empty, refill it now to identify the next image.
             // This shifts the shuffle timing slightly but preserves randomness.
             if (pool.length === 0) resetPool();
 
             if (pool.length > 0) {
-                const nextItem = pool[pool.length - 1];
-                const img = new Image();
-                img.src = getImg(nextItem);
+                // Preload up to PRELOAD_COUNT images from the end of the pool
+                for (let i = 1; i <= PRELOAD_COUNT; i++) {
+                    const idx = pool.length - i;
+                    if (idx >= 0) {
+                        const nextItem = pool[idx];
+                        const img = new Image();
+                        img.src = getImg(nextItem);
+                    } else {
+                        break;
+                    }
+                }
             }
         }
     </script>

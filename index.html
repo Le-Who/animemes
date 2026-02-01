@@ -156,6 +156,40 @@
             outline-offset: 2px;
         }
 
+        /* Keyboard Hints */
+        .key-hint {
+            position: absolute;
+            top: 20px;
+            width: 40px; height: 40px;
+            background: rgba(0,0,0,0.6);
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 8px;
+            color: #fff;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 1.2rem;
+            backdrop-filter: blur(4px);
+            z-index: 5;
+            pointer-events: none;
+            opacity: 0.8;
+            font-family: monospace;
+        }
+        #c1 .key-hint { left: 20px; }
+        #c2 .key-hint { right: 20px; }
+
+        .btn .key-hint {
+            position: static;
+            display: inline-block;
+            width: auto; height: auto;
+            background: transparent;
+            border: 1px solid currentColor;
+            border-radius: 4px;
+            padding: 0 6px;
+            margin-left: 8px;
+            font-size: 0.9em;
+            vertical-align: 1px;
+            backdrop-filter: none;
+        }
+
         @media(max-width: 768px) { 
             .game-area { flex-direction: column; } 
             .name { font-size: 1.8rem; } 
@@ -190,6 +224,7 @@
     <div class="game-area">
         <!-- Карточка 1 (Левая) -->
         <div class="card" id="c1" onclick="vote('left')" role="button" tabindex="0" onkeydown="handleCardKey(event, 'left')">
+            <div class="key-hint">←</div>
             <img src="" class="card-bg" id="img1">
             <div class="info">
                 <div class="name" id="name1">Loading...</div>
@@ -202,6 +237,7 @@
 
         <!-- Карточка 2 (Правая) -->
         <div class="card" id="c2" onclick="vote('right')" role="button" tabindex="0" onkeydown="handleCardKey(event, 'right')">
+            <div class="key-hint">→</div>
             <img src="" class="card-bg" id="img2">
             <div class="info">
                 <div class="name" id="name2">Loading...</div>
@@ -211,7 +247,7 @@
         </div>
     </div>
 
-    <button class="btn" id="nextBtn" onclick="next()">Дальше</button>
+    <button class="btn" id="nextBtn" onclick="next()">Дальше <span class="key-hint">↵</span></button>
 
     <script>
         let db = [], pool = [];

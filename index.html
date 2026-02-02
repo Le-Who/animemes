@@ -349,9 +349,17 @@
             return isNSFW ? item.counts.nsfw : item.counts.total;
         }
 
+        function safeUrl(url) {
+            if (typeof url !== 'string') return '';
+            if (!url.startsWith('https://') && !url.startsWith('http://')) return '';
+            return url.replace(/['"()]/g, (c) => '%' + c.charCodeAt(0).toString(16));
+        }
+
         function getImg(item) {
-            if (isNSFW && item.images.nsfw) return item.images.nsfw;
-            return item.images.sfw || item.images.nsfw;
+            let url;
+            if (isNSFW && item.images.nsfw) url = item.images.nsfw;
+            else url = item.images.sfw || item.images.nsfw;
+            return safeUrl(url);
         }
 
         function updateUI(revealed) {

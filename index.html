@@ -145,6 +145,21 @@
         }
         .btn.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
+        /* Status Icons */
+        .status-icon {
+            position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%, -50%) scale(0.5);
+            font-size: 8rem; font-weight: 900;
+            opacity: 0; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 4; text-shadow: 0 5px 20px rgba(0,0,0,0.5);
+            pointer-events: none;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        .card.win .status-icon { opacity: 1; transform: translate(-50%, -50%) scale(1); color: #4ade80; }
+        .card.lose .status-icon { opacity: 1; transform: translate(-50%, -50%) scale(1); color: #f87171; }
+        .card.win .status-icon::before { content: '✓'; }
+        .card.lose .status-icon::before { content: '✕'; }
+
         /* Accessibility Focus Styles */
         .card:focus-visible {
             outline: 4px solid #fff;
@@ -224,6 +239,7 @@
     <div class="game-area">
         <!-- Карточка 1 (Левая) -->
         <div class="card" id="c1" onclick="vote('left')" role="button" tabindex="0" onkeydown="handleCardKey(event, 'left')">
+            <div class="status-icon" aria-hidden="true"></div>
             <div class="key-hint">←</div>
             <img src="" class="card-bg" id="img1">
             <div class="info">
@@ -237,6 +253,7 @@
 
         <!-- Карточка 2 (Правая) -->
         <div class="card" id="c2" onclick="vote('right')" role="button" tabindex="0" onkeydown="handleCardKey(event, 'right')">
+            <div class="status-icon" aria-hidden="true"></div>
             <div class="key-hint">→</div>
             <img src="" class="card-bg" id="img2">
             <div class="info">

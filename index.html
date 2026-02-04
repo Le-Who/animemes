@@ -423,7 +423,8 @@
             const step = (timestamp) => {
                 if (!startTimestamp) startTimestamp = timestamp;
                 const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                obj.innerHTML = Math.floor(progress * (end - start) + start).toLocaleString();
+                // OPTIMIZATION: Use textContent for high-frequency updates to avoid HTML parsing overhead
+                obj.textContent = Math.floor(progress * (end - start) + start).toLocaleString();
                 if (progress < 1) {
                     currentAnimId = window.requestAnimationFrame(step);
                 } else {

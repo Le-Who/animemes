@@ -349,6 +349,21 @@
             return isNSFW ? item.counts.nsfw : item.counts.total;
         }
 
+        function safeUrl(url) {
+            if (!url || typeof url !== 'string') return '';
+            const u = url.trim().toLowerCase();
+            if (u.startsWith('javascript:') || u.startsWith('data:') || u.startsWith('vbscript:')) {
+                return '';
+            }
+            return url;
+        }
+
+        function safeCSSUrl(url) {
+            const s = safeUrl(url);
+            if (!s) return '';
+            return s.replace(/'/g, '%27').replace(/\(/g, '%28').replace(/\)/g, '%29');
+        }
+
         function getImg(item) {
             if (isNSFW && item.images.nsfw) return item.images.nsfw;
             return item.images.sfw || item.images.nsfw;
@@ -360,21 +375,21 @@
             els.fran1.innerText = leftItem.franchise;
             els.cnt1.innerText = getVal(leftItem).toLocaleString();
             
-            const url1 = getImg(leftItem);
+            const url1 = safeUrl(getImg(leftItem));
             els.img1.src = url1;
             els.img1.alt = `${leftItem.name} (${leftItem.franchise})`;
             els.c1.setAttribute('aria-label', `Vote for ${leftItem.name}`);
-            els.c1.style.setProperty('--bg-image', `url('${url1}')`);
+            els.c1.style.setProperty('--bg-image', `url('${safeCSSUrl(url1)}')`);
 
             // Правая
             els.name2.innerText = rightItem.name;
             els.fran2.innerText = rightItem.franchise;
             
-            const url2 = getImg(rightItem);
+            const url2 = safeUrl(getImg(rightItem));
             els.img2.src = url2;
             els.img2.alt = `${rightItem.name} (${rightItem.franchise})`;
             els.c2.setAttribute('aria-label', `Vote for ${rightItem.name}`);
-            els.c2.style.setProperty('--bg-image', `url('${url2}')`);
+            els.c2.style.setProperty('--bg-image', `url('${safeCSSUrl(url2)}')`);
             
             if (revealed) {
                 animateValue(els.cnt2, 0, getVal(rightItem), 600);
@@ -462,7 +477,7 @@
                     if (idx >= 0) {
                         const nextItem = pool[idx];
                         const img = new Image();
-                        img.src = getImg(nextItem);
+                        img.src = safeUrl(getImg(nextItem));
                     } else {
                         break;
                     }

@@ -293,6 +293,15 @@
         // Новая переменная для хранения ID анимации
         let currentAnimId = null;
 
+        /**
+         * Sanitize URL for use in CSS to prevent injection.
+         * Escapes single quotes and parentheses.
+         */
+        function safeCSSUrl(url) {
+            if (!url) return '';
+            return encodeURI(url).replace(/'/g, '%27').replace(/\(/g, '%28').replace(/\)/g, '%29');
+        }
+
         // Элементы
         const els = {
             c1: document.getElementById('c1'), c2: document.getElementById('c2'),
@@ -405,7 +414,7 @@
             els.img1.src = url1;
             els.img1.alt = `${leftItem.name} (${leftItem.franchise})`;
             els.c1.setAttribute('aria-label', `Vote for ${leftItem.name}`);
-            els.c1.style.setProperty('--bg-image', `url('${url1}')`);
+            els.c1.style.setProperty('--bg-image', `url('${safeCSSUrl(url1)}')`);
 
             // Правая
             els.name2.innerText = rightItem.name;
@@ -415,7 +424,7 @@
             els.img2.src = url2;
             els.img2.alt = `${rightItem.name} (${rightItem.franchise})`;
             els.c2.setAttribute('aria-label', `Vote for ${rightItem.name}`);
-            els.c2.style.setProperty('--bg-image', `url('${url2}')`);
+            els.c2.style.setProperty('--bg-image', `url('${safeCSSUrl(url2)}')`);
             
             if (revealed) {
                 animateValue(els.cnt2, 0, getVal(rightItem), 600);

@@ -314,8 +314,9 @@
         };
 
         // Старт
-        els.best.innerText = bestScore;
+        els.best.textContent = bestScore;
         
+        // OPTIMIZATION: Removed timestamp query param to enable browser caching
         fetch('characters.json')
             .then(r => r.json())
             .then(data => {
@@ -406,9 +407,10 @@
 
         function updateUI(revealed) {
             // Левая
-            els.name1.innerText = leftItem.name;
-            els.fran1.innerText = leftItem.franchise;
-            els.cnt1.innerText = getVal(leftItem).toLocaleString();
+            // OPTIMIZATION: Use textContent instead of innerHTML/innerText to prevent layout thrashing
+            els.name1.textContent = leftItem.name;
+            els.fran1.textContent = leftItem.franchise;
+            els.cnt1.textContent = getVal(leftItem).toLocaleString();
             
             const url1 = getImg(leftItem);
             els.img1.src = url1;
@@ -417,8 +419,8 @@
             els.c1.style.setProperty('--bg-image', `url('${safeCSSUrl(url1)}')`);
 
             // Правая
-            els.name2.innerText = rightItem.name;
-            els.fran2.innerText = rightItem.franchise;
+            els.name2.textContent = rightItem.name;
+            els.fran2.textContent = rightItem.franchise;
             
             const url2 = getImg(rightItem);
             els.img2.src = url2;
@@ -429,7 +431,7 @@
             if (revealed) {
                 animateValue(els.cnt2, 0, getVal(rightItem), 600);
             } else {
-                els.cnt2.innerText = "?";
+                els.cnt2.textContent = "?";
             }
         }
 
@@ -462,8 +464,8 @@
         }
 
         function updateScoreUI() {
-            els.score.innerText = score;
-            els.best.innerText = bestScore;
+            els.score.textContent = score;
+            els.best.textContent = bestScore;
         }
 
         function animateValue(obj, start, end, duration) {

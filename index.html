@@ -306,6 +306,25 @@
     <button class="btn" id="nextBtn" onclick="next()">Дальше <span class="key-hint">↵</span></button>
 
     <script>
+        // Security Sanitization
+        function safeUrl(url) {
+            if (typeof url !== 'string') return '';
+            // Block dangerous schemes
+            if (/^\s*(javascript|data|vbscript):/i.test(url)) {
+                return '';
+            }
+            // Allow everything else (including relative paths without leading slash)
+            return url;
+        }
+
+        function safeCSSUrl(url) {
+            const clean = safeUrl(url);
+            if (!clean) return 'none';
+            // Escape backslashes first, then single quotes
+            const escaped = clean.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+            return `url('${escaped}')`;
+        }
+
         let db = [], pool = [];
         let leftItem, rightItem;
         let isNSFW = false;
@@ -436,7 +455,7 @@
             els.cnt1.textContent = getVal(leftItem).toLocaleString();
             
             const url1 = getImg(leftItem);
-            els.img1.src = url1;
+            els.img1.src = safeUrl(url1);
             els.img1.alt = `${leftItem.name} (${leftItem.franchise})`;
             els.c1.setAttribute('aria-label', `Vote for ${leftItem.name}`);
             els.c1.style.setProperty('--bg-image', `url('${safeCSSUrl(url1)}')`);
@@ -446,7 +465,7 @@
             els.fran2.textContent = rightItem.franchise;
             
             const url2 = getImg(rightItem);
-            els.img2.src = url2;
+            els.img2.src = safeUrl(url2);
             els.img2.alt = `${rightItem.name} (${rightItem.franchise})`;
             els.c2.setAttribute('aria-label', `Vote for ${rightItem.name}`);
             els.c2.style.setProperty('--bg-image', `url('${safeCSSUrl(url2)}')`);
@@ -537,7 +556,7 @@
                     if (idx >= 0) {
                         const nextItem = pool[idx];
                         const img = new Image();
-                        img.src = getImg(nextItem);
+                        img.src = safeUrl(getImg(nextItem));
                     } else {
                         break;
                     }

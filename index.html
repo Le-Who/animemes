@@ -97,7 +97,7 @@
             /* Картинка видна полностью */
             object-fit: contain; 
             opacity: 1; 
-            transition: 0.5s; 
+            transition: opacity 0.5s ease, transform 0.5s ease;
             z-index: 1;
         }
         
@@ -238,6 +238,25 @@
             .info { position: relative; background: none; padding: 20px; }
             .card { justify-content: flex-end; }
         }
+
+        /* Error Message */
+        .error-msg {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            background: rgba(239, 68, 68, 0.9); color: white; padding: 20px 40px;
+            border-radius: 12px; font-weight: 700; text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5); z-index: 100;
+            display: none; backdrop-filter: blur(4px); border: 2px solid rgba(255,255,255,0.2);
+            width: 80%; max-width: 400px;
+        }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                transition-duration: 0.01s !important;
+                animation-duration: 0.01s !important;
+                scroll-behavior: auto !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -264,6 +283,7 @@
     </div>
 
     <div class="game-area">
+        <div id="errorMsg" class="error-msg" role="alert"></div>
         <!-- Карточка 1 (Левая) -->
         <div class="card" id="c1" onclick="vote('left')" role="button" tabindex="0" onkeydown="handleCardKey(event, 'left')">
             <div class="status-icon" aria-hidden="true"></div>
@@ -355,6 +375,10 @@
             btn: document.getElementById('nextBtn')
         };
 
+        // Smooth image loading handlers
+        els.img1.onload = () => els.img1.style.opacity = '1';
+        els.img2.onload = () => els.img2.style.opacity = '1';
+
         // Старт
         els.best.textContent = bestScore;
         
@@ -370,7 +394,14 @@
                 resetPool();
                 startFirstRound();
             })
-            .catch(e => console.error("Ошибка загрузки:", e));
+            .catch(e => {
+                console.error("Ошибка загрузки:", e);
+                const err = document.getElementById('errorMsg');
+                if (err) {
+                    err.style.display = 'block';
+                    err.innerHTML = `Failed to load game data.<br><span style="font-size:0.8em; font-weight:400; opacity:0.8">Please check your connection and refresh.</span>`;
+                }
+            });
 
         // Переключение режима
         document.getElementById('modeSwitch').addEventListener('change', (e) => {
@@ -454,21 +485,31 @@
             els.fran1.textContent = leftItem.franchise;
             els.cnt1.textContent = getVal(leftItem).toLocaleString();
             
-            const url1 = getImg(leftItem);
-            els.img1.src = safeUrl(url1);
+            const rawUrl1 = getImg(leftItem);
+            const url1 = safeUrl(rawUrl1);
+            if (els.img1.dataset.src !== url1) {
+                els.img1.style.opacity = '0';
+                els.img1.src = url1;
+                els.img1.dataset.src = url1;
+                els.c1.style.setProperty('--bg-image', `url('${safeCSSUrl(rawUrl1)}')`);
+            }
             els.img1.alt = `${leftItem.name} (${leftItem.franchise})`;
             els.c1.setAttribute('aria-label', `Vote for ${leftItem.name}`);
-            els.c1.style.setProperty('--bg-image', `url('${safeCSSUrl(url1)}')`);
 
             // Правая
             els.name2.textContent = rightItem.name;
             els.fran2.textContent = rightItem.franchise;
             
-            const url2 = getImg(rightItem);
-            els.img2.src = safeUrl(url2);
+            const rawUrl2 = getImg(rightItem);
+            const url2 = safeUrl(rawUrl2);
+            if (els.img2.dataset.src !== url2) {
+                els.img2.style.opacity = '0';
+                els.img2.src = url2;
+                els.img2.dataset.src = url2;
+                els.c2.style.setProperty('--bg-image', `url('${safeCSSUrl(rawUrl2)}')`);
+            }
             els.img2.alt = `${rightItem.name} (${rightItem.franchise})`;
             els.c2.setAttribute('aria-label', `Vote for ${rightItem.name}`);
-            els.c2.style.setProperty('--bg-image', `url('${safeCSSUrl(url2)}')`);
             
             if (revealed) {
                 animateValue(els.cnt2, 0, getVal(rightItem), 600);

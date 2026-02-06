@@ -306,25 +306,6 @@
     <button class="btn" id="nextBtn" onclick="next()">Дальше <span class="key-hint">↵</span></button>
 
     <script>
-        // Security Sanitization
-        function safeUrl(url) {
-            if (typeof url !== 'string') return '';
-            // Block dangerous schemes
-            if (/^\s*(javascript|data|vbscript):/i.test(url)) {
-                return '';
-            }
-            // Allow everything else (including relative paths without leading slash)
-            return url;
-        }
-
-        function safeCSSUrl(url) {
-            const clean = safeUrl(url);
-            if (!clean) return 'none';
-            // Escape backslashes first, then single quotes
-            const escaped = clean.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
-            return `url('${escaped}')`;
-        }
-
         let db = [], pool = [];
         let leftItem, rightItem;
         let isNSFW = false;
@@ -380,8 +361,23 @@
             startFirstRound();
         });
 
+        /**
+         * Fisher-Yates Shuffle for O(n) unbiased shuffling.
+         * Replaces O(n log n) sort-based shuffle.
+         */
+        function shuffle(array) {
+            let m = array.length, t, i;
+            while (m) {
+                i = Math.floor(Math.random() * m--);
+                t = array[m];
+                array[m] = array[i];
+                array[i] = t;
+            }
+            return array;
+        }
+
         function resetPool() {
-            pool = [...db].sort(() => Math.random() - 0.5);
+            pool = shuffle([...db]);
         }
 
         function getNext() {

@@ -129,6 +129,17 @@
             content: ''; position: absolute; inset: 0; background: var(--lose); opacity: 0.3; z-index: 3;
         }
 
+        /* Status Icons */
+        .status-icon {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.5);
+            width: 80px; height: 80px; z-index: 4; opacity: 0; transition: 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3); pointer-events: none;
+        }
+        .status-icon svg { width: 48px; height: 48px; stroke-width: 3; }
+        .card.win .status-icon-win { opacity: 1; transform: translate(-50%, -50%) scale(1); color: var(--win); }
+        .card.lose .status-icon-lose { opacity: 1; transform: translate(-50%, -50%) scale(1); color: var(--lose); }
+
         /* VS CIRCLE */
         .vs {
             position: absolute; top: 50%; left: 50%;
@@ -257,6 +268,12 @@
         <div class="card" id="c1" onclick="vote('left')" role="button" tabindex="0" onkeydown="handleCardKey(event, 'left')">
             <div class="status-icon" aria-hidden="true"></div>
             <div class="key-hint">←</div>
+            <div class="status-icon status-icon-win" aria-hidden="true">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+            </div>
+            <div class="status-icon status-icon-lose" aria-hidden="true">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+            </div>
             <img src="" class="card-bg" id="img1">
             <div class="info">
                 <div class="name" id="name1">Loading...</div>
@@ -271,6 +288,12 @@
         <div class="card" id="c2" onclick="vote('right')" role="button" tabindex="0" onkeydown="handleCardKey(event, 'right')">
             <div class="status-icon" aria-hidden="true"></div>
             <div class="key-hint">→</div>
+            <div class="status-icon status-icon-win" aria-hidden="true">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+            </div>
+            <div class="status-icon status-icon-lose" aria-hidden="true">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+            </div>
             <img src="" class="card-bg" id="img2">
             <div class="info">
                 <div class="name" id="name2">Loading...</div>

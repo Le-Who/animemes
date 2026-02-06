@@ -42,7 +42,18 @@
         input:checked + .switch-bg { background: var(--nsfw); }
         input:checked + .switch-bg .switch-dot { transform: translateX(20px); }
         .switch-label { font-size: 0.9rem; font-weight: 700; }
-        input { display: none; }
+
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
 
         /* SCORES */
         .scores { display: flex; gap: 20px; font-weight: 700; font-size: 1rem; }
@@ -204,7 +215,7 @@
         <div class="logo">Звенящая пошлость</div>
         
         <label class="switch-wrap">
-            <input type="checkbox" id="modeSwitch">
+            <input type="checkbox" id="modeSwitch" class="visually-hidden">
             <div class="switch-bg"><div class="switch-dot"></div></div>
             <span class="switch-label">NSFW (18+)</span>
         </label>

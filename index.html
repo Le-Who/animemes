@@ -7,6 +7,9 @@
     <meta name="referrer" content="no-referrer">
     <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://*.gelbooru.com; connect-src 'self'; base-uri 'self'; form-action 'self';">
     <title>Кто хочет стать Дуней</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://img2.gelbooru.com">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -287,7 +290,7 @@
         // Старт
         els.best.innerText = bestScore;
         
-        fetch('characters.json?t='+Date.now())
+        fetch('characters.json')
             .then(r => r.json())
             .then(data => {
                 db = data;
@@ -436,7 +439,7 @@
             const step = (timestamp) => {
                 if (!startTimestamp) startTimestamp = timestamp;
                 const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                obj.innerHTML = Math.floor(progress * (end - start) + start).toLocaleString();
+                obj.textContent = Math.floor(progress * (end - start) + start).toLocaleString();
                 if (progress < 1) {
                     currentAnimId = window.requestAnimationFrame(step);
                 } else {

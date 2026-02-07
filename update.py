@@ -24,10 +24,14 @@ def get_data(tag):
         }
         
         # 1. Запрос списка постов (сортировка по score для качества)
-        url = f"{API_URL}&tags={tag} sort:score:desc&limit=20"
+        # Использование params предотвращает parameter injection и обеспечивает корректное кодирование URL
+        params = {
+            'tags': f"{tag} sort:score:desc",
+            'limit': 20
+        }
         print(f"Fetching: {tag}...")
         
-        response = requests.get(url, headers=headers, timeout=15)
+        response = requests.get(API_URL, params=params, headers=headers, timeout=15)
         
         if response.status_code == 403:
             print(f"⚠️ 403 Forbidden for {tag}. IP blocked?")
@@ -60,6 +64,11 @@ def get_data(tag):
             
         random_post = random.choice(valid_posts)
         image_url = random_post['file_url']
+
+        # Security check: Ensure URL scheme is safe (prevent javascript: etc.)
+        if not image_url.startswith(('http://', 'https://')):
+            print(f"⚠️ Invalid URL scheme for {tag}: {image_url}")
+            return None, None
         
         # Пытаемся получить count из атрибутов, если есть, иначе считаем сами
         # В этом API count часто лежит в корне: data['@attributes']['count']

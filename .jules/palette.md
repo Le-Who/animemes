@@ -19,3 +19,7 @@ This journal tracks critical UX and accessibility learnings from the project.
 ## 2026-02-06 - Perceived Performance & Image Loading
 **Learning:** Abrupt image rendering can feel jarring and "unfinished." Initializing images with `opacity: 0` and transitioning to `1` upon the `load` event creates a significantly more polished experience with negligible performance cost.
 **Action:** Use CSS opacity transitions for heavy media elements to smooth out loading states.
+
+## 2026-05-22 - Live Regions for Game Feedback
+**Learning:** In dynamic games, screen reader users often miss the result of their actions (Win/Lose) if it's purely visual. Implementing a visually hidden `aria-live` region provides immediate, comparable feedback to what sighted users receive via animations.
+**Action:** Always couple significant visual state changes (like game results) with an update to a live region.

@@ -46,7 +46,7 @@
         input:checked + .switch-bg .switch-dot { transform: translateX(20px); }
         .switch-label { font-size: 0.9rem; font-weight: 700; }
 
-        .switch-wrap input {
+        .switch-wrap input, .visually-hidden {
             position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
             overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
             opacity: 0;
@@ -325,6 +325,8 @@
 
     <button class="btn" id="nextBtn" onclick="next()">Дальше <span class="key-hint">↵</span></button>
 
+    <div id="game-status" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+
     <script>
         // Security Sanitization
 
@@ -537,6 +539,13 @@
 
             updateUI(true); // Запускает анимацию
 
+            // Game Status Announcement for Screen Readers
+            if (isWin) {
+                announce(`Correct! ${rightItem.name} has ${v2.toLocaleString()} searches. Score: ${score + 1}`);
+            } else {
+                announce(`Wrong! ${rightItem.name} has ${v2.toLocaleString()} searches. Game Over. Best Score: ${bestScore}`);
+            }
+
             if (isWin) {
                 score++;
                 if (score > bestScore) {
@@ -553,6 +562,11 @@
             
             updateScoreUI();
             els.btn.classList.add('show');
+        }
+
+        function announce(text) {
+            const el = document.getElementById('game-status');
+            if (el) el.textContent = text;
         }
 
         function updateScoreUI() {

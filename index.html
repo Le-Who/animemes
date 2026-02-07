@@ -306,6 +306,34 @@
     <button class="btn" id="nextBtn" onclick="next()">Дальше <span class="key-hint">↵</span></button>
 
     <script>
+        // Security Sanitization
+
+        /**
+         * Strict URL sanitizer for HTML attributes (src, etc).
+         * Enforces https/http whitelist and percent-encodes quotes.
+         */
+        function safeUrl(url) {
+            if (typeof url !== 'string') return '';
+            if (!url.startsWith('https://') && !url.startsWith('http://')) return '';
+            // encodeURI handles spaces and double quotes (%22).
+            // Manually escape single quotes (%27) for attribute safety.
+            return encodeURI(url).replace(/'/g, '%27');
+        }
+
+        /**
+         * Strict URL sanitizer for CSS values (url(...)).
+         * Prevents injection via quotes or parentheses.
+         */
+        function safeCSSUrl(url) {
+            if (typeof url !== 'string') return '';
+            if (!url.startsWith('https://') && !url.startsWith('http://')) return '';
+            // For CSS url(), we must escape single quotes and parentheses
+            return encodeURI(url)
+                .replace(/'/g, '%27')
+                .replace(/\(/g, '%28')
+                .replace(/\)/g, '%29');
+        }
+
         let db = [], pool = [];
         let leftItem, rightItem;
         let isNSFW = false;
@@ -315,15 +343,6 @@
         
         // Новая переменная для хранения ID анимации
         let currentAnimId = null;
-
-        /**
-         * Sanitize URL for use in CSS to prevent injection.
-         * Escapes single quotes and parentheses.
-         */
-        function safeCSSUrl(url) {
-            if (!url) return '';
-            return encodeURI(url).replace(/'/g, '%27').replace(/\(/g, '%28').replace(/\)/g, '%29');
-        }
 
         // Элементы
         const els = {
@@ -430,17 +449,11 @@
             return isNSFW ? item.counts.nsfw : item.counts.total;
         }
 
-        function safeUrl(url) {
-            if (typeof url !== 'string') return '';
-            if (!url.startsWith('https://') && !url.startsWith('http://')) return '';
-            return url.replace(/['"()]/g, (c) => '%' + c.charCodeAt(0).toString(16));
-        }
-
         function getImg(item) {
             let url;
             if (isNSFW && item.images.nsfw) url = item.images.nsfw;
             else url = item.images.sfw || item.images.nsfw;
-            return safeUrl(url);
+            return url;
         }
 
         function updateUI(revealed) {

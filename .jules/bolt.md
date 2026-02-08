@@ -7,6 +7,11 @@
 ## 2024-10-24 - [DOM Performance: innerText vs textContent]
 **Learning:** `innerText` triggers a forced reflow (synchronous layout) to calculate visibility, which causes measurable frame drops in high-frequency animation loops. `innerHTML` adds parsing overhead. `textContent` avoids both.
 **Action:** Use `textContent` by default for all text updates, especially in `requestAnimationFrame` loops, unless visibility awareness is strictly required.
+
 ## 2024-05-23 - [Caching Strategy: Static Data]
 **Learning:** Aggressive cache-busting (e.g., timestamp query params) on static data files forces unnecessary redownloads on every page load, hurting repeat visit performance.
 **Action:** Relies on standard HTTP caching (ETag/Last-Modified) for static assets unless instant updates are critical for development.
+
+## 2025-05-02 - [Formatting: Intl.NumberFormat in Loops]
+**Learning:** `Number.prototype.toLocaleString()` is expensive when called repeatedly (e.g., inside `requestAnimationFrame`) because it may perform locale resolution and instantiation on every call.
+**Action:** Instantiate `Intl.NumberFormat` once outside the loop and reuse its `.format()` method for significant performance gains in animation hot paths.

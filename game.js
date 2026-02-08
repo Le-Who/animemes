@@ -5,11 +5,14 @@
  * Enforces https/http whitelist and percent-encodes quotes.
  */
 function safeUrl(url) {
-    if (typeof url !== 'string') return '';
-    if (!url.startsWith('https://') && !url.startsWith('http://')) return '';
-    // encodeURI handles spaces and double quotes (%22).
-    // Manually escape single quotes (%27) for attribute safety.
-    return encodeURI(url).replace(/'/g, '%27');
+    try {
+        const u = new URL(url);
+        if (u.protocol !== 'http:' && u.protocol !== 'https:') return '';
+        // u.href is already percent-encoded/normalized by the URL constructor
+        return u.href.replace(/'/g, '%27');
+    } catch {
+        return '';
+    }
 }
 
 /**
@@ -17,13 +20,17 @@ function safeUrl(url) {
  * Prevents injection via quotes or parentheses.
  */
 function safeCSSUrl(url) {
-    if (typeof url !== 'string') return '';
-    if (!url.startsWith('https://') && !url.startsWith('http://')) return '';
-    // For CSS url(), we must escape single quotes and parentheses
-    return encodeURI(url)
-        .replace(/'/g, '%27')
-        .replace(/\(/g, '%28')
-        .replace(/\)/g, '%29');
+    try {
+        const u = new URL(url);
+        if (u.protocol !== 'http:' && u.protocol !== 'https:') return '';
+        // For CSS url(), we must escape single quotes and parentheses
+        return u.href
+            .replace(/'/g, '%27')
+            .replace(/\(/g, '%28')
+            .replace(/\)/g, '%29');
+    } catch {
+        return '';
+    }
 }
 
 let db = [], pool = [];

@@ -10,3 +10,8 @@
 **Vulnerability:** `index.html` contained multiple definitions of critical sanitizer functions (`safeUrl`, `safeCSSUrl`), where later definitions silently overwrote earlier ones. This created ambiguity about which security policy was active (blacklist vs whitelist) and led to double-sanitization bugs.
 **Learning:** In single-file applications without modules, hoisting and global scope pollution make it easy to accidentally shadow functions.
 **Prevention:** Centralize all security functions at the top of the script. Adopt a "sanitize at sink" pattern: helper functions should return raw data, and sanitizers should be applied only at the point of DOM insertion to avoid double-encoding issues.
+
+## 2026-10-28 - Inconsistent URL Parsing
+**Vulnerability:** String-based checks (`startsWith`) were inconsistent with how browsers parse URLs, potentially allowing bypasses via whitespace or weird casing, and `encodeURI` caused double-encoding bugs with pre-encoded inputs.
+**Learning:** `new URL()` provides robust parsing, normalization, and protocol enforcement out-of-the-box. It automatically handles edge cases like backslashes and whitespace that regex might miss.
+**Prevention:** Prefer `new URL(url).href` over `encodeURI(url)` for sanitization. Always pair it with context-specific escaping (e.g. `replace(/'/g, '%27')`) since `URL` does not escape characters that are safe in URLs but dangerous in HTML attributes or CSS strings.

@@ -115,6 +115,12 @@ function getImg(item) {
     return url;
 }
 
+function announce(text) {
+    if (els.status) {
+        els.status.textContent = text;
+    }
+}
+
 function updateUI(revealed) {
     // Левая
     // OPTIMIZATION: Use textContent instead of innerHTML/innerText to prevent layout thrashing
@@ -166,6 +172,7 @@ function vote(side) {
     updateUI(true); // Запускает анимацию
 
     if (isWin) {
+        announce(`Correct! ${rightItem.name} has ${v2.toLocaleString()} images.`);
         score++;
         if (score > bestScore) {
             bestScore = score;
@@ -174,6 +181,7 @@ function vote(side) {
         if (side === 'left') els.c1.classList.add('win');
         else els.c2.classList.add('win');
     } else {
+        announce(`Wrong! ${rightItem.name} has ${v2.toLocaleString()} images.`);
         score = 0;
         if (side === 'left') { els.c1.classList.add('lose'); els.c2.classList.add('win'); }
         else { els.c2.classList.add('lose'); els.c1.classList.add('win'); }
@@ -247,7 +255,8 @@ document.addEventListener('DOMContentLoaded', () => {
         fran1: document.getElementById('fran1'), fran2: document.getElementById('fran2'),
         cnt1: document.getElementById('count1'), cnt2: document.getElementById('count2'),
         score: document.getElementById('score'), best: document.getElementById('best'),
-        btn: document.getElementById('nextBtn')
+        btn: document.getElementById('nextBtn'),
+        status: document.getElementById('game-status')
     };
 
     // Event Listeners for Cards

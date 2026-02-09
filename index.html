@@ -18,6 +18,10 @@
             --win: #22c55e; --lose: #ef4444; --nsfw: #f43f5e;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
+        .visually-hidden {
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+            overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+        }
         body {
             font-family: 'Outfit', sans-serif; background: var(--bg);
             color: var(--text); height: 100vh; overflow: hidden;
@@ -284,6 +288,7 @@
     </div>
 
     <div class="game-area">
+        <div id="game-status" class="visually-hidden" aria-live="polite"></div>
         <div id="errorMsg" class="error-msg" role="alert"></div>
         <!-- Карточка 1 (Левая) -->
         <div class="card" id="c1" role="button" tabindex="0">

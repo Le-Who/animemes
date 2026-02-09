@@ -63,6 +63,12 @@ function getNext() {
     return pool.pop();
 }
 
+function announce(text) {
+    if (els.status) {
+        els.status.textContent = text;
+    }
+}
+
 // Функция для остановки текущей анимации
 function stopAnimation() {
     if (currentAnimId) {
@@ -179,6 +185,8 @@ function vote(side) {
         else { els.c2.classList.add('lose'); els.c1.classList.add('win'); }
     }
 
+    announce((isWin ? "Correct!" : "Wrong!") + ` ${rightItem.name} has ${v2.toLocaleString()} images.`);
+
     updateScoreUI();
     els.btn.classList.add('show');
 }
@@ -247,7 +255,8 @@ document.addEventListener('DOMContentLoaded', () => {
         fran1: document.getElementById('fran1'), fran2: document.getElementById('fran2'),
         cnt1: document.getElementById('count1'), cnt2: document.getElementById('count2'),
         score: document.getElementById('score'), best: document.getElementById('best'),
-        btn: document.getElementById('nextBtn')
+        btn: document.getElementById('nextBtn'),
+        status: document.getElementById('game-status')
     };
 
     // Event Listeners for Cards

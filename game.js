@@ -39,6 +39,12 @@ let currentAnimId = null;
 // Элементы (will be populated on DOMContentLoaded)
 let els = {};
 
+function announce(message) {
+    if (els.liveAnnouncer) {
+        els.liveAnnouncer.textContent = message;
+    }
+}
+
 /**
  * Fisher-Yates Shuffle for O(n) unbiased shuffling.
  * Replaces O(n log n) sort-based shuffle.
@@ -84,6 +90,7 @@ function startFirstRound() {
     els.btn.classList.remove('show');
 
     preloadNext();
+    announce(`Игра началась: ${leftItem.name} против ${rightItem.name}`);
 }
 
 function next() {
@@ -102,6 +109,7 @@ function next() {
     els.c2.classList.remove('win', 'lose');
 
     preloadNext();
+    announce(`Следующий раунд: ${leftItem.name} против ${rightItem.name}`);
 }
 
 function getVal(item) {
@@ -173,10 +181,12 @@ function vote(side) {
         }
         if (side === 'left') els.c1.classList.add('win');
         else els.c2.classList.add('win');
+        announce(`Верно! У ${rightItem.name} — ${getVal(rightItem).toLocaleString()}. Счет: ${score}`);
     } else {
         score = 0;
         if (side === 'left') { els.c1.classList.add('lose'); els.c2.classList.add('win'); }
         else { els.c2.classList.add('lose'); els.c1.classList.add('win'); }
+        announce(`Неверно! У ${rightItem.name} — ${getVal(rightItem).toLocaleString()}. Игра окончена.`);
     }
 
     updateScoreUI();
@@ -247,7 +257,8 @@ document.addEventListener('DOMContentLoaded', () => {
         fran1: document.getElementById('fran1'), fran2: document.getElementById('fran2'),
         cnt1: document.getElementById('count1'), cnt2: document.getElementById('count2'),
         score: document.getElementById('score'), best: document.getElementById('best'),
-        btn: document.getElementById('nextBtn')
+        btn: document.getElementById('nextBtn'),
+        liveAnnouncer: document.getElementById('live-announcer')
     };
 
     // Event Listeners for Cards

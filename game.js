@@ -83,6 +83,7 @@ function startFirstRound() {
     els.c2.classList.remove('win', 'lose');
     els.btn.classList.remove('show');
 
+    announce(`Раунд начался. ${leftItem.name} из ${leftItem.franchise} против ${rightItem.name} из ${rightItem.franchise}.`);
     preloadNext();
 }
 
@@ -94,6 +95,7 @@ function next() {
     rightItem = getNext();
 
     updateUI(false); // Здесь поставится "?"
+    announce(`Новый раунд. ${leftItem.name} из ${leftItem.franchise} против ${rightItem.name} из ${rightItem.franchise}.`);
 
     // Сброс
     els.btn.classList.remove('show');
@@ -113,6 +115,12 @@ function getImg(item) {
     if (isNSFW && item.images.nsfw) url = item.images.nsfw;
     else url = item.images.sfw || item.images.nsfw;
     return url;
+}
+
+function announce(text) {
+    if (els.liveAnnouncer) {
+        els.liveAnnouncer.textContent = text;
+    }
 }
 
 function updateUI(revealed) {
@@ -165,7 +173,9 @@ function vote(side) {
 
     updateUI(true); // Запускает анимацию
 
+    const rightValStr = getVal(rightItem).toLocaleString();
     if (isWin) {
+        announce(`Верно! У ${rightItem.name} — ${rightValStr}.`);
         score++;
         if (score > bestScore) {
             bestScore = score;
@@ -174,6 +184,7 @@ function vote(side) {
         if (side === 'left') els.c1.classList.add('win');
         else els.c2.classList.add('win');
     } else {
+        announce(`Ошибка! У ${rightItem.name} — ${rightValStr}.`);
         score = 0;
         if (side === 'left') { els.c1.classList.add('lose'); els.c2.classList.add('win'); }
         else { els.c2.classList.add('lose'); els.c1.classList.add('win'); }
@@ -247,7 +258,8 @@ document.addEventListener('DOMContentLoaded', () => {
         fran1: document.getElementById('fran1'), fran2: document.getElementById('fran2'),
         cnt1: document.getElementById('count1'), cnt2: document.getElementById('count2'),
         score: document.getElementById('score'), best: document.getElementById('best'),
-        btn: document.getElementById('nextBtn')
+        btn: document.getElementById('nextBtn'),
+        liveAnnouncer: document.getElementById('live-announcer')
     };
 
     // Event Listeners for Cards

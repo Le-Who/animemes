@@ -10,3 +10,7 @@
 **Vulnerability:** `index.html` contained multiple definitions of critical sanitizer functions (`safeUrl`, `safeCSSUrl`), where later definitions silently overwrote earlier ones. This created ambiguity about which security policy was active (blacklist vs whitelist) and led to double-sanitization bugs.
 **Learning:** In single-file applications without modules, hoisting and global scope pollution make it easy to accidentally shadow functions.
 **Prevention:** Centralize all security functions at the top of the script. Adopt a "sanitize at sink" pattern: helper functions should return raw data, and sanitizers should be applied only at the point of DOM insertion to avoid double-encoding issues.
+## 2026-10-27 - Privacy Leak via External Fonts
+**Vulnerability:** External dependencies on `fonts.googleapis.com` and `fonts.gstatic.com` leaked user IP addresses to Google and required permissive Content Security Policy directives (`style-src` and `font-src`).
+**Learning:** External resources, even benign ones like fonts, create implicit privacy leaks and expand the attack surface. This necessitates broader CSP allowances, weakening defense-in-depth.
+**Prevention:** Eliminate external font dependencies by using the modern system font stack (`system-ui`, `-apple-system`). This allows stricter CSP (e.g., removing external domains entirely) and improves privacy.

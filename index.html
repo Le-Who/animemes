@@ -5,12 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- ВАЖНО: Разрешает загрузку картинок с других сайтов -->
     <meta name="referrer" content="no-referrer">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://*.gelbooru.com; connect-src 'self'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https://*.gelbooru.com; connect-src 'self'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests;">
     <title>Кто хочет стать Дуней</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://img2.gelbooru.com">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
     <script src="game.js" defer></script>
     <style>
         :root {
@@ -19,7 +16,7 @@
         }
         * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
         body {
-            font-family: 'Outfit', sans-serif; background: var(--bg);
+            font-family: system-ui, -apple-system, sans-serif; background: var(--bg);
             color: var(--text); height: 100vh; overflow: hidden;
             display: flex; flex-direction: column;
         }

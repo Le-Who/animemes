@@ -173,10 +173,12 @@ function vote(side) {
         }
         if (side === 'left') els.c1.classList.add('win');
         else els.c2.classList.add('win');
+        announce(`Верно! ${rightItem.name} имеет ${v2.toLocaleString()} картинок. Ваш счет: ${score}.`);
     } else {
         score = 0;
         if (side === 'left') { els.c1.classList.add('lose'); els.c2.classList.add('win'); }
         else { els.c2.classList.add('lose'); els.c1.classList.add('win'); }
+        announce(`Неверно! ${rightItem.name} имеет ${v2.toLocaleString()} картинок. Игра окончена.`);
     }
 
     updateScoreUI();
@@ -186,6 +188,12 @@ function vote(side) {
 function updateScoreUI() {
     els.score.textContent = score;
     els.best.textContent = bestScore;
+}
+
+function announce(text) {
+    if (els.liveAnnouncer) {
+        els.liveAnnouncer.textContent = text;
+    }
 }
 
 function animateValue(obj, start, end, duration) {
@@ -247,7 +255,8 @@ document.addEventListener('DOMContentLoaded', () => {
         fran1: document.getElementById('fran1'), fran2: document.getElementById('fran2'),
         cnt1: document.getElementById('count1'), cnt2: document.getElementById('count2'),
         score: document.getElementById('score'), best: document.getElementById('best'),
-        btn: document.getElementById('nextBtn')
+        btn: document.getElementById('nextBtn'),
+        liveAnnouncer: document.getElementById('live-announcer')
     };
 
     // Event Listeners for Cards

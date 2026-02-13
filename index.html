@@ -47,6 +47,7 @@
         input:checked + .switch-bg .switch-dot { transform: translateX(20px); }
         .switch-label { font-size: 0.9rem; font-weight: 700; }
 
+        .visually-hidden,
         .switch-wrap input {
             position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
             overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
@@ -326,5 +327,6 @@
 
     <button class="btn" id="nextBtn">Дальше <span class="key-hint">↵</span></button>
 
+    <div id="live-announcer" class="visually-hidden" aria-live="polite"></div>
 </body>
 </html>

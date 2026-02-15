@@ -17,6 +17,10 @@
             --bg: #0f172a; --card: #1e293b; --text: #f8fafc;
             --win: #22c55e; --lose: #ef4444; --nsfw: #f43f5e;
         }
+        .visually-hidden {
+            position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+            overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+        }
         * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
         body {
             font-family: 'Outfit', sans-serif; background: var(--bg);
@@ -326,5 +330,6 @@
 
     <button class="btn" id="nextBtn">Дальше <span class="key-hint">↵</span></button>
 
+    <div id="live-announcer" class="visually-hidden" aria-live="polite"></div>
 </body>
 </html>

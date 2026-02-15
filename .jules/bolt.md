@@ -10,3 +10,7 @@
 ## 2024-05-23 - [Caching Strategy: Static Data]
 **Learning:** Aggressive cache-busting (e.g., timestamp query params) on static data files forces unnecessary redownloads on every page load, hurting repeat visit performance.
 **Action:** Relies on standard HTTP caching (ETag/Last-Modified) for static assets unless instant updates are critical for development.
+
+## 2024-10-25 - [Animation Performance: Garbage Collection & Layout Thrashing]
+**Learning:** Instantiating `Intl.NumberFormat` on every frame inside `requestAnimationFrame` creates unnecessary garbage. Additionally, updating `textContent` with the same value triggers redundant layout calculations.
+**Action:** Lift `Intl` instances to module scope and only update DOM if the rounded value has changed.

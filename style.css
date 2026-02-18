@@ -1,0 +1,245 @@
+:root {
+    --bg: #0f172a; --card: #1e293b; --text: #f8fafc;
+    --win: #22c55e; --lose: #ef4444; --nsfw: #f43f5e;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
+body {
+    font-family: 'Outfit', sans-serif; background: var(--bg);
+    color: var(--text); height: 100vh; overflow: hidden;
+    display: flex; flex-direction: column;
+}
+
+/* HEADER */
+.header {
+    padding: 15px 30px; display: flex; justify-content: space-between;
+    align-items: center; z-index: 10; background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+}
+.logo { font-weight: 900; font-size: 1.4rem; letter-spacing: -1px; }
+
+/* SWITCH */
+.switch-wrap { display: flex; align-items: center; gap: 10px; cursor: pointer; }
+.switch-bg {
+    width: 44px; height: 24px; background: #475569;
+    border-radius: 20px; position: relative; transition: 0.3s;
+}
+.switch-dot {
+    width: 18px; height: 18px; background: #fff;
+    border-radius: 50%; position: absolute; top: 3px; left: 3px;
+    transition: 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+input:checked + .switch-bg { background: var(--nsfw); }
+input:checked + .switch-bg .switch-dot { transform: translateX(20px); }
+.switch-label { font-size: 0.9rem; font-weight: 700; }
+
+.switch-wrap input {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    opacity: 0;
+}
+
+/* SCORES */
+.scores { display: flex; gap: 20px; font-weight: 700; font-size: 1rem; }
+.score-box { display: flex; flex-direction: column; align-items: flex-end; }
+.score-val { font-size: 1.2rem; line-height: 1; }
+.score-label { font-size: 0.7rem; opacity: 0.6; text-transform: uppercase; }
+.best-val { color: #fbbf24; }
+
+/* GAME AREA */
+.game-area { flex: 1; display: flex; position: relative; }
+
+.card {
+    flex: 1;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Центрируем контент (текст) */
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    background: #000; /* Черный фон под картинкой */
+}
+
+/* Размытый фон для заполнения пустот */
+.card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    filter: blur(30px) brightness(0.4);
+    z-index: 0;
+    transition: background-image 0.5s ease;
+}
+
+.card-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    /* Картинка видна полностью */
+    object-fit: contain;
+    opacity: 1;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 1;
+}
+
+.card:hover .card-bg {
+    transform: scale(1.02);
+}
+
+.info {
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+    pointer-events: none;
+}
+
+.name { font-size: 2.5rem; font-weight: 900; line-height: 1.1; margin-bottom: 5px; }
+.fran { font-size: 1rem; opacity: 0.9; text-transform: uppercase; letter-spacing: 2px; color: #cbd5e1; }
+.count { font-size: 4rem; font-weight: 800; margin-top: 15px; color: #fff; }
+
+/* Результаты */
+.card.win::after {
+    content: ''; position: absolute; inset: 0; background: var(--win); opacity: 0.3; z-index: 3;
+}
+.card.lose::after {
+    content: ''; position: absolute; inset: 0; background: var(--lose); opacity: 0.3; z-index: 3;
+}
+
+/* Status Icons */
+.status-icon {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.5);
+    width: 80px; height: 80px; z-index: 4; opacity: 0; transition: 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3); pointer-events: none;
+}
+.status-icon svg { width: 48px; height: 48px; stroke-width: 3; }
+.card.win .status-icon-win { opacity: 1; transform: translate(-50%, -50%) scale(1); color: var(--win); }
+.card.lose .status-icon-lose { opacity: 1; transform: translate(-50%, -50%) scale(1); color: var(--lose); }
+
+/* VS CIRCLE */
+.vs {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px; height: 50px;
+    background: #fff; color: #000;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 900; z-index: 20;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* BUTTON */
+.btn {
+    position: absolute; bottom: 40px; left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: #fff; color: #000;
+    padding: 15px 40px; border-radius: 40px;
+    font-weight: 800; border: none; cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s, transform 0.4s, visibility 0.4s;
+    z-index: 30;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+.btn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+    transition: opacity 0.4s, transform 0.4s, visibility 0s;
+}
+
+/* Status Icons */
+.status-icon {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+    font-size: 8rem; font-weight: 900;
+    opacity: 0; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 4; text-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    pointer-events: none;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+.card.win .status-icon { opacity: 1; transform: translate(-50%, -50%) scale(1); color: #4ade80; }
+.card.lose .status-icon { opacity: 1; transform: translate(-50%, -50%) scale(1); color: #f87171; }
+.card.win .status-icon::before { content: '✓'; }
+.card.lose .status-icon::before { content: '✕'; }
+
+/* Accessibility Focus Styles */
+.card:focus-visible {
+    outline: 4px solid #fff;
+    outline-offset: -4px;
+    z-index: 10;
+}
+.switch-wrap input:focus-visible + .switch-bg {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+/* Keyboard Hints */
+.key-hint {
+    position: absolute;
+    top: 20px;
+    width: 40px; height: 40px;
+    background: rgba(0,0,0,0.6);
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 8px;
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 1.2rem;
+    backdrop-filter: blur(4px);
+    z-index: 5;
+    pointer-events: none;
+    opacity: 0.8;
+    font-family: monospace;
+}
+#c1 .key-hint { left: 20px; }
+#c2 .key-hint { right: 20px; }
+
+.btn .key-hint {
+    position: static;
+    display: inline-block;
+    width: auto; height: auto;
+    background: transparent;
+    border: 1px solid currentColor;
+    border-radius: 4px;
+    padding: 0 6px;
+    margin-left: 8px;
+    font-size: 0.9em;
+    vertical-align: 1px;
+    backdrop-filter: none;
+}
+
+@media(max-width: 768px) {
+    .game-area { flex-direction: column; }
+    .name { font-size: 1.8rem; }
+    .info { position: relative; background: none; padding: 20px; }
+    .card { justify-content: flex-end; }
+}
+
+/* Error Message */
+.error-msg {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    background: rgba(239, 68, 68, 0.9); color: white; padding: 20px 40px;
+    border-radius: 12px; font-weight: 700; text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); z-index: 100;
+    display: none; backdrop-filter: blur(4px); border: 2px solid rgba(255,255,255,0.2);
+    width: 80%; max-width: 400px;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        transition-duration: 0.01s !important;
+        animation-duration: 0.01s !important;
+        scroll-behavior: auto !important;
+    }
+}

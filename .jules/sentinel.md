@@ -10,3 +10,7 @@
 **Vulnerability:** `index.html` contained multiple definitions of critical sanitizer functions (`safeUrl`, `safeCSSUrl`), where later definitions silently overwrote earlier ones. This created ambiguity about which security policy was active (blacklist vs whitelist) and led to double-sanitization bugs.
 **Learning:** In single-file applications without modules, hoisting and global scope pollution make it easy to accidentally shadow functions.
 **Prevention:** Centralize all security functions at the top of the script. Adopt a "sanitize at sink" pattern: helper functions should return raw data, and sanitizers should be applied only at the point of DOM insertion to avoid double-encoding issues.
+## 2026-10-27 - Inline Styles Weakness
+**Vulnerability:** The application used a large `<style>` block in `index.html` and a loose CSP (`style-src ... 'unsafe-inline'`), leaving it vulnerable to CSS injection if an attacker could inject `<style>` tags.
+**Learning:** `style-src 'unsafe-inline'` is often necessary for dynamic style attributes but weakens protection against element injection.
+**Prevention:** Extract static styles to an external file and use `style-src-elem` (without 'unsafe-inline') to block inline `<style>` blocks, while allowing `style` attributes via fallback or `style-src-attr`.

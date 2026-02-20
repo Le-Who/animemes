@@ -47,7 +47,7 @@
         input:checked + .switch-bg .switch-dot { transform: translateX(20px); }
         .switch-label { font-size: 0.9rem; font-weight: 700; }
 
-        .switch-wrap input {
+        .switch-wrap input, .visually-hidden {
             position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
             overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
             opacity: 0;
@@ -285,6 +285,7 @@
 
     <div class="game-area">
         <div id="errorMsg" class="error-msg" role="alert"></div>
+        <div id="live-announcer" class="visually-hidden" aria-live="polite"></div>
         <!-- Карточка 1 (Левая) -->
         <div class="card" id="c1" role="button" tabindex="0">
             <div class="status-icon" aria-hidden="true"></div>

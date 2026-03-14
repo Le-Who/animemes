@@ -102,6 +102,9 @@ function next() {
     els.c2.classList.remove('win', 'lose');
 
     preloadNext();
+
+    // Accessibility: Restore focus to the first card after moving to the next round
+    if (els.c1) els.c1.focus();
 }
 
 function getVal(item) {

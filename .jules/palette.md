@@ -19,3 +19,7 @@ This journal tracks critical UX and accessibility learnings from the project.
 ## 2026-02-06 - Perceived Performance & Image Loading
 **Learning:** Abrupt image rendering can feel jarring and "unfinished." Initializing images with `opacity: 0` and transitioning to `1` upon the `load` event creates a significantly more polished experience with negligible performance cost.
 **Action:** Use CSS opacity transitions for heavy media elements to smooth out loading states.
+
+## 2026-03-17 - Restoring Keyboard Focus on View Change
+**Learning:** When interactive elements (like a "Next" button) are dynamically hidden, the browser drops keyboard focus to the <body>. This completely breaks keyboard navigation flow, requiring the user to tab through the entire page again. Programmatically restoring focus to the next logical interactive element (e.g., the first card) is crucial for a continuous accessible experience.
+**Action:** Whenever hiding or removing the active element, always use .focus() to move focus to the most appropriate next interactive element.

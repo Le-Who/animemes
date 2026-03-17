@@ -33,6 +33,9 @@ let locked = false;
 let score = 0;
 let bestScore = localStorage.getItem('pg_best') || 0;
 
+// Bolt: Cache Intl.NumberFormat to prevent GC overhead in animation loop
+const numberFormatter = new Intl.NumberFormat();
+
 // Новая переменная для хранения ID анимации
 let currentAnimId = null;
 
@@ -120,7 +123,7 @@ function updateUI(revealed) {
     // OPTIMIZATION: Use textContent instead of innerHTML/innerText to prevent layout thrashing
     els.name1.textContent = leftItem.name;
     els.fran1.textContent = leftItem.franchise;
-    els.cnt1.textContent = getVal(leftItem).toLocaleString();
+    els.cnt1.textContent = numberFormatter.format(getVal(leftItem));
 
     const rawUrl1 = getImg(leftItem);
     const url1 = safeUrl(rawUrl1);
@@ -192,11 +195,18 @@ function animateValue(obj, start, end, duration) {
     stopAnimation(); // На всякий случай сбрасываем перед запуском новой
 
     let startTimestamp = null;
+    let lastVal = null; // Bolt: Track last value to prevent redundant DOM updates
     const step = (timestamp) => {
         if (!startTimestamp) startTimestamp = timestamp;
         const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-        // Bolt: Use textContent for better performance in animation loop
-        obj.textContent = Math.floor(progress * (end - start) + start).toLocaleString();
+
+        // Bolt: Only format and update DOM when integer value changes
+        const currentVal = Math.floor(progress * (end - start) + start);
+        if (currentVal !== lastVal) {
+            obj.textContent = numberFormatter.format(currentVal);
+            lastVal = currentVal;
+        }
+
         if (progress < 1) {
             currentAnimId = window.requestAnimationFrame(step);
         } else {

@@ -292,7 +292,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const err = document.getElementById('errorMsg');
             if (err) {
                 err.style.display = 'block';
-                err.innerHTML = `Failed to load game data.<br><span style="font-size:0.8em; font-weight:400; opacity:0.8">Please check your connection and refresh.</span>`;
+                err.textContent = "Failed to load game data.";
+                const sub = document.createElement('span');
+                sub.className = 'error-detail';
+                sub.textContent = "Please check your connection and refresh.";
+                err.appendChild(document.createElement('br'));
+                err.appendChild(sub);
             }
         });
 

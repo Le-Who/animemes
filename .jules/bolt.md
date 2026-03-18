@@ -10,3 +10,7 @@
 ## 2024-05-23 - [Caching Strategy: Static Data]
 **Learning:** Aggressive cache-busting (e.g., timestamp query params) on static data files forces unnecessary redownloads on every page load, hurting repeat visit performance.
 **Action:** Relies on standard HTTP caching (ETag/Last-Modified) for static assets unless instant updates are critical for development.
+
+## 2024-10-25 - [GC and Paint Performance: toLocaleString and DOM Updates]
+**Learning:** Using `toLocaleString()` inside a `requestAnimationFrame` loop creates significant garbage collection overhead because it instantiates a new formatter internally each time. Furthermore, redundantly setting `textContent` with the exact same string still triggers unnecessary browser operations.
+**Action:** Cache `Intl.NumberFormat` instances for repeated use, and always check if the computed value has changed before updating DOM properties like `textContent` in high-frequency loops.

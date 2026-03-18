@@ -82,6 +82,7 @@ function startFirstRound() {
     els.c1.classList.remove('win', 'lose');
     els.c2.classList.remove('win', 'lose');
     els.btn.classList.remove('show');
+    els.c1.focus();
 
     preloadNext();
 }
@@ -100,6 +101,7 @@ function next() {
     locked = false;
     els.c1.classList.remove('win', 'lose');
     els.c2.classList.remove('win', 'lose');
+    els.c1.focus();
 
     preloadNext();
 }

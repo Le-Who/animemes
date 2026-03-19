@@ -84,6 +84,9 @@ function startFirstRound() {
     els.btn.classList.remove('show');
 
     preloadNext();
+
+    // Palette: Restore focus to first card
+    els.c1.focus();
 }
 
 function next() {
@@ -102,6 +105,9 @@ function next() {
     els.c2.classList.remove('win', 'lose');
 
     preloadNext();
+
+    // Palette: Restore focus to first card
+    els.c1.focus();
 }
 
 function getVal(item) {

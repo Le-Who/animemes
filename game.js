@@ -188,15 +188,28 @@ function updateScoreUI() {
     els.best.textContent = bestScore;
 }
 
+// ⚡ Bolt: Cache NumberFormat instance outside the animation loop to eliminate garbage collection overhead.
+const numberFormatter = new Intl.NumberFormat();
+
 function animateValue(obj, start, end, duration) {
     stopAnimation(); // На всякий случай сбрасываем перед запуском новой
 
     let startTimestamp = null;
+    let lastFormattedValue = null;
     const step = (timestamp) => {
         if (!startTimestamp) startTimestamp = timestamp;
         const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-        // Bolt: Use textContent for better performance in animation loop
-        obj.textContent = Math.floor(progress * (end - start) + start).toLocaleString();
+        const currentValue = Math.floor(progress * (end - start) + start);
+
+        // ⚡ Bolt: Use cached formatter
+        const formattedValue = numberFormatter.format(currentValue);
+
+        // ⚡ Bolt: Guard DOM updates with a value-change check to prevent redundant repaints
+        if (lastFormattedValue !== formattedValue) {
+            obj.textContent = formattedValue;
+            lastFormattedValue = formattedValue;
+        }
+
         if (progress < 1) {
             currentAnimId = window.requestAnimationFrame(step);
         } else {

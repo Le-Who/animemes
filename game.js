@@ -83,6 +83,7 @@ function startFirstRound() {
     els.c2.classList.remove('win', 'lose');
     els.btn.classList.remove('show');
 
+    els.c1.focus();
     preloadNext();
 }
 
@@ -101,6 +102,7 @@ function next() {
     els.c1.classList.remove('win', 'lose');
     els.c2.classList.remove('win', 'lose');
 
+    els.c1.focus();
     preloadNext();
 }
 

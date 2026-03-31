@@ -172,6 +172,19 @@
             transform: translateX(-50%) translateY(0);
             transition: opacity 0.4s, transform 0.4s, visibility 0s;
         }
+        .btn.show:hover {
+            background: #f1f5f9;
+            transform: translateX(-50%) translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+        }
+        .btn.show:active {
+            transform: translateX(-50%) translateY(2px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+        .btn:focus-visible {
+            outline: 4px solid #fff;
+            outline-offset: 4px;
+        }
 
         /* Status Icons */
         .status-icon {
@@ -288,7 +301,7 @@
         <!-- Карточка 1 (Левая) -->
         <div class="card" id="c1" role="button" tabindex="0">
             <div class="status-icon" aria-hidden="true"></div>
-            <div class="key-hint">←</div>
+            <div class="key-hint" aria-hidden="true">←</div>
             <div class="status-icon status-icon-win" aria-hidden="true">
                 <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
             </div>
@@ -308,7 +321,7 @@
         <!-- Карточка 2 (Правая) -->
         <div class="card" id="c2" role="button" tabindex="0">
             <div class="status-icon" aria-hidden="true"></div>
-            <div class="key-hint">→</div>
+            <div class="key-hint" aria-hidden="true">→</div>
             <div class="status-icon status-icon-win" aria-hidden="true">
                 <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
             </div>
@@ -324,7 +337,7 @@
         </div>
     </div>
 
-    <button class="btn" id="nextBtn">Дальше <span class="key-hint">↵</span></button>
+    <button class="btn" id="nextBtn">Дальше <span class="key-hint" aria-hidden="true">↵</span></button>
 
 </body>
 </html>

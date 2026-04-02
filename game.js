@@ -192,11 +192,21 @@ function animateValue(obj, start, end, duration) {
     stopAnimation(); // На всякий случай сбрасываем перед запуском новой
 
     let startTimestamp = null;
+    // OPTIMIZATION: Instantiate Intl.NumberFormat outside the loop
+    // to prevent garbage collection overhead.
+    const formatter = new Intl.NumberFormat();
+
     const step = (timestamp) => {
         if (!startTimestamp) startTimestamp = timestamp;
         const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-        // Bolt: Use textContent for better performance in animation loop
-        obj.textContent = Math.floor(progress * (end - start) + start).toLocaleString();
+        const currentValue = Math.floor(progress * (end - start) + start);
+        const formattedValue = formatter.format(currentValue);
+
+        // OPTIMIZATION: Guard DOM updates to prevent unnecessary browser repaints
+        if (obj.textContent !== formattedValue) {
+            obj.textContent = formattedValue;
+        }
+
         if (progress < 1) {
             currentAnimId = window.requestAnimationFrame(step);
         } else {

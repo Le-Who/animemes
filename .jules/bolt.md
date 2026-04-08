@@ -10,3 +10,7 @@
 ## 2024-05-23 - [Caching Strategy: Static Data]
 **Learning:** Aggressive cache-busting (e.g., timestamp query params) on static data files forces unnecessary redownloads on every page load, hurting repeat visit performance.
 **Action:** Relies on standard HTTP caching (ETag/Last-Modified) for static assets unless instant updates are critical for development.
+
+## 2026-04-08 - [Animation Loop Garbage Collection & Reflow]
+**Learning:** Instantiating objects like `Intl.NumberFormat` inside `requestAnimationFrame` causes garbage collection overhead. Unconditional DOM updates cause unnecessary repaints.
+**Action:** Instantiate formatters outside animation loops and guard DOM updates (e.g., `textContent`) with a value-change check.

@@ -10,3 +10,7 @@
 **Vulnerability:** `index.html` contained multiple definitions of critical sanitizer functions (`safeUrl`, `safeCSSUrl`), where later definitions silently overwrote earlier ones. This created ambiguity about which security policy was active (blacklist vs whitelist) and led to double-sanitization bugs.
 **Learning:** In single-file applications without modules, hoisting and global scope pollution make it easy to accidentally shadow functions.
 **Prevention:** Centralize all security functions at the top of the script. Adopt a "sanitize at sink" pattern: helper functions should return raw data, and sanitizers should be applied only at the point of DOM insertion to avoid double-encoding issues.
+## 2024-05-24 - Prevent HTTP Parameter Pollution via URL f-strings
+**Vulnerability:** Constructing API URLs via f-strings risks HTTP Parameter Pollution if inputs contain unescaped characters like `&` or `=`.
+**Learning:** Always pass parameters explicitly via the `requests.get(params=...)` dictionary, which automatically URL-encodes user input safely.
+**Prevention:** Use `params` kwarg in `requests.get()` instead of manual URL interpolation.

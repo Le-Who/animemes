@@ -199,6 +199,11 @@
             outline-offset: 2px;
         }
 
+        .btn:focus-visible {
+            outline: 4px solid #fff;
+            outline-offset: 4px;
+        }
+
         /* Keyboard Hints */
         .key-hint {
             position: absolute;
@@ -288,7 +293,7 @@
         <!-- Карточка 1 (Левая) -->
         <div class="card" id="c1" role="button" tabindex="0">
             <div class="status-icon" aria-hidden="true"></div>
-            <div class="key-hint">←</div>
+            <div class="key-hint" aria-hidden="true">←</div>
             <div class="status-icon status-icon-win" aria-hidden="true">
                 <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
             </div>
@@ -308,7 +313,7 @@
         <!-- Карточка 2 (Правая) -->
         <div class="card" id="c2" role="button" tabindex="0">
             <div class="status-icon" aria-hidden="true"></div>
-            <div class="key-hint">→</div>
+            <div class="key-hint" aria-hidden="true">→</div>
             <div class="status-icon status-icon-win" aria-hidden="true">
                 <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
             </div>
@@ -324,7 +329,7 @@
         </div>
     </div>
 
-    <button class="btn" id="nextBtn">Дальше <span class="key-hint">↵</span></button>
+    <button class="btn" id="nextBtn">Дальше <span class="key-hint" aria-hidden="true">↵</span></button>
 
 </body>
 </html>

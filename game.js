@@ -188,15 +188,25 @@ function updateScoreUI() {
     els.best.textContent = bestScore;
 }
 
+const numberFormatter = new Intl.NumberFormat();
+
 function animateValue(obj, start, end, duration) {
     stopAnimation(); // На всякий случай сбрасываем перед запуском новой
 
     let startTimestamp = null;
+    let lastValue = null;
     const step = (timestamp) => {
         if (!startTimestamp) startTimestamp = timestamp;
         const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-        // Bolt: Use textContent for better performance in animation loop
-        obj.textContent = Math.floor(progress * (end - start) + start).toLocaleString();
+
+        const currentValue = Math.floor(progress * (end - start) + start);
+        if (currentValue !== lastValue) {
+            // Bolt: Avoid per-frame locale resolution and GC pressure
+            // by using Intl.NumberFormat and guard DOM updates to prevent unnecessary repaints.
+            obj.textContent = numberFormatter.format(currentValue);
+            lastValue = currentValue;
+        }
+
         if (progress < 1) {
             currentAnimId = window.requestAnimationFrame(step);
         } else {

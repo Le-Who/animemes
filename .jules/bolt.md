@@ -10,3 +10,7 @@
 ## 2024-05-23 - [Caching Strategy: Static Data]
 **Learning:** Aggressive cache-busting (e.g., timestamp query params) on static data files forces unnecessary redownloads on every page load, hurting repeat visit performance.
 **Action:** Relies on standard HTTP caching (ETag/Last-Modified) for static assets unless instant updates are critical for development.
+
+## 2025-02-23 - [Animation Loop Overhead: toLocaleString and Repaints]
+**Learning:** Calling `.toLocaleString()` on numbers inside high-frequency loops (like `requestAnimationFrame`) causes unnecessary locale resolution and garbage collection overhead. Additionally, unconditionally updating `textContent` every frame causes unnecessary repaints if the value hasn't actually changed.
+**Action:** Instantiate `Intl.NumberFormat` outside animation loops and use its `.format()` method. Guard DOM updates with a value-change check to prevent redundant repaints.

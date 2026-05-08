@@ -192,11 +192,21 @@ function animateValue(obj, start, end, duration) {
     stopAnimation(); // На всякий случай сбрасываем перед запуском новой
 
     let startTimestamp = null;
+    let lastValue = null;
+    // Bolt: Instantiate NumberFormat outside loop to avoid GC pressure and implicit locale resolution
+    const formatter = new Intl.NumberFormat();
+
     const step = (timestamp) => {
         if (!startTimestamp) startTimestamp = timestamp;
         const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-        // Bolt: Use textContent for better performance in animation loop
-        obj.textContent = Math.floor(progress * (end - start) + start).toLocaleString();
+        const currentValue = Math.floor(progress * (end - start) + start);
+
+        // Bolt: Guard DOM updates with value-change check to prevent unnecessary repaints
+        if (currentValue !== lastValue) {
+            obj.textContent = formatter.format(currentValue);
+            lastValue = currentValue;
+        }
+
         if (progress < 1) {
             currentAnimId = window.requestAnimationFrame(step);
         } else {

@@ -19,3 +19,7 @@ This journal tracks critical UX and accessibility learnings from the project.
 ## 2026-02-06 - Perceived Performance & Image Loading
 **Learning:** Abrupt image rendering can feel jarring and "unfinished." Initializing images with `opacity: 0` and transitioning to `1` upon the `load` event creates a significantly more polished experience with negligible performance cost.
 **Action:** Use CSS opacity transitions for heavy media elements to smooth out loading states.
+
+## 2024-05-09 - Hide decorative keyboard hints from screen readers
+**Learning:** Screen readers may read raw keyboard shortcut symbols (like ←, →, ↵) in confusing ways. Since they are visual hints and not structural content, they should be hidden from accessibility trees.
+**Action:** Always add `aria-hidden="true"` to decorative keyboard shortcut icons to avoid confusing screen reader users.

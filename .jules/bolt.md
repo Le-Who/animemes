@@ -10,3 +10,7 @@
 ## 2024-05-23 - [Caching Strategy: Static Data]
 **Learning:** Aggressive cache-busting (e.g., timestamp query params) on static data files forces unnecessary redownloads on every page load, hurting repeat visit performance.
 **Action:** Relies on standard HTTP caching (ETag/Last-Modified) for static assets unless instant updates are critical for development.
+
+## 2026-05-21 - [Network Performance: Preload Critical Data]
+**Learning:** In this SPA, `characters.json` is a critical dependency for Time to Interactive. However, it was only requested after `game.js` downloaded, parsed, and `DOMContentLoaded` fired, delaying startup.
+**Action:** Use `<link rel="preload" as="fetch" crossorigin="anonymous">` in the HTML `<head>` for critical data files to start the network request in parallel with HTML/JS parsing.

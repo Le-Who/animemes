@@ -26,6 +26,7 @@ function safeCSSUrl(url) {
         .replace(/\)/g, '%29');
 }
 
+const numFormatter = new Intl.NumberFormat();
 let db = [], pool = [];
 let leftItem, rightItem;
 let isNSFW = false;
@@ -120,7 +121,7 @@ function updateUI(revealed) {
     // OPTIMIZATION: Use textContent instead of innerHTML/innerText to prevent layout thrashing
     els.name1.textContent = leftItem.name;
     els.fran1.textContent = leftItem.franchise;
-    els.cnt1.textContent = getVal(leftItem).toLocaleString();
+    els.cnt1.textContent = numFormatter.format(getVal(leftItem));
 
     const rawUrl1 = getImg(leftItem);
     const url1 = safeUrl(rawUrl1);
@@ -196,7 +197,8 @@ function animateValue(obj, start, end, duration) {
         if (!startTimestamp) startTimestamp = timestamp;
         const progress = Math.min((timestamp - startTimestamp) / duration, 1);
         // Bolt: Use textContent for better performance in animation loop
-        obj.textContent = Math.floor(progress * (end - start) + start).toLocaleString();
+        // Bolt: Use pre-instantiated Intl.NumberFormat instead of .toLocaleString()
+        obj.textContent = numFormatter.format(Math.floor(progress * (end - start) + start));
         if (progress < 1) {
             currentAnimId = window.requestAnimationFrame(step);
         } else {

@@ -10,3 +10,6 @@
 ## 2024-05-23 - [Caching Strategy: Static Data]
 **Learning:** Aggressive cache-busting (e.g., timestamp query params) on static data files forces unnecessary redownloads on every page load, hurting repeat visit performance.
 **Action:** Relies on standard HTTP caching (ETag/Last-Modified) for static assets unless instant updates are critical for development.
+## 2024-05-01 - Number Formatting in Animation Loops
+**Learning:** Calling `toLocaleString()` on numbers inside `requestAnimationFrame` loops is highly inefficient because it instantiates a new `Intl.NumberFormat` instance on every frame.
+**Action:** Always instantiate `Intl.NumberFormat` once outside the loop and use its `format()` method inside the animation to reduce overhead and memory pressure.

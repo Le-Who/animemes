@@ -10,3 +10,7 @@
 **Vulnerability:** `index.html` contained multiple definitions of critical sanitizer functions (`safeUrl`, `safeCSSUrl`), where later definitions silently overwrote earlier ones. This created ambiguity about which security policy was active (blacklist vs whitelist) and led to double-sanitization bugs.
 **Learning:** In single-file applications without modules, hoisting and global scope pollution make it easy to accidentally shadow functions.
 **Prevention:** Centralize all security functions at the top of the script. Adopt a "sanitize at sink" pattern: helper functions should return raw data, and sanitizers should be applied only at the point of DOM insertion to avoid double-encoding issues.
+## 2024-05-25 - Fix URL Parameter Injection
+**Vulnerability:** Unsafe URL construction using f-strings allows parameter injection via malicious tags.
+**Learning:** URL parameters constructed via string formatting are vulnerable to injection. `requests` module should be allowed to properly encode URL parameters.
+**Prevention:** Always use the `params` argument in `requests.get()` instead of string manipulation.

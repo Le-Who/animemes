@@ -10,3 +10,7 @@
 **Vulnerability:** `index.html` contained multiple definitions of critical sanitizer functions (`safeUrl`, `safeCSSUrl`), where later definitions silently overwrote earlier ones. This created ambiguity about which security policy was active (blacklist vs whitelist) and led to double-sanitization bugs.
 **Learning:** In single-file applications without modules, hoisting and global scope pollution make it easy to accidentally shadow functions.
 **Prevention:** Centralize all security functions at the top of the script. Adopt a "sanitize at sink" pattern: helper functions should return raw data, and sanitizers should be applied only at the point of DOM insertion to avoid double-encoding issues.
+## 2025-10-27 - API Parameter Injection
+**Vulnerability:** String concatenation (f-strings) in URL construction (`update.py`) allowed API parameter injection. If a user-provided tag contained `&` or `=`, they could inject arbitrary parameters into the Gelbooru API request.
+**Learning:** Never interpolate dynamic variables directly into URL query strings. Standard Python request libraries safely url-encode parameters when passed via a dictionary map.
+**Prevention:** Always use the `params` kwarg in `requests.get()` (or URL building utilities like `urllib.parse.urlencode`) instead of string interpolation for query strings.

@@ -32,6 +32,7 @@ let isNSFW = false;
 let locked = false;
 let score = 0;
 let bestScore = localStorage.getItem('pg_best') || 0;
+let preloadedUrls = new Set();
 
 // Новая переменная для хранения ID анимации
 let currentAnimId = null;
@@ -56,6 +57,7 @@ function shuffle(array) {
 
 function resetPool() {
     pool = shuffle([...db]);
+    preloadedUrls.clear();
 }
 
 function getNext() {
@@ -229,8 +231,13 @@ function preloadNext() {
             const idx = pool.length - i;
             if (idx >= 0) {
                 const nextItem = pool[idx];
-                const img = new Image();
-                img.src = safeUrl(getImg(nextItem));
+                const url = safeUrl(getImg(nextItem));
+                // OPTIMIZATION: Skip if already preloaded to avoid redundant Image allocations
+                if (!preloadedUrls.has(url)) {
+                    const img = new Image();
+                    img.src = url;
+                    preloadedUrls.add(url);
+                }
             } else {
                 break;
             }

@@ -27,6 +27,8 @@ function safeCSSUrl(url) {
 }
 
 let db = [], pool = [];
+// ⚡ Bolt: Cache preloaded URLs to prevent redundant Image allocations in sliding window
+const preloadedUrls = new Set();
 let leftItem, rightItem;
 let isNSFW = false;
 let locked = false;
@@ -56,6 +58,7 @@ function shuffle(array) {
 
 function resetPool() {
     pool = shuffle([...db]);
+    preloadedUrls.clear(); // ⚡ Bolt: Clear memory cache when pool resets
 }
 
 function getNext() {
@@ -229,8 +232,13 @@ function preloadNext() {
             const idx = pool.length - i;
             if (idx >= 0) {
                 const nextItem = pool[idx];
-                const img = new Image();
-                img.src = safeUrl(getImg(nextItem));
+                const url = safeUrl(getImg(nextItem));
+                // ⚡ Bolt: Only instantiate if not already preloaded in a previous round
+                if (!preloadedUrls.has(url)) {
+                    preloadedUrls.add(url);
+                    const img = new Image();
+                    img.src = url;
+                }
             } else {
                 break;
             }

@@ -10,3 +10,7 @@
 ## 2024-05-23 - [Caching Strategy: Static Data]
 **Learning:** Aggressive cache-busting (e.g., timestamp query params) on static data files forces unnecessary redownloads on every page load, hurting repeat visit performance.
 **Action:** Relies on standard HTTP caching (ETag/Last-Modified) for static assets unless instant updates are critical for development.
+
+## 2024-05-18 - Caching Sliding Window Preloaders
+**Learning:** Sliding window preloaders in game loops must cache their preloaded URLs (e.g., using a `Set`). Otherwise, they redundantly re-instantiate `Image` objects for the same overlapping elements in each round, causing excessive garbage collection (GC) churn and unnecessary network/cache resolution on the main thread.
+**Action:** Always maintain a cache of processed items when dealing with sliding window iterations over game state, and clear it only when the state entirely resets.

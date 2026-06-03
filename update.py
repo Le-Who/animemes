@@ -3,6 +3,7 @@ import requests
 import time
 import random
 import os
+import urllib.parse
 
 # Основной URL API
 API_URL = "https://gelbooru.com/index.php?page=dapi&s=post&q=index&json=1"
@@ -24,7 +25,9 @@ def get_data(tag):
         }
         
         # 1. Запрос списка постов (сортировка по score для качества)
-        url = f"{API_URL}&tags={tag} sort:score:desc&limit=20"
+        # 🛡️ Sentinel: URL-encode the tag parameter to prevent URL parameter injection
+        safe_tag = urllib.parse.quote(f"{tag} sort:score:desc")
+        url = f"{API_URL}&tags={safe_tag}&limit=20"
         print(f"Fetching: {tag}...")
         
         response = requests.get(url, headers=headers, timeout=15)
@@ -78,7 +81,9 @@ def get_data(tag):
              
              # ПОПЫТКА 2: Запросить API тегов (осторожно)
              try:
-                tag_url = f"https://gelbooru.com/index.php?page=dapi&s=tag&q=index&json=1&names={tag}"
+                # 🛡️ Sentinel: URL-encode the tag parameter to prevent URL parameter injection
+                safe_names = urllib.parse.quote(tag)
+                tag_url = f"https://gelbooru.com/index.php?page=dapi&s=tag&q=index&json=1&names={safe_names}"
                 tag_resp = requests.get(tag_url, headers=headers, timeout=10)
                 tag_data = tag_resp.json()
                 if 'tag' in tag_data:

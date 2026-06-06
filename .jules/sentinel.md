@@ -10,3 +10,7 @@
 **Vulnerability:** `index.html` contained multiple definitions of critical sanitizer functions (`safeUrl`, `safeCSSUrl`), where later definitions silently overwrote earlier ones. This created ambiguity about which security policy was active (blacklist vs whitelist) and led to double-sanitization bugs.
 **Learning:** In single-file applications without modules, hoisting and global scope pollution make it easy to accidentally shadow functions.
 **Prevention:** Centralize all security functions at the top of the script. Adopt a "sanitize at sink" pattern: helper functions should return raw data, and sanitizers should be applied only at the point of DOM insertion to avoid double-encoding issues.
+## 2024-06-06 - Prevent URL Parameter Smuggling via String Concatenation
+**Vulnerability:** Constructing API URLs by concatenating unsanitized input (`f"{API_URL}&tags={tag}"`) allows for URL Injection/Parameter Smuggling where a crafted tag containing `&` could inject arbitrary query parameters (e.g., `&limit=1000`).
+**Learning:** Even internal or semi-trusted data (like a JSON database) must be properly URL-encoded. Using Python `requests` library string concatenation for URL parameters bypasses its built-in url-encoding safety.
+**Prevention:** Always use the `params` argument in `requests.get()` to let the library properly encode and handle query parameters securely, preventing parameter smuggling.

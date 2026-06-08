@@ -10,3 +10,7 @@
 ## 2024-05-23 - [Caching Strategy: Static Data]
 **Learning:** Aggressive cache-busting (e.g., timestamp query params) on static data files forces unnecessary redownloads on every page load, hurting repeat visit performance.
 **Action:** Relies on standard HTTP caching (ETag/Last-Modified) for static assets unless instant updates are critical for development.
+
+## 2024-06-08 - [JS Performance: Intl.NumberFormat vs toLocaleString]
+**Learning:** Using `toLocaleString()` inside a high-frequency loop (like `requestAnimationFrame`) is significantly slower (up to 25x) than instantiating a single `Intl.NumberFormat` object and calling `.format()`.
+**Action:** Always cache and reuse `Intl.NumberFormat` instances for formatting numbers in hot loops or frequent updates.

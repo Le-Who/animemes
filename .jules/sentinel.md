@@ -10,3 +10,7 @@
 **Vulnerability:** `index.html` contained multiple definitions of critical sanitizer functions (`safeUrl`, `safeCSSUrl`), where later definitions silently overwrote earlier ones. This created ambiguity about which security policy was active (blacklist vs whitelist) and led to double-sanitization bugs.
 **Learning:** In single-file applications without modules, hoisting and global scope pollution make it easy to accidentally shadow functions.
 **Prevention:** Centralize all security functions at the top of the script. Adopt a "sanitize at sink" pattern: helper functions should return raw data, and sanitizers should be applied only at the point of DOM insertion to avoid double-encoding issues.
+## 2025-02-18 - Parameter Injection via String Formatting
+**Vulnerability:** `update.py` constructed API URLs using string formatting (e.g., `f"{API_URL}&tags={tag}"`), allowing user-controlled tag inputs from JSON to inject arbitrary query parameters (like `&limit=1`) into the backend request.
+**Learning:** String interpolation for URL construction is an SSRF-related risk that fails to safely URL-encode query parameters.
+**Prevention:** Always use the `params` dictionary argument provided by HTTP libraries like `requests` to automatically apply secure, context-aware URL encoding to all query inputs.

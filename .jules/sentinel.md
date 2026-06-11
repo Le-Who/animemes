@@ -10,3 +10,7 @@
 **Vulnerability:** `index.html` contained multiple definitions of critical sanitizer functions (`safeUrl`, `safeCSSUrl`), where later definitions silently overwrote earlier ones. This created ambiguity about which security policy was active (blacklist vs whitelist) and led to double-sanitization bugs.
 **Learning:** In single-file applications without modules, hoisting and global scope pollution make it easy to accidentally shadow functions.
 **Prevention:** Centralize all security functions at the top of the script. Adopt a "sanitize at sink" pattern: helper functions should return raw data, and sanitizers should be applied only at the point of DOM insertion to avoid double-encoding issues.
+## 2024-06-11 - [CRITICAL] Fix URL Injection Vulnerability
+**Vulnerability:** String concatenation of user-provided tags directly into API URL allows injection.
+**Learning:** Directly interpolating strings without URL-encoding makes the application vulnerable to injection attacks, potentially allowing manipulation of the Gelbooru API query or path traversal if characters like `&`, `?`, or `#` are passed.
+**Prevention:** Always use `urllib.parse.quote()` to URL-encode variables before appending them to the query string to prevent injection attacks and ensure robust query construction.

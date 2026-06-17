@@ -10,3 +10,6 @@
 ## 2024-05-23 - [Caching Strategy: Static Data]
 **Learning:** Aggressive cache-busting (e.g., timestamp query params) on static data files forces unnecessary redownloads on every page load, hurting repeat visit performance.
 **Action:** Relies on standard HTTP caching (ETag/Last-Modified) for static assets unless instant updates are critical for development.
+## 2024-05-24 - Python Requests Connection Pooling
+**Learning:** By default, `requests.get()` opens and closes a new TCP/TLS connection for every single request. When making repeated calls to the same host (like looping through characters to fetch data from Gelbooru), this creates significant overhead.
+**Action:** Use `requests.Session()` to enable connection pooling, which reuses the underlying TCP connection and significantly speeds up sequential requests to the same origin.

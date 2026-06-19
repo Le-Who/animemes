@@ -10,3 +10,6 @@
 ## 2024-05-23 - [Caching Strategy: Static Data]
 **Learning:** Aggressive cache-busting (e.g., timestamp query params) on static data files forces unnecessary redownloads on every page load, hurting repeat visit performance.
 **Action:** Relies on standard HTTP caching (ETag/Last-Modified) for static assets unless instant updates are critical for development.
+## 2024-05-24 - [Backend Performance: HTTP Connection Reuse]
+**Learning:** Making multiple HTTP requests to the same host using bare requests.get() creates a new TCP/TLS connection for every single call. This adds massive overhead (DNS, TCP handshake, TLS handshake) to each request, drastically slowing down iterative scripts like database updaters.
+**Action:** Always prefer requests.Session() over bare requests.get() when making repeated API calls to the same server, as it reuses the underlying connection and significantly reduces request latency.

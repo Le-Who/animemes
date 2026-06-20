@@ -7,6 +7,9 @@ import os
 # Основной URL API
 API_URL = "https://gelbooru.com/index.php?page=dapi&s=post&q=index&json=1"
 
+# Использование сессии для переиспользования соединений (ускорение HTTP)
+http_session = requests.Session()
+
 # Список User-Agent, чтобы притворяться разными браузерами
 USER_AGENTS = [
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
@@ -27,7 +30,7 @@ def get_data(tag):
         url = f"{API_URL}&tags={tag} sort:score:desc&limit=20"
         print(f"Fetching: {tag}...")
         
-        response = requests.get(url, headers=headers, timeout=15)
+        response = http_session.get(url, headers=headers, timeout=15)
         
         if response.status_code == 403:
             print(f"⚠️ 403 Forbidden for {tag}. IP blocked?")
@@ -79,7 +82,7 @@ def get_data(tag):
              # ПОПЫТКА 2: Запросить API тегов (осторожно)
              try:
                 tag_url = f"https://gelbooru.com/index.php?page=dapi&s=tag&q=index&json=1&names={tag}"
-                tag_resp = requests.get(tag_url, headers=headers, timeout=10)
+                tag_resp = http_session.get(tag_url, headers=headers, timeout=10)
                 tag_data = tag_resp.json()
                 if 'tag' in tag_data:
                     total_count = tag_data['tag'][0]['count']

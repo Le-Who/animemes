@@ -10,3 +10,6 @@
 ## 2024-05-23 - [Caching Strategy: Static Data]
 **Learning:** Aggressive cache-busting (e.g., timestamp query params) on static data files forces unnecessary redownloads on every page load, hurting repeat visit performance.
 **Action:** Relies on standard HTTP caching (ETag/Last-Modified) for static assets unless instant updates are critical for development.
+## 2025-06-21 - Use requests.Session() for consecutive API calls
+**Learning:** For consecutive HTTP requests to the same host (e.g. fetching Gelbooru API data in a loop), bare `requests.get()` creates a new TCP/TLS connection every time, causing a significant performance bottleneck.
+**Action:** Always use `requests.Session()` when making repeated requests to the same domain to reuse the underlying connections and drastically reduce latency.

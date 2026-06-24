@@ -10,3 +10,6 @@
 ## 2024-05-23 - [Caching Strategy: Static Data]
 **Learning:** Aggressive cache-busting (e.g., timestamp query params) on static data files forces unnecessary redownloads on every page load, hurting repeat visit performance.
 **Action:** Relies on standard HTTP caching (ETag/Last-Modified) for static assets unless instant updates are critical for development.
+## 2024-06-24 - Add Connection Pooling to Gelbooru Script
+**Learning:** Using `requests.Session()` instead of bare `requests.get()` in a loop significantly reduces TCP/TLS overhead by reusing connections. This is especially useful for scraping or API fetching where many requests are sent to the same host in succession.
+**Action:** Always default to `requests.Session()` when making repeated requests to the same domain.

@@ -199,6 +199,27 @@
             outline-offset: 2px;
         }
 
+        .btn:focus-visible {
+            outline: 4px solid #fff;
+            outline-offset: 4px;
+        }
+
+        .btn.show:hover {
+            transform: translateX(-50%) translateY(-2px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            background: #f1f5f9;
+        }
+
+        .btn.show:active {
+            transform: translateX(-50%) translateY(2px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            background: #e2e8f0;
+        }
+
+        .switch-wrap:hover .switch-bg {
+            box-shadow: 0 0 10px rgba(255,255,255,0.2);
+        }
+
         /* Keyboard Hints */
         .key-hint {
             position: absolute;

@@ -162,7 +162,7 @@
             font-weight: 800; border: none; cursor: pointer;
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.4s, transform 0.4s, visibility 0.4s;
+            transition: opacity 0.4s, transform 0.4s, visibility 0.4s, background-color 0.2s, box-shadow 0.2s;
             z-index: 30;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
@@ -170,7 +170,16 @@
             opacity: 1;
             visibility: visible;
             transform: translateX(-50%) translateY(0);
-            transition: opacity 0.4s, transform 0.4s, visibility 0s;
+            transition: opacity 0.4s, transform 0.4s, visibility 0s, background-color 0.2s, box-shadow 0.2s;
+        }
+        .btn.show:hover {
+            background-color: #f1f5f9;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+        }
+        .btn.show:active {
+            background-color: #e2e8f0;
+            transform: translateX(-50%) translateY(2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
         /* Status Icons */
@@ -197,6 +206,10 @@
         .switch-wrap input:focus-visible + .switch-bg {
             outline: 2px solid #fff;
             outline-offset: 2px;
+        }
+        .btn:focus-visible {
+            outline: 4px solid #fff;
+            outline-offset: 4px;
         }
 
         /* Keyboard Hints */

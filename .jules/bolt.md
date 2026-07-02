@@ -10,3 +10,7 @@
 ## 2024-05-23 - [Caching Strategy: Static Data]
 **Learning:** Aggressive cache-busting (e.g., timestamp query params) on static data files forces unnecessary redownloads on every page load, hurting repeat visit performance.
 **Action:** Relies on standard HTTP caching (ETag/Last-Modified) for static assets unless instant updates are critical for development.
+
+## 2024-11-20 - [Network Performance: Connection Pooling]
+**Learning:** Making sequential external API requests without a session creates a new TCP/TLS connection for every request, which is a major performance bottleneck for backend scripts.
+**Action:** Use `requests.Session()` for repeated HTTP requests to the same host to reuse the underlying connection and significantly reduce latency.

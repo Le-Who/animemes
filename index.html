@@ -166,11 +166,19 @@
             z-index: 30;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
+        .btn:focus-visible {
+            outline: 4px solid #fff;
+            outline-offset: 4px;
+        }
         .btn.show {
             opacity: 1;
             visibility: visible;
             transform: translateX(-50%) translateY(0);
             transition: opacity 0.4s, transform 0.4s, visibility 0s;
+        }
+        .btn.show:hover {
+            transform: translateX(-50%) translateY(0) scale(1.05);
+            background: #f8fafc;
         }
 
         /* Status Icons */
@@ -271,7 +279,7 @@
             <span class="switch-label">NSFW (18+)</span>
         </label>
         
-        <div class="scores">
+        <div class="scores" aria-live="polite">
             <div class="score-box">
                 <span class="score-val" id="score">0</span>
                 <span class="score-label">Current</span>

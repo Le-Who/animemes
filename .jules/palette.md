@@ -19,3 +19,7 @@ This journal tracks critical UX and accessibility learnings from the project.
 ## 2026-02-06 - Perceived Performance & Image Loading
 **Learning:** Abrupt image rendering can feel jarring and "unfinished." Initializing images with `opacity: 0` and transitioning to `1` upon the `load` event creates a significantly more polished experience with negligible performance cost.
 **Action:** Use CSS opacity transitions for heavy media elements to smooth out loading states.
+
+## 2026-10-25 - Interactive Element Feedback
+**Learning:** Primary call-to-action buttons lacking hover, active, and explicit focus states leave users, particularly those using keyboards or touch devices, without necessary interactive feedback, reducing confidence in their actions.
+**Action:** Always provide explicit :hover, :active, and :focus-visible states for all primary buttons to ensure clear interaction feedback across all input methods.

@@ -172,6 +172,14 @@
             transform: translateX(-50%) translateY(0);
             transition: opacity 0.4s, transform 0.4s, visibility 0s;
         }
+        .btn.show:hover {
+            transform: translateX(-50%) translateY(-2px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+        }
+        .btn.show:active {
+            transform: translateX(-50%) translateY(2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
 
         /* Status Icons */
         .status-icon {
@@ -193,6 +201,10 @@
             outline: 4px solid #fff;
             outline-offset: -4px;
             z-index: 10;
+        }
+        .btn:focus-visible {
+            outline: 4px solid #fff;
+            outline-offset: 4px;
         }
         .switch-wrap input:focus-visible + .switch-bg {
             outline: 2px solid #fff;

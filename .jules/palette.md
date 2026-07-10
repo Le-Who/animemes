@@ -19,3 +19,6 @@ This journal tracks critical UX and accessibility learnings from the project.
 ## 2026-02-06 - Perceived Performance & Image Loading
 **Learning:** Abrupt image rendering can feel jarring and "unfinished." Initializing images with `opacity: 0` and transitioning to `1` upon the `load` event creates a significantly more polished experience with negligible performance cost.
 **Action:** Use CSS opacity transitions for heavy media elements to smooth out loading states.
+## 2026-05-22 - Primary Action Button Accessibility & Interaction
+**Learning:** Icon/Key-hint elements inside buttons can cause screen readers to read out confusing characters (like "return symbol") instead of the primary action. Additionally, primary dynamic buttons that appear conditionally lack discoverability if they don't have explicit hover/focus states.
+**Action:** Always add `aria-hidden="true"` to decorative or hint spans inside buttons and ensure conditional interactive elements have clear visual states (`:hover`, `:focus-visible`).

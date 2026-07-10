@@ -172,6 +172,15 @@
             transform: translateX(-50%) translateY(0);
             transition: opacity 0.4s, transform 0.4s, visibility 0s;
         }
+        .btn.show:hover {
+            transform: translateX(-50%) translateY(-2px);
+            background: #f8fafc;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+        }
+        .btn.show:focus-visible {
+            outline: 4px solid #fff;
+            outline-offset: 4px;
+        }
 
         /* Status Icons */
         .status-icon {
@@ -324,7 +333,7 @@
         </div>
     </div>
 
-    <button class="btn" id="nextBtn">Дальше <span class="key-hint">↵</span></button>
+    <button class="btn" id="nextBtn" aria-label="Дальше (Enter)">Дальше <span class="key-hint" aria-hidden="true">↵</span></button>
 
 </body>
 </html>

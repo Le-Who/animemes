@@ -10,3 +10,6 @@
 ## 2024-05-23 - [Caching Strategy: Static Data]
 **Learning:** Aggressive cache-busting (e.g., timestamp query params) on static data files forces unnecessary redownloads on every page load, hurting repeat visit performance.
 **Action:** Relies on standard HTTP caching (ETag/Last-Modified) for static assets unless instant updates are critical for development.
+## 2024-10-24 - Missing connection pooling in loops
+**Learning:** Python scripts sequentially fetching data (like `update.py`) were using bare `requests.get()` inside loops, suffering significant TCP/TLS handshake overhead on every iteration.
+**Action:** Always inject and reuse `requests.Session()` when making repeated API calls to the same host to enable connection pooling and drastically reduce latency.

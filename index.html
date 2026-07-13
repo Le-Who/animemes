@@ -172,6 +172,18 @@
             transform: translateX(-50%) translateY(0);
             transition: opacity 0.4s, transform 0.4s, visibility 0s;
         }
+        .btn.show:hover {
+            transform: translateX(-50%) translateY(-2px);
+            background: #f1f5f9;
+        }
+        .btn.show:active {
+            transform: translateX(-50%) translateY(2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .btn:focus-visible {
+            outline: 3px solid #fff;
+            outline-offset: 4px;
+        }
 
         /* Status Icons */
         .status-icon {

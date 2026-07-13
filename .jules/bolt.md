@@ -10,3 +10,6 @@
 ## 2024-05-23 - [Caching Strategy: Static Data]
 **Learning:** Aggressive cache-busting (e.g., timestamp query params) on static data files forces unnecessary redownloads on every page load, hurting repeat visit performance.
 **Action:** Relies on standard HTTP caching (ETag/Last-Modified) for static assets unless instant updates are critical for development.
+## 2024-05-15 - Connection Pooling with Requests
+**Learning:** Using `requests.get()` inside a loop creates a new TCP/TLS connection for each request, adding significant network overhead. By using `requests.Session()`, the underlying connections are pooled and reused, drastically reducing request latency for repeated calls to the same host.
+**Action:** Always prefer `requests.Session()` when making multiple API requests to the same host in Python backend scripts. Defaulting to `session=requests` in function parameters maintains backward compatibility.

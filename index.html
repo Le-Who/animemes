@@ -162,7 +162,7 @@
             font-weight: 800; border: none; cursor: pointer;
             opacity: 0;
             visibility: hidden;
-            transition: opacity 0.4s, transform 0.4s, visibility 0.4s;
+            transition: all 0.4s;
             z-index: 30;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
@@ -170,7 +170,21 @@
             opacity: 1;
             visibility: visible;
             transform: translateX(-50%) translateY(0);
-            transition: opacity 0.4s, transform 0.4s, visibility 0s;
+            transition: opacity 0.4s, transform 0.4s, visibility 0s, box-shadow 0.2s, background 0.2s;
+        }
+        .btn.show:hover {
+            transform: translateX(-50%) translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            background: #f1f5f9;
+        }
+        .btn.show:active {
+            transform: translateX(-50%) translateY(2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.1s, box-shadow 0.1s;
+        }
+        .btn:focus-visible {
+            outline: 4px solid #fff;
+            outline-offset: 4px;
         }
 
         /* Status Icons */

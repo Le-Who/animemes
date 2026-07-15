@@ -10,3 +10,7 @@
 **Vulnerability:** `index.html` contained multiple definitions of critical sanitizer functions (`safeUrl`, `safeCSSUrl`), where later definitions silently overwrote earlier ones. This created ambiguity about which security policy was active (blacklist vs whitelist) and led to double-sanitization bugs.
 **Learning:** In single-file applications without modules, hoisting and global scope pollution make it easy to accidentally shadow functions.
 **Prevention:** Centralize all security functions at the top of the script. Adopt a "sanitize at sink" pattern: helper functions should return raw data, and sanitizers should be applied only at the point of DOM insertion to avoid double-encoding issues.
+## 2026-07-15 - Missing URL Encoding Leads to Query Injection
+**Vulnerability:** The API parameter `tag` in `update.py` is interpolated directly into URL strings (`f"{API_URL}&tags={tag}"` and `f"...names={tag}"`) without URL encoding.
+**Learning:** Even internal build scripts are vulnerable to injection when interpolating strings into URLs. Unencoded characters like `&` or `#` within a tag name (e.g., `characters.json`) can alter the structure of the GET request, causing unintended queries or broken requests.
+**Prevention:** Always use `urllib.parse.quote()` (or let `requests.get(params=...)` handle it) when dynamically constructing URL parameters.

@@ -10,3 +10,7 @@
 ## 2024-05-23 - [Caching Strategy: Static Data]
 **Learning:** Aggressive cache-busting (e.g., timestamp query params) on static data files forces unnecessary redownloads on every page load, hurting repeat visit performance.
 **Action:** Relies on standard HTTP caching (ETag/Last-Modified) for static assets unless instant updates are critical for development.
+
+## 2026-07-16 - [Connection Pooling for Batch API Requests]
+**Learning:** Performing multiple consecutive HTTP requests to the same domain without `requests.Session()` forces a new TCP handshake and SSL negotiation for every single request, causing significant latency overhead.
+**Action:** Always utilize a `requests.Session()` context manager when making batched or looped requests to the same host to take advantage of connection pooling.

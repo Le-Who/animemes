@@ -172,6 +172,12 @@
             transform: translateX(-50%) translateY(0);
             transition: opacity 0.4s, transform 0.4s, visibility 0s;
         }
+        .btn.show:hover {
+            background-color: #e2e8f0;
+        }
+        .btn.show:active {
+            transform: translateX(-50%) translateY(2px);
+        }
 
         /* Status Icons */
         .status-icon {
@@ -197,6 +203,10 @@
         .switch-wrap input:focus-visible + .switch-bg {
             outline: 2px solid #fff;
             outline-offset: 2px;
+        }
+        .btn:focus-visible {
+            outline: 4px solid #fff;
+            outline-offset: 4px;
         }
 
         /* Keyboard Hints */

@@ -10,3 +10,7 @@
 ## 2024-05-23 - [Caching Strategy: Static Data]
 **Learning:** Aggressive cache-busting (e.g., timestamp query params) on static data files forces unnecessary redownloads on every page load, hurting repeat visit performance.
 **Action:** Relies on standard HTTP caching (ETag/Last-Modified) for static assets unless instant updates are critical for development.
+
+## 2026-07-18 - [Optimization: Intl.NumberFormat in animation loop]
+**Learning:** `toLocaleString()` inside a `requestAnimationFrame` loop creates unnecessary object instantiation overhead which causes performance degradation over time compared to a cached `Intl.NumberFormat` instance.
+**Action:** Always instantiate `Intl.NumberFormat` once outside of high-frequency loops (like animation frames or large list renderings) and reuse its `.format()` method.

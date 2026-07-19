@@ -14,7 +14,7 @@ USER_AGENTS = [
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0'
 ]
 
-def get_data(tag):
+def get_data(tag, session=None):
     try:
         # Выбираем случайный User-Agent
         headers = {
@@ -27,7 +27,8 @@ def get_data(tag):
         url = f"{API_URL}&tags={tag} sort:score:desc&limit=20"
         print(f"Fetching: {tag}...")
         
-        response = requests.get(url, headers=headers, timeout=15)
+        req = session if session else requests
+        response = req.get(url, headers=headers, timeout=15)
         
         if response.status_code == 403:
             print(f"⚠️ 403 Forbidden for {tag}. IP blocked?")
@@ -79,7 +80,8 @@ def get_data(tag):
              # ПОПЫТКА 2: Запросить API тегов (осторожно)
              try:
                 tag_url = f"https://gelbooru.com/index.php?page=dapi&s=tag&q=index&json=1&names={tag}"
-                tag_resp = requests.get(tag_url, headers=headers, timeout=10)
+                req = session if session else requests
+                tag_resp = req.get(tag_url, headers=headers, timeout=10)
                 tag_data = tag_resp.json()
                 if 'tag' in tag_data:
                     total_count = tag_data['tag'][0]['count']
@@ -108,21 +110,22 @@ def update_database():
     updated_db = []
     success_count = 0
     
-    for char in db:
-        # Небольшая пауза перед каждым запросом (Anti-Spam)
-        time.sleep(random.uniform(1.0, 3.0))
-        
-        count, img = get_data(char['tag'])
-        
-        if count is not None and img is not None:
-            char['posts'] = int(count)
-            char['image'] = img
-            success_count += 1
-            print(f"✅ Updated {char['name']}: {count} posts")
-        else:
-            print(f"⚠️ Skipped {char['name']} (keep old data)")
+    with requests.Session() as session:
+        for char in db:
+            # Небольшая пауза перед каждым запросом (Anti-Spam)
+            time.sleep(random.uniform(1.0, 3.0))
+
+            count, img = get_data(char['tag'], session)
             
-        updated_db.append(char)
+            if count is not None and img is not None:
+                char['posts'] = int(count)
+                char['image'] = img
+                success_count += 1
+                print(f"✅ Updated {char['name']}: {count} posts")
+            else:
+                print(f"⚠️ Skipped {char['name']} (keep old data)")
+
+            updated_db.append(char)
 
     # Сохраняем ТОЛЬКО если хоть что-то обновилось или если файл был пустым
     if success_count > 0 or len(db) > 0:

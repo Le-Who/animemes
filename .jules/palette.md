@@ -19,3 +19,7 @@ This journal tracks critical UX and accessibility learnings from the project.
 ## 2026-02-06 - Perceived Performance & Image Loading
 **Learning:** Abrupt image rendering can feel jarring and "unfinished." Initializing images with `opacity: 0` and transitioning to `1` upon the `load` event creates a significantly more polished experience with negligible performance cost.
 **Action:** Use CSS opacity transitions for heavy media elements to smooth out loading states.
+
+## 2026-07-19 - Missing Keyboard Focus on Next Button
+**Learning:** The "Next" button (`#nextBtn`) lacks a `focus-visible` state, meaning keyboard users cannot tell when they have tabbed to it to proceed to the next match, breaking keyboard navigation. It also lacks a hover state for mouse users.
+**Action:** Always ensure interactive elements like buttons have explicit `:focus-visible` styles matching the design system (e.g., `outline: 4px solid #fff`) and basic `:hover` feedback.

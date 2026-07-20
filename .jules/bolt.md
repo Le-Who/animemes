@@ -10,3 +10,7 @@
 ## 2024-05-23 - [Caching Strategy: Static Data]
 **Learning:** Aggressive cache-busting (e.g., timestamp query params) on static data files forces unnecessary redownloads on every page load, hurting repeat visit performance.
 **Action:** Relies on standard HTTP caching (ETag/Last-Modified) for static assets unless instant updates are critical for development.
+
+## 2026-07-20 - Connection Pooling in API Scrapers
+**Learning:** Using requests.get inside a loop for the same host creates a new TCP connection and SSL handshake for every single request, which adds massive overhead.
+**Action:** Always use requests.Session() when making multiple requests to the same API host to enable connection pooling and keep-alive.
